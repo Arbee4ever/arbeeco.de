@@ -44,8 +44,30 @@
     color: white;
 }
 
-.content {
-    margin: 2%;
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.row-flipped {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.row-flipped p {
+    text-align: right;
+}
+
+.side {
+    flex: 20%;
+    padding: 0%;
+    height: max-content;
+}
+
+.main {
+    flex: 80%;
+    background-color: white;
+    padding: 20px;
     font-size: 150%;
 }
 
