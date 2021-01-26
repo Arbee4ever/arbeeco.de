@@ -80,6 +80,11 @@
     overflow: hidden;
 }
 
+.mod-title a {
+    text-decoration: none;
+    color: black;
+}
+
 .footer {
     padding: 10px;
     font-size: 60%;
