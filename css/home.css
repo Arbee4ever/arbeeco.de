@@ -1,96 +1,72 @@
-body {
-    background-color: #724a00;
-    margin: 0%;
-    color: white
-}
-
-.welcome {
-    color: grey;
-    padding: 0%;
+* {
+    box-sizing: border-box;
     margin: 0%;
 }
 
-.welcomebox {
-    background-color: #2f3136;
+.header {
+    background-image: url(../img/Banner.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position-y: 50%
+    background-position-y: 50%;
+    background-size: 100%;
+    padding: 27.5%;
 }
 
-.welcomebox img {
+.header img {
     max-width: 100%;
     max-height: 100%;
     margin: auto;
 }
 
-.nav {
+.navbar {
     background-color: #2f3136;
     overflow: hidden;
     position: sticky;
 }
 
-.nav a {
+.navbar a {
     float: left;
+    display: block;
     color: white;
     text-align: center;
     padding: 1% 1%;
     text-decoration: none;
-    font-size: 140%;
+    font-size: 100%;
     transition: all 0.3s ease-in-out;
 }
 
-.nav a:hover {
+.navbar a:hover {
     background-color: black;
     color: white;
     transition: all 0.3s ease-in-out;
 }
 
-.nav a.active {
+.navbar a.active {
     background-color: black;
     color: white;
 }
 
-.descriptionheader {
-    float: right;
-    background-color: black;
-    background-position: bottom;
-    padding: 1% 1%;
-    width: 20%;
-    top: 0%;
-    position: sticky;
+.row {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.descriptionheader p {
-    margin: 0%;
-    color: white;
-    font-size: 140%;
-    overflow: hidden
+.side {
+    flex: 20%;
+    background-image: url(/img/icon.png);
+    padding: 20px;
+    background-size: 100%;
+    height: max-content;
 }
 
-.link {
-    color: orange;
-    text-decoration: none
-}
-
-.media {
-    font-size: 125%;
-}
-
-.media a {
+.main {
+    flex: 80%;
     background-color: white;
-    color: black;
-    text-decoration: none;
-    padding: 1% 1%;
-    top: 0%;
-    position: sticky;
-    transition: all 0.3s ease-in-out;
-    border-style: solid;
-    border-color: black;
-    border-radius: 10%;
+    padding: 20px;
 }
 
-.media a:hover {
-    background-color: black;
-    color: white;
-    transition: all 0.3s ease-in-out;
+.footer {
+    padding: 20px;
+    text-align: center; /* Center text*/
+    background: #ddd; /* Grey background */
 }
