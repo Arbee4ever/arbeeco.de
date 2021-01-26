@@ -52,6 +52,7 @@
 .row img {
     max-width: 100%;
     max-height: 100%;
+    display: block;
 }
 
 .row-flipped {
@@ -72,11 +73,11 @@
 .main {
     flex: 80%;
     background-color: white;
-    padding: 2%;
+    padding: 20px;
 }
 
-.main a {
-    font-size: 100%;
+.mod-info {
+    overflow: hidden;
 }
 
 .footer {
