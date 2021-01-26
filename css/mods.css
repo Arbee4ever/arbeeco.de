@@ -72,8 +72,11 @@
 .main {
     flex: 80%;
     background-color: white;
-    padding: 20px;
-    font-size: 150%;
+    padding: 2%;
+}
+
+.main a {
+    font-size: 100%;
 }
 
 .footer {
