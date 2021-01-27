@@ -22,7 +22,7 @@
 
 .navbar a {
     float: left;
-    display: block;
+    display: inline-flex;
     color: white;
     text-align: center;
     padding: 1% 1%;
@@ -42,11 +42,11 @@
     color: white;
 }
 
-.right {
+a.right {
     float: right;
 }
 
-.image {
+a, img.btn-icon{
     max-height: 13%;
     max-width: 13%;
 }
