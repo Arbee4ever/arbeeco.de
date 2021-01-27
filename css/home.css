@@ -46,7 +46,7 @@ a.right {
     float: right;
 }
 
-a, img.btn-icon{
+a, img.btn-icon {
     max-height: 13%;
     max-width: 13%;
 }
