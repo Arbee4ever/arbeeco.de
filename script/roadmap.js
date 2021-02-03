@@ -18,7 +18,7 @@ function readTextFile() {
         {
             var text = rawFile.responseText.split("/n");
             for (var i = 0; i < text.length; i++) {
-                features.innerHTML = features.innerHTML + text[i] + "<br>";
+                features.innerHTML = features.innerHTML + text[i] + "<br><br>";
             }
         }
     }
