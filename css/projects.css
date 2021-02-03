@@ -106,3 +106,7 @@
     margin: 2%;
     color: red;
 }
+
+#hidden {
+    display: none;
+}
