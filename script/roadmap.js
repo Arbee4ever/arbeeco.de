@@ -1,5 +1,5 @@
 var selector = document.getElementById("feature-type");
-var features = document.getElementById("features");
+var features = document.getElementById("features-list");
 
 selector.onchange = function() {
     readTextFile();
