@@ -47,17 +47,27 @@
 .row {
     display: flex;
     flex-direction: row;
+    background-color: black;
 }
 
 .row img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 400px;
     display: block;
 }
 
 .row-flipped {
     display: flex;
     flex-direction: row-reverse;
+    background-color: #2f3136;
+}
+
+.row-flipped img {
+    max-width: 400px;
+    display: block;
+}
+
+.row-flipped h3 {
+    text-align: right;
 }
 
 .row-flipped p {
@@ -72,22 +82,27 @@
 
 .main {
     flex: 80%;
-    background-color: white;
     padding: 20px;
 }
 
 .mod-info {
     overflow: hidden;
+    color: white;
 }
 
 .mod-title a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .footer {
-    padding: 10px;
-    font-size: 60%;
+    padding: 0.5%;
+    font-size: 75%;
     text-align: center;
     background: #ddd;
+}
+
+.error {
+    margin: 2%;
+    color: red;
 }
