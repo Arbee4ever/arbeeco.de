@@ -1,0 +1,11 @@
+ Expand the vanilla feature that allows zombies to spread fire to their targets if they attack without an item to all mobs/n
+Leadable Hoglins, Zoglins, Turtles, Pandas/n
+Wild wolves are able to be bred. Allow for some neat natural systems/n
+Farmer villagers will deposit excess items into a nearby chest/n
+Allow zombies to break wooden doors placed in all directions/n
+Customizable Egg throwing Chicken Spawn rate/n
+Chickens drop feathers randomly./n
+Force mobs to drop all of their equipment along with their loot on death/n
+Horse dual riding, like for boat/n
+Shift right-click to unequip a saddle from a pig/strider./n
+Particle/sound effect when a mob spawns naturally or from a spawner in the world

@@ -1,0 +1,19 @@
+ The glass bottle received after drinking a potion will automatically be moved into an already existing stack of glass bottles in your inventory (if available)/n
+When a lead breaks a sound is played/n
+XP sources give their XP directly to the player that earns them. This would reduce lag on big servers/n
+The heads of tipped arrows render the color of their status effect/n
+Recipe for nametag/n
+Recipe for chain armor - crafted from chains/n
+Dynamite - throwable TNT/n
+Dragon Eggs, Command blocks and debug stick can be found in the creative menu/n
+Fire arrows set a block they hit on fire/n
+Recipe for horse armors/n
+Auto-enable third-person for elytra, boat, minecart and horse/pig/strider riding/n
+A 'ding' sound effect that plays when Minecraft loaded successfully or a world is loaded/n
+Show in-game time and real-time in the f3 menu./n
+toggleable particles/n
+/hunger command to set a player's hunger and saturation/n
+"fallDamageMultiplier", "drowningDamageMultiplier" and "fireDamageMultiplier" gamerules/n
+Configurable minmal/maximum light level/n
+Make Emeralds more common/n
+Particle/sound effect when a mob spawns naturally or from a spawner in the world

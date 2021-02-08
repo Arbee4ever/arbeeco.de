@@ -1,0 +1,1 @@
+ Villagers follow Players holding an Emerald Block/Ore.

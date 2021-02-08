@@ -42,17 +42,17 @@
     color: white;
 }
 
-#feature-type {
+#soon-type, #feature-type {
     height: 50px;
     width: 100%;
     font-size: 100%;
     background-color: #ddd;
 }
 
-.features {
+.soon, .features {
     background-color: #ddd;
-    text-align: left;
     height: 400px;
+    padding: 0.5%;
     overflow-y: scroll;
 }
 
