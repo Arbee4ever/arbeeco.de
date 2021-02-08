@@ -45,7 +45,6 @@
 #soon-type, #feature-type {
     height: 50px;
     width: 100%;
-    font-size: 100%;
     background-color: #ddd;
 }
 
@@ -54,6 +53,19 @@
     height: 400px;
     padding: 0.5%;
     overflow-y: scroll;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+#soon {
+    flex: 50%;
+}
+
+#features {
+    flex: 50%;
 }
 
 .content {
