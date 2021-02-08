@@ -55,9 +55,17 @@
     overflow-y: scroll;
 }
 
-.row {
-    display: flex;
-    flex-direction: row;
+@media (max-width: 665px) {
+    .row{
+        display: block;
+    }
+}
+
+@media (min-width: 666px) {
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 #soon {
