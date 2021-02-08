@@ -55,13 +55,13 @@
     overflow-y: scroll;
 }
 
-@media (max-width: 665px) {
+@media (max-width: 936px) {
     .row{
         display: block;
     }
 }
 
-@media (min-width: 666px) {
+@media (min-width: 937px) {
     .row {
         display: flex;
         flex-direction: row;
