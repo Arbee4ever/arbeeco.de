@@ -66,14 +66,14 @@
         display: flex;
         flex-direction: row;
     }
-}
 
-#soon {
-    flex: 50%;
-}
-
-#features {
-    flex: 50%;
+    #soon {
+        flex: 50%;
+    }
+    
+    #features {
+        flex: 50%;
+    }
 }
 
 .content {

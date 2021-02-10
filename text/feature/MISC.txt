@@ -1,1 +1,3 @@
- Recipe for a saddle
+ Recipe for a saddle/n
+/hunger command to set a player's hunger/n
+/health command to set a player's health
