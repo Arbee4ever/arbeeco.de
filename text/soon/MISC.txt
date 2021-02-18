@@ -12,7 +12,6 @@ Auto-enable third-person for elytra, boat, minecart and horse/pig/strider riding
 A 'ding' sound effect that plays when Minecraft loaded successfully or a world is loaded/n
 Show in-game time and real-time in the f3 menu./n
 toggleable particles/n
-/hunger command to set a player's hunger and saturation/n
 "fallDamageMultiplier", "drowningDamageMultiplier" and "fireDamageMultiplier" gamerules/n
 Configurable minmal/maximum light level/n
 Make Emeralds more common/n
