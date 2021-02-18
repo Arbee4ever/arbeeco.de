@@ -53,8 +53,10 @@
 }
 
 #snakeboard {
+    position: relative;
+    top: 50%;
     left: 50%;
-    transform: translate(108%, 5%);
+    transform: translate(-50%, 0%);
 }
 
 #score {
