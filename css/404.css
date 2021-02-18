@@ -12,19 +12,17 @@
     max-width: 100%;
     max-height: 100%;
     display: block;
-    object-fit: contain; 
 }
 
 .navbar {
     background-color: #2f3136;
     overflow: hidden;
-    top: 0%;
-    position: sticky;    
+    position: sticky;
 }
 
 .navbar a {
     float: left;
-    display: block;
+    display: inline-flex;
     color: white;
     text-align: center;
     padding: 1% 1%;
@@ -44,55 +42,24 @@
     color: white;
 }
 
-.row {
-    display: flex;
-    flex-direction: row;
-    background-color: black;
+#soon-type, #feature-type {
+    height: 50px;
+    width: 100%;
+    background-color: #ddd;
 }
 
-.row img {
-    max-width: 400px;
-    display: block;
+.content {
+    margin: 2%;
 }
 
-.row-flipped {
-    display: flex;
-    flex-direction: row-reverse;
-    background-color: #2f3136;
+#snakeboard {
+    left: 50%;
+    transform: translate(108%, 5%);
 }
 
-.row-flipped img {
-    max-width: 400px;
-    display: block;
-}
-
-.row-flipped h3 {
-    text-align: right;
-}
-
-.row-flipped p {
-    text-align: right;
-}
-
-.side {
-    flex: 20%;
-    padding: 0%;
-    height: max-content;
-}
-
-.main {
-    flex: 80%;
-    padding: 20px;
-}
-
-.mod-info {
-    overflow: hidden;
-    color: white;
-}
-
-.mod-title a {
-    text-decoration: none;
-    color: white;
+#score {
+    text-align: center;
+    font-size: 140px;
 }
 
 .footer {
@@ -106,8 +73,4 @@
     margin: 2%;
     text-align: center;
     color: red;
-}
-
-#hidden {
-    display: none;
 }
