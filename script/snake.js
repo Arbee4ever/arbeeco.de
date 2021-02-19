@@ -89,12 +89,12 @@ function gen_food() {
 }
 
 function change_direction(event) {
-    const LEFT_KEY = 37;
-    const RIGHT_KEY = 39;
-    const UP_KEY = 38;
-    const DOWN_KEY = 40;
+    const LEFT_KEY = 65;
+    const RIGHT_KEY = 68;
+    const UP_KEY = 87;
+    const DOWN_KEY = 83;
 
-    if([LEFT_KEY, RIGHT_KEY, UP_KEY, DOWN_KEY].indexOf(event.keyCode > -1)) {
+    if(event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40) {
         event.preventDefault();
     }
 
