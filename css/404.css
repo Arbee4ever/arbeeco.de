@@ -3,6 +3,11 @@
     margin: 0%;
 }
 
+html,
+body {
+    overscroll-behavior-y: contain;
+}
+
 .header {
     width: 100%;
     height: 100%;
