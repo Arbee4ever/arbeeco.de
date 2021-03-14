@@ -1,7 +1,10 @@
+const board_col = "white";
 const board_border = "black";
-const board_background = "white";
-const snake_col = "lightblue";
-const snake_border = "darkblue";
+const snake_col = "green";
+const snake_border = "black";
+const food_col = "red";
+const food_border = "black";
+const font_col = "black";
 
 let snake = [
     {x:200, y:200},
@@ -41,12 +44,15 @@ function main() {
         move_snake();
         drawSnake();
         main();
+        snakeboard_ctx.fillStyle = font_col;
+        snakeboard_ctx.font = "30px Arial";
+        snakeboard_ctx.fillText(score, 5, 30);
     }, 100)
 }
 
 function clearCanvas() {
-    snakeboard_ctx.fillStyle = board_background;
-    snakeboard_ctx.strokestyle = board_border;
+    snakeboard_ctx.fillStyle = board_col;
+    snakeboard_ctx.strokeStyle = board_border;
     snakeboard_ctx.fillRect(0, 0, snakeboard.width, snakeboard.height);
     snakeboard_ctx.strokeRect(0, 0, snakeboard.width, snakeboard.height);
 }
@@ -56,15 +62,15 @@ function drawSnake() {
 }
 
 function drawFood() {
-    snakeboard_ctx.fillStyle = "lightgreen";
-    snakeboard_ctx.strokestyle = "darkgreen";
+    snakeboard_ctx.fillStyle = food_col;
+    snakeboard_ctx.strokeStyle = food_border;
     snakeboard_ctx.fillRect(food_x, food_y, 10, 10);
     snakeboard_ctx.strokeRect(food_x, food_y, 10, 10);
 }
 
 function drawSnakePart(snakePart) {
     snakeboard_ctx.fillStyle = snake_col;
-    snakeboard_ctx.strokestyle = snake_border;
+    snakeboard_ctx.strokeStyle = snake_border;
     snakeboard_ctx.fillRect(snakePart.x, snakePart.y, 10, 10);
     snakeboard_ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
 }
@@ -137,7 +143,6 @@ function move_snake() {
     const has_eaten_food = snake[0].x === food_x && snake[0].y === food_y;
     if(has_eaten_food) {
         score += 1;
-        document.getElementById("score").innerHTML = score;
         gen_food();
     } else {
         snake.pop();
