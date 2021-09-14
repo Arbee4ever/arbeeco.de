@@ -1,4 +1,0 @@
- Sleeping in a bed will heal the player by a configurable amount/n
-Add a recipe for trapped chest for crafting it without chest - chest recipe with a tripwire hook in the middle/n
-Sneaking through Berry Bushes doesn't deal damage to Players./n
-Sleeping will cure any effects
