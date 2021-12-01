@@ -90,6 +90,8 @@ body {
 	padding: 0.5%;
 	font-size: 1.5vh;
 	color: White;
+	z-index: 1;
+	position: absolute;
 } 
 
 a {
