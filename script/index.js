@@ -63,12 +63,12 @@ mainbutton.onclick = function() {
 	}
 }
 
-projects.onclick = function() {
+//This may be used in the Future and is just here as a reminder.
+/*projects.onclick = function() {
 	mainbutton.style.animation = "flip 1s";
 }
 
-//This may be used in the Future and is just here as a reminder.
-/*let scroll = 0;
+let scroll = 0;
 document.addEventListener("wheel", function (e) {
 	scroll = (scroll - e.deltaY/10)%360;
 	root.style.setProperty("--animation-rotation", "rotateX(" + scroll + "deg)");
