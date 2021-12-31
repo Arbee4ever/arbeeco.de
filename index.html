@@ -8,9 +8,19 @@
 	<link rel="icon" href="img/Logo.png">
 </head>
 <body>
+	<div class="credits">
+		<p>This Website is hosted by <a href="https://github.com" target="_blank">GitHub</a>.</p>
+		<p>© 2021 Arbee</p>
+	</div>
+	<noscript>
+		<p class="error">This site doesn't work without JavaScript! (╯°□°）╯︵ ┻━┻</p>
+	</noscript>
 	<div id="content" class="content">
+		<a onclick="slide()" id="back" class="back hide">
+			<img src="img/BackIcon.svg">
+		</a>
 		<div id="buttons" class="buttons">
-			<img id="mainbutton" class="mainbutton" src="img/Logo.png">
+			<img id="mainbutton" class="mainbutton" onclick= "showContact()" src="img/Logo.png">
 			<a href="https://discord.gg/ehKTjghj4X" target="_blank">
 				<img class="button" style="left: 32.5%;" src="img/icon_clyde_circle_blurple_white.svg">
 			</a>
@@ -25,17 +35,13 @@
 			</a>
 		</div>
 		<p id="description" class="description">I (Arbee) am a 17 year old German Guy who likes Programming.<br>I'm creating Minecraft Mods and Games in Unity.<br>Click my Logo if you want to contact me.</p>
-		<!-- WIP <a id="projects" class="projects">
+		<a id="projectsBtn" onclick="slide()" class="projectsBtn">
 			<img src="img/ProjectsIcon.svg">
-		</a> -->
+		</a>
 	</div>
-	<div class="credits">
-		<p>This Website is hosted by <a href="https://github.com" target="_blank">GitHub</a>.</p>
-		<p>© 2021 Arbee</p>
+	<div id="projects" class="projects hide">
+		<a>Coming soon...</a>
 	</div>
-	<noscript>
-		<p class="error">This site doesn't work without JavaScript! (╯°□°）╯︵ ┻━┻</p>
-	</noscript>
 	<script src="script/index.js"></script>
 </body>
 </html>

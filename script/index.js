@@ -4,11 +4,13 @@ const description = document.getElementById("description");
 const button = document.getElementsByClassName("button");
 const content = document.getElementById("content");
 const projects = document.getElementById("projects");
+const projectsBtn = document.getElementById("projectsBtn");
+const back = document.getElementById("back");
 var root = document.documentElement;
 var index = 0;
 var state = 1;
 
-mainbutton.onclick = function() {
+function showContact() {
 	if(state == 0 || state == 1) {
 		var id = null;
 		switch (state) {
@@ -71,10 +73,20 @@ mainbutton.onclick = function() {
 let scroll = 0;
 document.addEventListener("wheel", function (e) {
 	scroll = (scroll - e.deltaY/10)%360;
-	root.style.setProperty("--animation-rotation", "rotateX(" + scroll + "deg)");
-	if(Math.abs(scroll) < 90 || Math.abs(scroll) > 270) {
-		mainbutton.src = "img/Logo.png";
+	root.style.setProperty("--animation-rotation", 
+	if(state == 0) {
+		showContact();
+	}
 	} else {
 		mainbutton.src = "img/TwitterLogo.svg";
 	}
 }, true);*/
+
+async function slide() {
+	content.classList.toggle("hide");
+	mainbutton.classList.toggle("hide");
+	buttons.classList.toggle("hide");
+	projectsBtn.classList.toggle("hide");
+	back.classList.toggle("hide");
+	projects.classList.toggle("hide");
+}

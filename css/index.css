@@ -19,14 +19,28 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: fixed;
-	min-width: 100vw;
-	width: auto;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0 auto;
+	transition: all 0.4s ease-in-out;
+}
+
+.projects {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0 auto;
+	transition: all 0.4s ease-in-out;
 }
 
 .buttons {
 	position: fixed;
 	height: 240px;
+	transition: all 0.4s ease-in-out;
 }
 
 .mainbutton {
@@ -41,6 +55,7 @@ body {
 	border-radius: 190%;
 	-moz-border-radius: 190%;
 	-webkit-border-radius: 190%;
+	transition: all 0.4s ease-in-out;
 }
 
 @keyframes pulse {
@@ -67,21 +82,35 @@ body {
 	position: absolute;
 	height: 35%;
 	opacity: 0;
+	transition: all 0.4s ease-in-out;
 }
 
-.projects {
+.back {
 	position: fixed;
 	height: 15%;
+	top: 0%;
+	transition: all 0.4s ease-in-out;
+}
+
+.back img {
+	height: 100%;
 	bottom: 0%;
 }
 
-.projects img {
+.projectsBtn {
+	position: fixed;
+	height: 15%;
+	bottom: 0%;
+	transition: all 0.4s ease-in-out;
+}
+
+.projectsBtn img {
 	height: 100%;
 	bottom: 0%;
 }
 
 .description {
-	margin-top: 70vh;
+	margin-top: 55vh;
 	text-align: center;
 	color: White;
 }
@@ -96,6 +125,10 @@ body {
 
 a {
 	color: White;
+}
+
+.hide {
+	height: 0vh;
 }
 
 .error {
