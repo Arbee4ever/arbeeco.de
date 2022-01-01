@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
 * {
+	font-family: 'Ubuntu';
 	margin: 0%;
+	transition: height 0.4s ease-in-out;
 }
 
 :root {
@@ -17,16 +21,16 @@ body {
 
 .content {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
 	margin: 0 auto;
-	transition: all 0.4s ease-in-out;
 }
 
-.projects {
+.main, .projects {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -34,13 +38,11 @@ body {
 	height: 100vh;
 	overflow: hidden;
 	margin: 0 auto;
-	transition: all 0.4s ease-in-out;
 }
 
 .buttons {
 	position: fixed;
-	height: 240px;
-	transition: all 0.4s ease-in-out;
+	height: 21%;
 }
 
 .mainbutton {
@@ -55,7 +57,6 @@ body {
 	border-radius: 190%;
 	-moz-border-radius: 190%;
 	-webkit-border-radius: 190%;
-	transition: all 0.4s ease-in-out;
 }
 
 @keyframes pulse {
@@ -82,52 +83,41 @@ body {
 	position: absolute;
 	height: 35%;
 	opacity: 0;
-	transition: all 0.4s ease-in-out;
 }
 
 .back {
 	position: fixed;
 	height: 15%;
 	top: 0%;
-	transition: all 0.4s ease-in-out;
-}
-
-.back img {
-	height: 100%;
-	bottom: 0%;
 }
 
 .projectsBtn {
 	position: fixed;
 	height: 15%;
 	bottom: 0%;
-	transition: all 0.4s ease-in-out;
 }
 
-.projectsBtn img {
+.back img, .projectsBtn img {
 	height: 100%;
-	bottom: 0%;
 }
 
 .description {
-	margin-top: 45vh;
+	margin-bottom: -45vh;
 	text-align: center;
-	color: White;
 }
 
 .credits {
 	padding: 0.5%;
 	font-size: 1.5vh;
-	color: White;
 	z-index: 2;
 	position: absolute;
 }
 
-a {
+a, p {
 	color: White;
 }
 
-.hide {
+.hide, .hide * {
 	height: 0vh;
 }
 
