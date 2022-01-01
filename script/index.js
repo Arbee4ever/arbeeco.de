@@ -10,15 +10,20 @@ var root = document.documentElement;
 var index = 0;
 var state = 1;
 
-function showContact() {
-	if(state == 0 || state == 1) {
+function delay(time) {
+	return new Promise(resolve => setTimeout(resolve, time));
+}
+
+async function showContact() {
+	if (state == 0 || state == 1) {
 		var id = null;
 		switch (state) {
 			case 1:
-				for(i=0; i<10; i++) {
+				for (i = 0; i < 90; i++) {
+					await delay(10);
 					state = 0.5;
-					index = (i/10);
-					mainbutton.style.opacity = 1-index;
+					index = (i / 100);
+					mainbutton.style.opacity = 1 - index;
 					description.style.opacity = 0;
 					for (let x = 0; x < button.length; x++) {
 						const element = button[x];
@@ -31,12 +36,13 @@ function showContact() {
 				mainbutton.style.zIndex = -1;
 				state = 0;
 				break;
-			
+
 			case 0:
-				for(i=10; i>0; i--) {
+				for (i = 90; i > 0; i--) {
+					await delay(10);
 					state = 0.5;
-					index = (i/10);
-					mainbutton.style.opacity = 1-index;
+					index = (i / 100);
+					mainbutton.style.opacity = 1 - index;
 					description.style.opacity = 1;
 					for (let x = 0; x < button.length; x++) {
 						const element = button[x];
