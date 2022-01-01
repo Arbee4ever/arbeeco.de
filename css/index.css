@@ -117,7 +117,7 @@ a, p {
 	color: White;
 }
 
-.hide, .hide * {
+.hide {
 	height: 0vh;
 }
 

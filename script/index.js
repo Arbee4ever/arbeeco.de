@@ -24,7 +24,7 @@ async function showContact() {
 					state = 0.5;
 					index = (i / 100);
 					mainbutton.style.opacity = 1 - index;
-					description.style.opacity = 0;
+					description.style.opacity = 1 - index;
 					for (let x = 0; x < button.length; x++) {
 						const element = button[x];
 						element.style.opacity = index;
@@ -32,6 +32,7 @@ async function showContact() {
 					}
 				}
 
+				description.style.opacity = 0;
 				mainbutton.style.animationPlayState = "paused";
 				mainbutton.style.zIndex = -1;
 				state = 0;
@@ -43,7 +44,7 @@ async function showContact() {
 					state = 0.5;
 					index = (i / 100);
 					mainbutton.style.opacity = 1 - index;
-					description.style.opacity = 1;
+					description.style.opacity = 1 - index;
 					for (let x = 0; x < button.length; x++) {
 						const element = button[x];
 						element.style.opacity = index;
@@ -51,6 +52,7 @@ async function showContact() {
 					}
 				}
 
+				description.style.opacity = 1;
 				mainbutton.style.animationPlayState = "running";
 				mainbutton.style.zIndex = 1;
 				state = 1;
