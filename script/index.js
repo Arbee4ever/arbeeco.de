@@ -19,17 +19,11 @@ async function showContact() {
 		var id = null;
 		switch (state) {
 			case 1:
-				for (i = 0; i < 90; i++) {
-					await delay(10);
-					state = 0.5;
-					index = (i / 100);
-					mainbutton.style.opacity = 1 - index;
-					description.style.opacity = 1 - index;
-					for (let x = 0; x < button.length; x++) {
-						const element = button[x];
-						element.style.opacity = index;
-						element.style.zIndex = 1;
-					}
+				mainbutton.style.opacity = 0.1;
+				for (let x = 0; x < button.length; x++) {
+					const element = button[x];
+					element.style.opacity = 1;
+					element.style.zIndex = 1;
 				}
 
 				description.style.opacity = 0;
@@ -39,17 +33,11 @@ async function showContact() {
 				break;
 
 			case 0:
-				for (i = 90; i > 0; i--) {
-					await delay(10);
-					state = 0.5;
-					index = (i / 100);
-					mainbutton.style.opacity = 1 - index;
-					description.style.opacity = 1 - index;
-					for (let x = 0; x < button.length; x++) {
-						const element = button[x];
-						element.style.opacity = index;
-						element.style.zIndex = -1;
-					}
+				mainbutton.style.opacity = 1;
+				for (let x = 0; x < button.length; x++) {
+					const element = button[x];
+					element.style.opacity = 0;
+					element.style.zIndex = -1;
 				}
 
 				description.style.opacity = 1;
@@ -65,26 +53,7 @@ async function showContact() {
 	}
 }
 
-//This may be used in the Future and is just here as a reminder.
-/*projects.onclick = function() {
-	mainbutton.style.animation = "flip 1s";
-}
-
-let scroll = 0;
-document.addEventListener("wheel", function (e) {
-	scroll = (scroll - e.deltaY/10)%360;
-	root.style.setProperty("--animation-rotation",
-	if(state == 0) {
-		showContact();
-	}
-	} else {
-		mainbutton.src = "img/TwitterLogo.svg";
-	}
-}, true);*/
-
-async function slide() {
+function slide() {
 	main.classList.toggle("hide");
-	projectsBtn.classList.toggle("hide");
 	projects.classList.toggle("hide");
-	back.classList.toggle("hide");
 }

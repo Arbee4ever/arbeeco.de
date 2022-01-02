@@ -11,16 +11,13 @@
 
 <body>
 	<div class="credits">
-		<p>This Website is hosted by <a href="https://github.com" target="_blank">GitHub</a>.</p>
+		<p>This Website is hosted by <a href="https://pages.github.com" target="_blank">GitHub</a>.</p>
 		<p>© 2021 Arbee</p>
 	</div>
 	<noscript>
 		<p class="error">This site doesn't work without JavaScript! (╯°□°）╯︵ ┻━┻</p>
 	</noscript>
 	<div class="content" id="content">
-		<a onclick="slide()" id="back" class="back hide">
-			<img src="img/BackIcon.svg">
-		</a>
 		<div id="main" class="main">
 			<div id="buttons" class="buttons">
 				<img id="mainbutton" class="mainbutton" onclick="showContact()" src="img/Logo.png">
@@ -41,13 +38,12 @@
 				<br>I'm creating Minecraft Mods and Games in Unity.
 				<br>Click my Logo if you want to contact me.
 			</p>
+			<img src="img/ProjectsIcon.svg" onclick="slide()" id="projectsBtn" class="projectsBtn">
 		</div>
 		<div id="projects" class="projects hide">
+			<img onclick="slide()" src="img/BackIcon.svg" id="back" class="back">
 			<p>Coming soon...</p>
 		</div>
-		<a onclick="slide()" id="projectsBtn" class="projectsBtn">
-			<img src="img/ProjectsIcon.svg">
-		</a>
 	</div>
 	<script src="script/index.js"></script>
 </body>
