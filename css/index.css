@@ -1,120 +1,122 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
-
 @keyframes pulse {
-	from {
-		transform: var(--animation-scale-from);
-	}
-	to {
-		transform: var(--animation-scale-to);
-	}
+    from {
+        transform: var(--animation-scale-from);
+    }
+    to {
+        transform: var(--animation-scale-to);
+    }
 }
 
 * {
-	font-family: 'Ubuntu';
-	margin: 0%;
-	transition: all 0.4s ease-in-out;
+    font-family: 'Ubuntu';
+    margin: 0%;
+    transition: all 0.4s ease-in-out;
 }
 
 :root {
-	--animation-scale-from: scale(100%);
-	--animation-scale-to: scale(110%);
+    --animation-scale-from: scale(100%);
+    --animation-scale-to: scale(110%);
 }
 
 html {
-	overflow: hidden;
-	width: 100%;
+    overflow: hidden;
+    width: 100%;
 }
 
 body {
-	background-image: linear-gradient(to bottom right, #2B8DAF, #B222A9);
-	box-shadow: 0px 0px 1000px inset black;
+    background-image: linear-gradient(to bottom right, #2B8DAF, #B222A9);
+    box-shadow: 0px 0px 1000px inset black;
 }
 
 .content {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
-	margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0 auto;
 }
 
-.main, .projects {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
-	margin: 0 auto;
+.main,
+.projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0 auto;
 }
 
 .buttons {
-	margin-bottom: 25vh;
-	position: fixed;
-	height: 240px;
+    margin-bottom: 25vh;
+    position: fixed;
+    height: 240px;
 }
 
 .mainbutton {
-	z-index: 1;
-	height: 240px;
-	animation: pulse 1s infinite;
-	animation-direction: alternate;
-	border: -1px solid #fff;
-	box-shadow: 0px 0px 10vh black;
-	-moz-box-shadow: 0px 0px 10vh black;
-	-webkit-box-shadow_: 0px 0px 10vh black;
-	border-radius: 190%;
-	-moz-border-radius: 190%;
-	-webkit-border-radius: 190%;
+    z-index: 1;
+    height: 240px;
+    animation: pulse 1s infinite;
+    animation-direction: alternate;
+    border: -1px solid #fff;
+    box-shadow: 0px 0px 10vh black;
+    -moz-box-shadow: 0px 0px 10vh black;
+    -webkit-box-shadow_: 0px 0px 10vh black;
+    border-radius: 190%;
+    -moz-border-radius: 190%;
+    -webkit-border-radius: 190%;
 }
 
 .button {
-	margin: 1%;
-	z-index: -1;
-	position: absolute;
-	height: 80.766px;
+    margin: 1%;
+    z-index: -1;
+    position: absolute;
+    height: 80.766px;
 }
 
 .backBtn {
-	position: fixed;
-	height: 15%;
-	top: 0%;
+    position: fixed;
+    height: 15%;
+    top: 0%;
 }
 
 .projectsBtn {
-	position: fixed;
-	height: 15%;
-	bottom: 0%;
+    position: fixed;
+    height: 15%;
+    bottom: 0%;
 }
 
 .description {
-	margin-top: 35vh;
-	text-align: center;
-	height: 0vh;
+    margin-top: 35vh;
+    text-align: center;
+    height: 0vh;
 }
 
 .credits {
-	padding: 0.5%;
-	font-size: 1.5vh;
-	z-index: 2;
-	position: absolute;
+    padding: 0.5%;
+    font-size: 1.5vh;
+    z-index: 2;
+    position: absolute;
 }
 
-a, p {
-	color: White;
+a,
+p {
+    color: White;
 }
 
-.hide, .hide * {
-	height: 0vh;
-	font-size: 0vh;
+.hide,
+.hide * {
+    height: 0vh;
+    font-size: 0vh;
 }
 
 .error {
-	font-size: 100%;
-	margin: 2%;
-	text-align: center;
-	color: red;
+    font-size: 100%;
+    margin: 2%;
+    text-align: center;
+    color: red;
 }
