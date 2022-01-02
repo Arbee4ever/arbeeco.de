@@ -10,11 +10,7 @@ var root = document.documentElement;
 var index = 0;
 var state = 1;
 
-function delay(time) {
-	return new Promise(resolve => setTimeout(resolve, time));
-}
-
-async function showContact() {
+function showContact() {
 	if (state == 0 || state == 1) {
 		var id = null;
 		switch (state) {
