@@ -1,13 +1,6 @@
 const mainbutton = document.getElementById("mainbutton");
-const buttons = document.getElementById("buttons");
 const description = document.getElementById("description");
 const button = document.getElementsByClassName("button");
-const main = document.getElementById("main");
-const projects = document.getElementById("projects");
-const projectsBtn = document.getElementById("projectsBtn");
-const back = document.getElementById("back");
-var root = document.documentElement;
-var index = 0;
 var state = 1;
 
 function showContact() {
@@ -47,9 +40,4 @@ function showContact() {
                 break;
         }
     }
-}
-
-function slide() {
-    main.classList.toggle("hide");
-    projects.classList.toggle("hide");
 }
