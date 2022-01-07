@@ -48,6 +48,7 @@ html {
     width: 100%;
     height: 100%;
     position: fixed;
+    z-index: 0;
     box-shadow: inset 0px 0px 250px #000000;
 }
 
@@ -58,8 +59,7 @@ html {
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
-    margin: 0 auto;
+    min-height: 100vh;
 }
 
 .wordmark {
@@ -70,12 +70,12 @@ html {
 
 .center {
     margin-top: -20vh;
-    filter: drop-shadow(0 0 20px #000);
     display: flex;
     justify-content: center;
     text-align: center;
     height: 250px;
     width: 250px;
+    filter: drop-shadow(0 0 20px #000);
     transition: height 0.4s ease-in-out, width 0.4s ease-in-out;
     background: -moz-linear-gradient(45deg, #2b8eaf 0%, #b222a8 100%);
     background: -webkit-linear-gradient(45deg, #2b8eaf 0%, #b222a8 100%);
@@ -140,17 +140,62 @@ html {
     position: fixed;
 }
 
+.posts {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    overflow-y: overlay;
+    height: 85vh;
+    min-width: 100vw;
+    margin-bottom: -15vh;
+}
+
+.post-wrapper {
+    align-self: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
 .post {
-    min-height: 20vh;
-    min-width: 20vw;
-    background: red;
-    margin-right: 30vw;
-    margin: 1vh;
+    display: block;
+    position: relative;
+    align-self: center;
+    padding: 1vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 40vw;
+    transition: height 0.4s ease-in-out, width 0.4s ease-in-out;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px 15px;
+}
+
+.postRight {
+    padding-left: 50vw;
+}
+
+.postLeft {
+    padding-right: 50vw;
+}
+
+.line {
+    position: absolute;
+    left: 50vw;
+    z-index: -1;
+    border-width: 0 5px 0 0;
+    border-style: dashed;
+    border-color: rgba(0, 0, 0, 0.4);
+    transform: translateX(-50%);
+    height: 85vh;
+    margin-bottom: -15vh;
 }
 
 a,
 p {
     color: White;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
 }
 
 .hide {
