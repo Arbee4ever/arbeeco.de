@@ -11,7 +11,6 @@
    84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
 }
 
-
 @keyframes movement {
     0%,
   100% { transform: none; }
