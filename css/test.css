@@ -73,14 +73,6 @@ html {
     movement 10s ease-in-out infinite both;
 }
 
-@media screen and (max-width: 1500px) {
-    .center {
-        animation: 
-        transform 50s ease-in-out infinite both alternate,
-        movement 10s ease-in-out infinite both alternate;
-    }
-}
-
 .centerIcon, .centerIcon2 {
     position: absolute;
     transition: height 0.4s ease-in-out, margin 0.4s ease-in-out, opacity 0.4s ease-in-out;
