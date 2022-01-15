@@ -7,6 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="screen" href="css/index.css" />
     <link rel="icon" href="img/Logo.png">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@nytimesbits" />
+    <meta name="twitter:creator" content="@nickbilton" />
+    <meta property="og:url" content="http://bits.blogs.nytimes.com/2011/12/08/a-twitter-for-my-sister/" />
+    <meta property="og:title" content="A Twitter for My Sister" />
+    <meta property="og:description"
+        content="In the early days, Twitter grew so quickly that it was almost impossible to add new features because engineers spent their time trying to keep the rocket ship from stalling." />
+    <meta property="og:image"
+        content="http://graphics8.nytimes.com/images/2011/12/08/technology/bits-newtwitter/bits-newtwitter-tmagArticle.jpg" />
 </head>
 
 <body>
@@ -17,26 +26,27 @@
     <noscript>
         <p class="error">This site doesn't work without JavaScript! (╯°□°）╯︵ ┻━┻</p>
     </noscript>
-    <div class="vignette"></div>
+    <div id="vignette" class="vignette"></div>
     <section id="main" class="main">
-        <div id="buttons" class="buttons">
-            <img id="mainbutton" class="mainbutton" onclick="showContact()" src="img/Logo.png">
+        <img src="img/WordmarkArbee.svg" class="wordmark">
+        <div id="center" class="center">
             <a href="https://discord.gg/ehKTjghj4X" target="_blank">
-                <img class="button" style="left: 32.5%;" src="img/icon_clyde_circle_blurple_white.svg">
+                <img class="button hide" style="left: 39%; top: 19%;" src="img/icon_clyde_circle_blurple_white.svg">
             </a>
             <a href="https://twitter.com/0Arbee0" target="_blank">
-                <img class="button" style="right: 0%; top: 32.5%;" src="img/TwitterLogo.svg">
+                <img class="button hide" style="right: 19%; top: 39%;" src="img/TwitterLogo.svg">
             </a>
             <a href="https://www.reddit.com/u/Arbee4ever" target="_blank">
-                <img class="button" style="left: 0%; top: 32.5%;" src="img/Reddit_Mark_OnDark.svg">
+                <img class="button hide" style="left: 19%; top: 39%;" src="img/Reddit_Mark_OnDark.svg">
             </a>
             <a href="mailto:arbeeweb@gmx.de?subject=Contact-Website&body=Hello Arbee,">
-                <img class="button" style="left: 32.5%; bottom: 0%;" src="img/MailLogo.svg">
+                <img class="button hide" style="left: 39%; bottom: 19%;" src="img/MailLogo.svg">
             </a>
+            <img src="img/CenterCross.svg" class="centerIcon2 hide" id="centerIcon2">
+            <img src="img/CenterCircle.svg" class="centerIcon" id="centerIcon">
         </div>
         <p id="description" class="description">I (Arbee) am a 17 year old German Guy who likes Programming.
             <br>I'm creating Minecraft Mods and Games in Unity.
-            <br>Click my Logo if you want to contact me.
         </p>
         <a href="#projects" id="projectsBtn" class="projectsBtn">
             <img src="img/ProjectsIcon.svg">
@@ -49,6 +59,8 @@
         <p>Coming soon...</p>
     </section>
     <script src="script/index.js"></script>
+    <script src="https://unpkg.com/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>
+    <script src="https://unpkg.com/smoothscroll-anchor-polyfill"></script>
 </body>
 
 </html>
