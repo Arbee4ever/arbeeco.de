@@ -69,10 +69,10 @@ html {
     display: flex;
     justify-content: center;
     text-align: center;
-    height: 30vh;
-    width: 30vh;
+    height: 25vh;
+    width: 25vh;
     filter: drop-shadow(0 0 20px #000);
-    transition: height 0.4s ease-in-out, width 0.4s ease-in-out;
+    transition: height 0.4s ease-in-out, width 0.4s ease-in-out, margin-top 0.4s ease-in-out;
     background: -moz-linear-gradient(45deg, #2b8eaf 0%, #b222a8 100%);
     background: -webkit-linear-gradient(45deg, #2b8eaf 0%, #b222a8 100%);
     background: linear-gradient(45deg, #2b8eaf 0%, #b222a8 100%);
@@ -103,7 +103,7 @@ html {
     transition: opacity 0.4s ease-in-out;
     margin: 1%;
     position: absolute;
-    height: 60px;
+    height: 4vw;
 }
 
 .projectsBtn {
@@ -112,6 +112,8 @@ html {
 }
 
 .description {
+    font-weight: normal;
+    font-size: 2vh;
     margin: 1vh;
     margin-top: 70vh;
     text-align: center;
@@ -120,6 +122,58 @@ html {
 
 .soon {
     margin-top: 50vh;
+}
+
+.posts {
+    z-index: 2;
+    margin: 50px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px 14px;
+    grid-template-areas:
+    ". . ."
+    ". . .";
+}
+
+.post {
+    border-top: black 20px;
+    border-radius: 10px;
+    height: fit-content;
+    width: 25vw;
+    background: #1a1a1a99;
+}
+
+.postHeader {
+    height: fit-content;
+    margin-top: auto;
+    border-top-right-radius:  10px;
+    border-top-left-radius:  10px;
+    border: 5px solid #1a1a1a99;
+    background-color: #000000;
+    margin: 0;
+    height: 40px;
+    align-content: center;
+}
+
+.postHeader p {
+    float: right;
+}
+
+.postHeader img {
+    margin: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    vertical-align: middle;
+    height: 30px;
+}
+
+.postContent {
+}
+
+.postImg {
+    margin: 0px;
+    width: 25vw;
 }
 
 .footer {
@@ -151,6 +205,7 @@ html {
     margin-left: 5px;
 }
 
+h1,
 a,
 p {
     color: White;
@@ -162,9 +217,9 @@ p {
 }
 
 .bigger {
-    margin—top: 10vh;
-    height: 35vh;
-    width: 35vh;
+    margin-top: 18vh;
+    height: 30vh;
+    width: 30vh;
 }
 
 .error {
