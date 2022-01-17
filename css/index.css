@@ -103,7 +103,7 @@ html {
     transition: opacity 0.4s ease-in-out;
     margin: 1%;
     position: absolute;
-    height: 4vw;
+    height: 6vh;
 }
 
 .projectsBtn {
