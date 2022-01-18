@@ -3,6 +3,7 @@ const center = document.getElementById("center");
 const centerIcon2 = document.getElementById("centerIcon2");
 const centerIcon = document.getElementById("centerIcon");
 const vignette = document.getElementById("vignette");
+const topBtn = document.getElementById("topBtn");
 var state = 1;
 
 centerIcon.onclick = function () { toggleHide() };
@@ -45,4 +46,14 @@ vignette.onclick = function () {
         toggleHide();
         center.classList.toggle("bigger");
     }
+}
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    topBtn.style.display = "block";
+  } else {
+    topBtn.style.display = "none";
+  }
 }
