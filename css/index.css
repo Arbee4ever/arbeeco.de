@@ -109,6 +109,14 @@ html {
     bottom: 0vh;
 }
 
+.topBtn {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0vh;
+    z-index: 99;
+}
+
 .description {
     font-weight: normal;
     font-size: 2vh;
@@ -123,8 +131,6 @@ html {
 }
 
 .posts {
-    z-index: 2;
-    margin: 50px;
     display: grid;
     grid-auto-flow: row;
     grid-template-columns: 1fr 1fr 1fr;
@@ -135,43 +141,50 @@ html {
 }
 
 .post {
-    border-top: black 20px;
+    border-top: #1a1a1a99 20px;
     border-radius: 10px;
-    height: fit-content;
-    width: 25vw;
+    width: 30vw;
+    min-height: fit-content;
+    overflow-y: hidden;
     background: #1a1a1a99;
+    margin: 1vw;
+    text-align: center;
 }
 
 .postHeader {
-    height: fit-content;
     margin-top: auto;
     border-top-right-radius:  10px;
     border-top-left-radius:  10px;
-    border: 5px solid #1a1a1a99;
     background-color: #000000;
-    margin: 0;
-    height: 40px;
+    margin: 3px;
+    height: 4vh;
     align-content: center;
 }
 
 .postHeader p {
+    margin-right: 1vw;
+    line-height: 4vh;
     float: right;
 }
 
 .postHeader img {
-    margin: 10px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    vertical-align: middle;
-    height: 30px;
+    margin: 0.5vh;
+    float: left;
+    height: 3vh;
 }
 
 .postContent {
+    height: 10vh;
+    display: flex;
+    flex: 0 1 auto;
 }
 
 .postImg {
-    margin: 0px;
-    width: 25vw;
+    flex-grow: 0;
+    flex-shrink: 1;
+    height: 10vh;
+    width: 10vw;
+    object-fit: cover;
 }
 
 .footer {
