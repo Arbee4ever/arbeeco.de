@@ -119,7 +119,7 @@ html {
     position: fixed;
     bottom: 0;
     right: 0vh;
-    z-index: 1;
+    z-index: 3;
 }
 
 .description {
