@@ -1,9 +1,10 @@
 const button = document.getElementsByClassName("button");
-const center = document.getElementById("center");
 const centerIcon2 = document.getElementById("centerIcon2");
 const centerIcon = document.getElementById("centerIcon");
 const vignette = document.getElementById("vignette");
 const topBtn = document.getElementById("topBtn");
+const center = document.getElementById("center");
+const post = document.getElementById("post");
 var state = 1;
 
 centerIcon.onclick = function () { toggleHide() };
@@ -48,12 +49,12 @@ vignette.onclick = function () {
     }
 }
 
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    topBtn.style.display = "block";
-  } else {
-    topBtn.style.display = "none";
-  }
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
 }
