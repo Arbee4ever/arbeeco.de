@@ -1,6 +1,3 @@
----
----
-
 <!DOCTYPE html>
 <html>
 
@@ -79,22 +76,22 @@
     <section id="blog">
         <a id="seeAll" href="/blog">See all</a>
         <div id="posts">
-            {% for post in site.posts limit:9 %}
+            
             <div class="post" id="post">
                 <div id="postAbout">
-                    <a href="{{ post.authorurl }}" target="_blank">
-                        <img class="authorImg" src="{{ post.authorimage }}">
+                    <a href="https://www.arbee.cf" target="_blank">
+                        <img class="authorImg" src="/authorImg/2022-01_ARBEE_Bild-Marke_rgb_weiss_bg_verlauf_01.svg">
                     </a>
-                    <a class="authorName" href="{{ post.authorurl }}" target="_blank">{{ post.author }}</a>
-                    <p class="postDate">{{ post.date | date_to_string }}</p>
+                    <a class="authorName" href="https://www.arbee.cf" target="_blank">Arbee</a>
+                    <p class="postDate">07 Dec 2021</p>
                 </div>
                 <article id="postContent">
-                    <img id="postImg" src="{{ post.postimage }}">
-                    <h3 class="postTitle"><a>{{ post.category }}</a></h3>
-                    <h2 class="postTitle"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                    <img id="postImg" src="/postImg/Screenshot from 2022-01-16 00-45-30.png">
+                    <h3 class="postTitle"><a>GAME RELEASE</a></h3>
+                    <h2 class="postTitle"><a href="/game%20release/2021/12/07/test.html">Welcome to Jekyll!1</a></h2>
                 </article>
             </div>
-            {% endfor %}
+            
         </div>
         <div class="moreLink" id="moreLink">
             <a onclick="moreLink()" id="moreLink">more...</a>
