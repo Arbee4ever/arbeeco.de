@@ -1,4 +1,5 @@
 const button = document.getElementsByClassName("button");
+const moreBtn = document.getElementsByClassName("moreBtn");
 const centerIcon2 = document.getElementById("centerIcon2");
 const centerIcon = document.getElementById("centerIcon");
 const vignette = document.getElementById("vignette");
@@ -47,6 +48,11 @@ vignette.onclick = function () {
         toggleHide();
         center.classList.toggle("bigger");
     }
+}
+
+moreBtn.onclick = function () {
+    console.log(moreBtn.parentElement.parentElement.nodeName);
+    moreBtn.parentElement.parentElement.style.maxHeight = "none";
 }
 
 window.onscroll = function () { scrollFunction() };

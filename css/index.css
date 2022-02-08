@@ -37,6 +37,7 @@ html {
     --scroll-behavior: smooth;
     scroll-behavior: smooth;
     overflow: overlay;
+    overflow-x: hidden;
     background: linear-gradient(to bottom right, #2b8eaf, #b222a8);
     background-attachment: fixed;
 }
@@ -153,20 +154,20 @@ html {
 
 /*big screens (Computers)*/
 #post {
+    position: relative;
     z-index: 1;
     transition: transform 0.1s ease-in-out;
     border-top: #1a1a1a99 20px;
-    border-radius: 10px;
     width: 30vw;
     height: fit-content;
+    max-height: 33vh;
     overflow-y: hidden;
     background: #1a1a1a99;
+    border-radius: 10px;
     margin: 1vw;
     text-align: center;
     background: rgba( 0, 0, 0, 0.25 );
     box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.37);
-    backdrop-filter: blur( 10px );
-    -webkit-backdrop-filter: blur( 10px );
 }
 
 /*medium screens (tablets)*/
@@ -202,7 +203,7 @@ html {
 }
 
 #post:hover {
-    transform: rotate(4deg);
+    transform: scale(1.1);
     position: relative;
 }
 
@@ -253,10 +254,26 @@ html {
     margin: 10px;
 }
 
+#moreBtn {
+    z-index: 300;
+}
+
+#moreBtn img {
+    transform: rotateZ(180deg);
+    height: 3vh;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #1a1a1a99;
+    border-radius: 10px;
+    margin: 3px;
+}
+
 #footer {
     position: relative;
     z-index: 2;
     text-align: center;
+    margin-top: 1.5vw;
     background-color: #000000c2;
     padding: 50px;
 }
