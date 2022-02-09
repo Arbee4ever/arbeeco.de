@@ -50,10 +50,19 @@ vignette.onclick = function () {
     }
 }
 
-moreBtn.onclick = function () {
-    console.log(moreBtn.parentElement.parentElement.nodeName);
-    moreBtn.parentElement.parentElement.style.maxHeight = "none";
-}
+document.querySelectorAll(".moreBtn").forEach(
+    el => {
+        el.addEventListener("click", evt => {
+            if(el.parentElement.parentElement.style.maxHeight != "none") {
+                el.parentElement.parentElement.style.maxHeight = "none";
+                el.children[0].style.transform = "rotateZ(0deg)"
+            } else {
+                el.parentElement.parentElement.style.maxHeight = "33vh";
+                el.children[0].style.transform = "rotateZ(180deg)"
+            }
+        });
+    }
+);
 
 window.onscroll = function () { scrollFunction() };
 
