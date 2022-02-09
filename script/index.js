@@ -53,8 +53,8 @@ vignette.onclick = function () {
 document.querySelectorAll(".moreBtn").forEach(
     el => {
         el.addEventListener("click", evt => {
-            if(el.parentElement.parentElement.style.maxHeight != "none") {
-                el.parentElement.parentElement.style.maxHeight = "none";
+            if(el.parentElement.parentElement.style.maxHeight != "100vh") {
+                el.parentElement.parentElement.style.maxHeight = "100vh";
                 el.children[0].style.transform = "rotateZ(0deg)"
             } else {
                 el.parentElement.parentElement.style.maxHeight = "33vh";
