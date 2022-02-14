@@ -158,7 +158,7 @@ html {
     border-top: #1a1a1a99 20px;
     width: 30vw;
     height: fit-content;
-    max-height: 33vh;
+    max-height: 50vh;
     overflow: hidden;
     background: #1a1a1a99;
     border-radius: 10px;
@@ -202,7 +202,6 @@ html {
     border-top-left-radius:  10px;
     background-color: #000000;
     margin: 3px;
-    margin-bottom: 0px;
     height: 4vh;
     align-content: center;
     background: rgba( 0, 0, 0, 0.25 );
@@ -226,7 +225,6 @@ html {
     border-radius: 10px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    overflow: hidden;
     margin: 3px;
     margin-top: 0px;
 }
