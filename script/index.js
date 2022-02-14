@@ -89,7 +89,6 @@ function checkOverflow(el) {
 
 var rm = []
 for (let el of moreBtn) {
-    console.log("Yes");
     if (!checkOverflow(el.parentElement.parentElement)) {
         rm.push(el)
     }
