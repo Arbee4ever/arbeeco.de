@@ -52,12 +52,12 @@ html {
 }
 
 .category {
-    margin: 3vh;
     margin-left: 10vw;
 }
 
 .title {
     margin: 3vh;
+    margin-top: 1vh;
     margin-left: 10vw;
 }
 
@@ -68,6 +68,7 @@ html {
 }
 
 .about {
+    line-height: 20px;
     padding: 1vw;
     border-top: #1a1a1a99 20px;
     height: fit-content;
