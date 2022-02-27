@@ -106,13 +106,13 @@ html {
     height: 6vh;
 }
 
-#projectsBtn {
+#blogBtn {
     position: absolute;
     bottom: 0vh;
     z-index: 1;
 }
 
-#projectsBtn img {
+#blogBtn img {
     height: 15vh;
 }
 
@@ -150,11 +150,16 @@ html {
     grid-template-rows: masonry;
 }
 
+#post:hover {
+    -webkit-transform: scale(1.05) rotate(1deg);
+    transform: scale(1.05) rotate(1deg);
+}
+
 /*big screens (Computers)*/
 #post {
     position: relative;
     z-index: 1;
-    transition: max-height 0.5s ease-in-out;
+    transition: max-height 0.5s ease-in-out, transform 0.3s ease-in-out;
     border-top: #1a1a1a99 20px;
     width: 30vw;
     height: fit-content;
@@ -163,7 +168,6 @@ html {
     background: #1a1a1a99;
     border-radius: 10px;
     margin: 1vw;
-    text-align: center;
     background: rgba( 0, 0, 0, 0.25 );
     box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.37);
 }
@@ -196,7 +200,7 @@ html {
     }
 }
 
-#postHeader {
+#postAbout {
     margin-top: auto;
     border-top-right-radius:  10px;
     border-top-left-radius:  10px;
@@ -209,16 +213,23 @@ html {
     border-radius: 10px;
 }
 
-#postHeader p {
+.postDate {
     margin-right: 1vw;
     line-height: 4vh;
     float: right;
 }
 
-#postHeader img {
+.authorImg {
+    border-radius: 100%;
     margin: 0.5vh;
     float: left;
     height: 3vh;
+}
+
+.authorName {
+    float: left;
+    height: 4vh;
+    line-height: 4vh;
 }
 
 #postContent {
@@ -237,24 +248,12 @@ html {
     border-radius: 10px;
 }
 
-#postText {
+.postTitle {
     margin: 10px;
 }
 
-#moreBtn {
-    z-index: 2;
-}
-
-#moreBtn img {
-    transform: rotateZ(180deg);
-    transition: transform 0.5s ease-in-out;
-    height: 3vh;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: #1a1a1a99;
-    border-radius: 10px;
-    margin: 3px;
+#postText {
+    margin: 10px;
 }
 
 #footer {
@@ -288,6 +287,8 @@ html {
 }
 
 h1,
+h2,
+h3,
 a,
 p {
     color: White;

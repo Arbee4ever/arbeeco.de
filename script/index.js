@@ -1,5 +1,4 @@
 const button = document.getElementsByClassName("button");
-const moreBtn = document.getElementsByClassName("moreBtn");
 const centerIcon2 = document.getElementById("centerIcon2");
 const centerIcon = document.getElementById("centerIcon");
 const vignette = document.getElementById("vignette");
@@ -31,58 +30,21 @@ function toggleHide() {
     centerIcon.classList.toggle("hide");
 }
 
-center.onmouseenter = function () {
+center.onmouseenter = function() {
     if (centerIcon2.classList.contains("hide")) {
         center.classList.toggle("bigger");
     }
 }
 
-center.onmouseleave = function () {
+center.onmouseleave = function() {
     if (centerIcon2.classList.contains("hide")) {
         center.classList.toggle("bigger");
     }
 }
 
-vignette.onclick = function () {
+vignette.onclick = function() {
     if (centerIcon.classList.contains("hide")) {
         toggleHide();
         center.classList.toggle("bigger");
     }
-}
-
-document.querySelectorAll(".moreBtn").forEach(
-    el => {
-        el.addEventListener("click", evt => {
-            if (el.parentElement.parentElement.style.maxHeight != "100vh") {
-                el.parentElement.parentElement.style.maxHeight = "100vh";
-                el.children[0].style.transform = "rotateZ(0deg)"
-            } else {
-                el.parentElement.parentElement.style.maxHeight = "50vh";
-                el.children[0].style.transform = "rotateZ(180deg)"
-            }
-        });
-    }
-);
-
-function checkOverflow(el) {
-    var curOverf = el.style.overflow;
-
-    if (!curOverf || curOverf === "visible")
-        el.style.overflow = "hidden";
-
-    var isOverflowing = el.clientWidth < el.scrollWidth || el.clientHeight < el.scrollHeight;
-
-    el.style.overflow = curOverf;
-
-    return isOverflowing;
-}
-
-var rm = []
-for (let el of moreBtn) {
-    if (!checkOverflow(el.parentElement.parentElement)) {
-        rm.push(el)
-    }
-}
-for (let el of rm) {
-    el.remove();
 }
