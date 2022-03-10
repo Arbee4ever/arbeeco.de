@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Blog Feature released!"
-date: 2021-03-10 02:30
+date: 2022-03-10 02:30
 category: WEBSITE UPDATE
 author: Arbee
 authorurl: https://www.arbee.cf
