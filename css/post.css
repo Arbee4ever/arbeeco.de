@@ -38,6 +38,7 @@ html {
 #vignette {
     pointer-events: none;
     position: fixed;
+    top: 0;
     width: 100%;
     height: 100%;
     box-shadow: 0px 0px 250px 0px #000000 inset;
@@ -45,11 +46,25 @@ html {
 }
 
 #backBtn {
+    transform: rotateZ(-90deg);
+    margin-left: 1vw;
+    top: 2vh;
     position: fixed;
     z-index: 2;
 }
 
+#wordmark {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    height: 2vh;
+}
+
 .postImg {
+    max-height: 40vh;
+    object-fit: cover;
     width: 80vw;
     margin: 1vh;
     margin-left: 10vw;
@@ -66,9 +81,15 @@ html {
 }
 
 .post {
+    margin-top: 4vh;
     margin-left: 10vw;
     display: flex;
     max-width: 80vw;
+}
+
+.postText {
+    max-width: 900px;
+    line-height: 1.6;
 }
 
 .postAbout {
@@ -83,6 +104,11 @@ html {
     background: rgba( 0, 0, 0, 0.25 );
     box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.37);
     min-width: 10vw;
+}
+
+.postContent {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media only screen and (max-width: 1075px) {
@@ -121,7 +147,7 @@ html {
     position: relative;
     z-index: 1;
     text-align: center;
-    margin-top: 1.5vw;
+    margin-top: 6vh;
     background-color: #000000c2;
     padding: 50px;
 }

@@ -133,9 +133,12 @@ html {
     text-align: center;
 }
 
+.blogBtn {
+    max-width: 6vh;
+}
+
 #seeAll {
     position: relative;
-    margin: 3vw;
 }
 
 #posts {
@@ -264,7 +267,6 @@ html {
 #moreLink {
     position: relative;
     text-align: center;
-    text-decoration: underline;
     cursor: pointer;
 }
 
@@ -303,6 +305,7 @@ h3,
 a,
 p {
     color: White;
+    text-decoration: none;
 }
 
 .hide {

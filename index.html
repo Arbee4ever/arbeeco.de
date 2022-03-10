@@ -74,11 +74,10 @@
             <br>I'm creating Minecraft mods and&nbsp;games&nbsp;in&nbsp;Unity.
         </h1>
         <a href="#blog" id="blogBtn">
-            <img src="img/ProjectsIcon.svg" alt="Click to show blog.">
+            <img class="blogBtn" src="img/BlogIcon.svg" alt="Click to show blog.">
         </a>
     </section>
     <section id="blog">
-        <a id="seeAll" href="/blog">See all</a>
         <div id="posts">
             {% for post in site.posts limit:9 %}
             <div class="post" id="post">
@@ -89,16 +88,21 @@
                     <a class="authorName" href="{{ post.authorurl }}" target="_blank">{{ post.author }}</a>
                     <p class="postDate">{{ post.date | date_to_string }}</p>
                 </div>
-                <article id="postContent">
-                    <img id="postImg" src="{{ post.postimage }}">
-                    <h3 class="postTitle"><a>{{ post.category }}</a></h3>
-                    <h2 class="postTitle"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                </article>
+                <a href="{{ post.url }}">
+                    <article id="postContent">
+                        <img id="postImg" src="{{ post.postimage }}">
+                        <h3 class="postTitle"><a>{{ post.category }}</a></h3>
+                        <h2 class="postTitle">{{ post.title }}</h2>
+                    </article>
+                </a>
             </div>
             {% endfor %}
         </div>
         <div class="moreLink" id="moreLink">
             <a onclick="moreLink()" id="moreLink">more...</a>
+            <br>
+            <br>
+            <a id="seeAll" href="/blog">See all</a>
         </div>
     </section>
     <footer id="footer">
