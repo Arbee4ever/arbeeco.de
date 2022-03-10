@@ -62,7 +62,7 @@ var num = 3;
 postHandler(num);
 
 function moreLink() {
-    if (num != 9) {
+    if (num != 9 && num <= posts.length) {
         num = num + 3;
         postHandler(num);
     } else {
@@ -73,8 +73,10 @@ function moreLink() {
 function postHandler(num) {
     for (let i = 0; i < num; i++) {
         const element = posts[i];
-        if (element.classList.contains("hidePost")) {
-            element.classList.toggle("hidePost");
+        if (element != null) {
+            if (element.classList.contains("hidePost")) {
+                element.classList.toggle("hidePost");
+            }
         }
     }
 }
