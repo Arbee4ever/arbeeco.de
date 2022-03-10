@@ -3,7 +3,7 @@ layout: post
 title: "Blog Feature released!"
 date: 2022-03-10 02:30
 category: WEBSITE UPDATE
-author: Arbee
+author: ARBEE
 authorurl: https://www.arbee.cf
 postimage: /postImg/2022-01_ARBEE_Wort-Bild-Marke_rgb_grau_01.png
 authorimage: /authorImg/2022-01_ARBEE_Bild-Marke_rgb_weiss_bg_verlauf_01.png
