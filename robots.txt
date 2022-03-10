@@ -1,3 +1,36 @@
+# ===================================
+# Generator: http://pixelfolk.net/tools/robots
+# Erstellt am: 10.03.2022, 13:25
+# Webseite: http://http://www.arbee.cf
+# ===================================
+
+Sitemap: http://www.arbee.cf/sitemap.xml
+
+# ===================================
+# Folgende Seiten sollen nicht indexiert werden:
+# ===================================
+
 User-agent: *
+Disallow: /_layouts/
+Disallow: /_posts/
+Disallow: /authorImg/
+Disallow: /css/
+Disallow: /img/
+Disallow: /postImg/
 Disallow: /script/
-Sitemap: https://www.arbee.cf/sitemap.xml
+Disallow: /config.yml
+Disallow: /404.html
+Disallow: /about.markdown
+
+# ===================================
+# Schließe folgende Spider komplett aus:
+# ===================================
+
+User-agent: WebReaper
+User-agent: WebCopier
+User-agent: Offline Explorer
+User-agent: HTTrack
+User-agent: Microsoft.URL.Control
+User-agent: EmailCollector
+User-agent: penthesilea
+Disallow: /
