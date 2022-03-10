@@ -1,3 +1,0 @@
-User-agent: *
-Disallow: /script/
-Sitemap: https://www.arbee.cf/sitemap.xml
