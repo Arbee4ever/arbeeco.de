@@ -13,10 +13,7 @@ Sitemap: http://www.arbee.cf/sitemap.xml
 User-agent: *
 Disallow: /_layouts/
 Disallow: /_posts/
-Disallow: /authorImg/
 Disallow: /css/
-Disallow: /img/
-Disallow: /postImg/
 Disallow: /script/
 Disallow: /config.yml
 Disallow: /404.html
