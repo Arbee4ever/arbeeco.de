@@ -85,6 +85,25 @@ html {
     min-width: 10vw;
 }
 
+@media only screen and (max-width: 1075px) {
+    .post {
+        margin-left: 10vw;
+        display: unset;
+        max-width: 80vw;
+    }
+
+    .postAbout {
+        margin-bottom: 2vh;
+        margin-left: 10vw;
+        width: 80vw;
+    }
+
+    .postContent {
+        margin-left: 10vw;
+        width: 80vw;
+    }
+}
+
 .authorImg {
     width: 5vw;
     border-radius: 100%;
