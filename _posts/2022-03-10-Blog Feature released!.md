@@ -6,7 +6,7 @@ category: WEBSITE UPDATE
 author: Arbee
 authorurl: https://www.arbee.cf
 postimage: /postImg/2022-01_ARBEE_Wort-Bild-Marke_rgb_grau_01.png
-authorimage: /authorImg/2022-01_ARBEE_Bild-Marke_rgb_weiss_bg_verlauf_01.svg
+authorimage: /authorImg/2022-01_ARBEE_Bild-Marke_rgb_weiss_bg_verlauf_01.png
 ---
 
 *console.log("Hello World")*<br>
