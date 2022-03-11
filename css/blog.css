@@ -51,6 +51,15 @@ html {
     z-index: 3;
 }
 
+#wordmark {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    height: 2vh;
+}
+
 #backBtn {
     position: fixed;
     z-index: 2;
