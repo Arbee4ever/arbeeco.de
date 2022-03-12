@@ -51,6 +51,12 @@ html {
     top: 2vh;
     position: fixed;
     z-index: 2;
+    height: 5vh;
+    width: 5vh;
+}
+
+#backBtn img {
+    height: 5vh;
 }
 
 #wordmark {
@@ -63,7 +69,6 @@ html {
 }
 
 .postImg {
-    max-height: 40vh;
     object-fit: cover;
     width: 80vw;
     margin: 1vh;
@@ -94,7 +99,8 @@ html {
 
 .postAbout {
     line-height: 20px;
-    padding: 1vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
     border-top: #1a1a1a99 20px;
     height: fit-content;
     background: #1a1a1a99;
@@ -116,11 +122,13 @@ html {
         margin-left: 10vw;
         display: unset;
         max-width: 80vw;
+        margin-right: 10vw;
     }
 
     .postAbout {
         margin-bottom: 2vh;
         margin-left: 10vw;
+        margin-right: 10vw;
         width: 80vw;
     }
 
@@ -141,6 +149,7 @@ html {
     bottom: 0;
     right: 0vh;
     z-index: 2;
+    cursor: pointer;
 }
 
 #footer {
