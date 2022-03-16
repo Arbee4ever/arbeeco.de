@@ -69,7 +69,7 @@ html {
     display: none;
     position: fixed;
     bottom: 0;
-    right: 0vh;
+    right: 0;
     z-index: 2;
     cursor: pointer;
 }
@@ -229,8 +229,20 @@ html {
     max-height: 50vh;
 }
 
+.postCategory {
+    text-shadow: 0px 0px 20px black;
+    margin: 1vw;
+    position: absolute;
+}
+
 .postTitle {
-    margin: 10px;
+    margin: 1vw;
+    margin-top: 2vh;
+}
+
+.postPreview {
+    margin: 1vw;
+    margin-top: 2vh;
 }
 
 #postText {
@@ -240,7 +252,7 @@ html {
 #footer {
     position: relative;
     text-align: center;
-    margin-top: 1.5vw;
+    margin-top: 6vh;
     background-color: #000000c2;
     padding: 50px;
 }
@@ -272,6 +284,7 @@ h3,
 a,
 p {
     color: White;
+    text-decoration: none;
 }
 
 #error {

@@ -29,7 +29,8 @@
     <meta name="twitter:creator" content="@0Arbee0" />
     <meta property="og:url" content="https://www.arbee.cf/blog" />
     <meta property="og:title" content="ARBEE's Blog" />
-    <meta property="og:description" content="Read about stuff ARBEE is doing or thinking about technical, political or any other stuff." />
+    <meta property="og:description"
+        content="Read about stuff ARBEE is doing or thinking about technical, political or any other stuff." />
     <meta property="og:image" content="https://www.arbee.cf/img/2022-01_ARBEE_Bild-Marke_rgb_Verlauf_01.png" />
     <meta name="theme-color" content="#2b8eaf" />
 </head>
@@ -58,13 +59,15 @@
                 <a class="authorName" href="{{ post.authorurl }}" target="_blank">{{ post.author }}</a>
                 <p class="postDate">{{ post.date | date_to_string }}</p>
             </div>
-            <article id="postContent">
-                <img id="postImg" src="{{ post.postimage }}">
-                <div class="postTitleWide">
-                    <h3 class="postTitle"><a>{{ post.category }}</a></h3>
-                    <h2 class="postTitle"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                </div>
-            </article>
+            <h3 class="postCategory"><a>{{ post.category }}</a></h3>
+            <a href="{{ post.url }}">
+                <article id="postContent">
+                    <img id="postImg" src="{{ post.postimage }}">
+                    <div class="postTitleWide">
+                        <h2 class="postTitle">{{ post.title }}</h2>
+                    </div>
+                </article>
+            </a>
         </div>
         {% endfor %}
         <div id="posts">
@@ -77,11 +80,14 @@
                     <a class="authorName" href="{{ post.authorurl }}" target="_blank">{{ post.author }}</a>
                     <p class="postDate">{{ post.date | date_to_string }}</p>
                 </div>
-                <article id="postContent">
-                    <img id="postImg" src="{{ post.postimage }}">
-                    <h3 class="postTitle"><a>{{ post.category }}</a></h3>
-                    <h2 class="postTitle"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                </article>
+                <h3 class="postCategory"><a href="?c={{ post.category }}#blog">{{ post.category }}</a></h3>
+                <a class="postLink" href="{{ post.url }}">
+                    <article id="postContent">
+                        <img id="postImg" src="{{ post.postimage }}">
+                        <h2 class="postTitle">{{ post.title }}</h2>
+                        <p class="postPreview">{{ post.content | truncatewords: 50 | strip_html }}</p>
+                    </article>
+                </a>
             </div>
             {% endfor %}
         </div>

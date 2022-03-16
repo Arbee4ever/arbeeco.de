@@ -5,7 +5,7 @@ date: 2022-03-10 02:30
 category: WEBSITE UPDATE
 author: ARBEE
 authorurl: https://www.arbee.cf
-postimage: /postImg/Blog_2022-03-10_1920x1080px_02.jpg
+postimage: /postImg/Blog_2022-03-10.png
 authorimage: /authorImg/2022-01_ARBEE_Bild-Marke_rgb_weiss_bg_verlauf_01.png
 ---
 

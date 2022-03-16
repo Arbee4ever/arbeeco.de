@@ -71,7 +71,7 @@
         <h1 id="description">I (ARBEE) am a 17 year old german&nbsp;guy&nbsp;who&nbsp;likes&nbsp;programming.
             <br>I'm creating Minecraft mods and&nbsp;games&nbsp;in&nbsp;Unity.
         </h1>
-        <a href="#blog" id="blogBtn">
+        <a href="#blog" id="blogBtnDiv">
             <img class="blogBtn" src="img/BlogIcon.svg" alt="Click to show blog.">
         </a>
     </section>
@@ -86,21 +86,25 @@
                     <a class="authorName" href="{{ post.authorurl }}" target="_blank">{{ post.author }}</a>
                     <p class="postDate">{{ post.date | date_to_string }}</p>
                 </div>
-                <article id="postContent">
-                    <img id="postImg" src="{{ post.postimage }}">
-                    <h3 class="postTitle"><a>{{ post.category }}</a></h3>
-                    <a href="{{ post.url }}">
+                <h3 class="postCategory"><a href="?c={{ post.category }}#blog">{{ post.category }}</a></h3>
+                <a class="postLink" href="{{ post.url }}">
+                    <article id="postContent">
+                        <img id="postImg" src="{{ post.postimage }}">
                         <h2 class="postTitle">{{ post.title }}</h2>
-                    </a>
-                </article>
+                        <p class="postPreview">{{ post.content | truncatewords: 50 | strip_html }}</p>
+                    </article>
+                </a>
             </div>
             {% endfor %}
         </div>
-        <div class="moreLink" id="moreLink">
-            <a onclick="moreLink()" id="moreLink">more...</a>
+        <div class="miscLinks" id="miscLinks">
             <br>
             <br>
-            <a id="seeAll" href="/blog">See all</a>
+            <a onclick="moreLink()" class="postUtilities">MORE</a>
+            <br>
+            <br>
+            <br>
+            <a class="seeAll postUtilities" href="/blog">SEE ALL</a>
         </div>
     </section>
     <footer id="footer">
