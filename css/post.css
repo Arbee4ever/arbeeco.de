@@ -9,12 +9,18 @@
    84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
 }
 
+@keyframes movement {
+    0%,
+  100% { transform: translateY(-10%); }
+   50% { transform: translateY(10%); }
+}
+
 * {
     font-family: "Josefin Sans", sans-serif;
     margin: 0%;
     scrollbar-width: auto;
     scrollbar-color: rgba(127, 127, 127, 0.502) #000000;
-  }
+}
 
 *::-webkit-scrollbar {
     width: 12px;
@@ -45,12 +51,6 @@ html {
     z-index: 3;
 }
 
-#backBtn {
-    transform: rotateZ(-90deg);
-    position: fixed;
-    z-index: 2;
-}
-
 #wordmark {
     display: block;
     margin-left: auto;
@@ -58,6 +58,21 @@ html {
     margin-top: 5vh;
     margin-bottom: 3vh;
     height: 2vh;
+}
+
+#backBtn {
+    transform: rotateZ(-90deg);
+    position: fixed;
+    z-index: 2;
+}
+
+#topBtn {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
 }
 
 .postImg {
@@ -78,7 +93,6 @@ html {
 }
 
 .post {
-    margin-top: 4vh;
     margin-left: 10vw;
     display: flex;
     max-width: 80vw;
@@ -131,15 +145,6 @@ html {
 .authorImg {
     width: 5vw;
     border-radius: 100%;
-}
-
-#topBtn {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 2;
-    cursor: pointer;
 }
 
 #footer {

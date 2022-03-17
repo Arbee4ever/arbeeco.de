@@ -20,7 +20,7 @@
     margin: 0%;
     scrollbar-width: auto;
     scrollbar-color: rgba(127, 127, 127, 0.502) #000000;
-  }
+}
 
 *::-webkit-scrollbar {
     width: 12px;
