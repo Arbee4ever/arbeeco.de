@@ -47,16 +47,8 @@ html {
 
 #backBtn {
     transform: rotateZ(-90deg);
-    margin-left: 1vw;
-    top: 2vh;
     position: fixed;
     z-index: 2;
-    height: 5vh;
-    width: 5vh;
-}
-
-#backBtn img {
-    height: 5vh;
 }
 
 #wordmark {
