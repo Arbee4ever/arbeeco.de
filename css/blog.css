@@ -115,7 +115,7 @@ html {
     grid-template-rows: masonry;
 }
 
-#post:hover {
+.post:hover {
     -webkit-transform: scale(1.05) rotate(1deg);
     transform: scale(1.05) rotate(1deg);
 }
@@ -143,11 +143,10 @@ html {
 }
 
 /*big screens (Computers)*/
-#post {
+.post {
     position: relative;
     transition: transform 0.3s ease-in-out;
     border-top: #1a1a1a99 20px;
-    width: 100%;
     height: fit-content;
     overflow: hidden;
     background: #1a1a1a99;
@@ -166,7 +165,7 @@ html {
         ". .";
     }
 
-    #post {
+    .post {
         width: 45vw;
     }
 
@@ -184,7 +183,7 @@ html {
         ".";
     }
     
-    #post {
+    .post {
         width: 90vw;
     }
 
