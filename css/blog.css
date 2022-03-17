@@ -61,6 +61,7 @@ html {
 }
 
 #backBtn {
+    transform: rotateZ(-90deg);
     position: fixed;
     z-index: 2;
 }
