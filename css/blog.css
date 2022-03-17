@@ -78,6 +78,29 @@ html {
     display: grid;
 }
 
+#filterLinks {
+    letter-spacing: 0.2vw;
+    font-size: 2vh;
+    position: relative;
+    text-align: center;
+}
+
+.filterHead {
+    margin-bottom: 1.5vh;
+}
+
+.filterLink {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    cursor: pointer;
+    margin-bottom: 3vh;
+}
+
+.filterLink:hover {
+    color: #00BFFF;
+    text-shadow: 0px 0px 20px #00BFFF;
+}
+
 #posts {
     margin-left: 2vw;
     margin-right: 2vw;
@@ -98,12 +121,12 @@ html {
 }
 
 .wide {
+    margin-top: 3vh;
     margin-left: 2vw;
     margin-right: 2vw;
     margin-bottom: 1vw;
     position: relative;
-    transition: max-height 0.5s ease-in-out, transform 0.3s ease-in-out;
-    max-height: 50vh;
+    transition: transform 0.3s ease-in-out;
     width: 96vw;
     overflow: hidden;
     background: #1a1a1a99;
@@ -119,19 +142,13 @@ html {
     transform: scale(1.01) rotate(1deg);
 }
 
-.postTitleWide {
-    position: absolute;
-    bottom: 0;
-}
-
 /*big screens (Computers)*/
 #post {
     position: relative;
-    transition: max-height 0.5s ease-in-out, transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     border-top: #1a1a1a99 20px;
     width: 100%;
     height: fit-content;
-    max-height: 50vh;
     overflow: hidden;
     background: #1a1a1a99;
     border-radius: 10px;
@@ -226,7 +243,7 @@ html {
     background: rgba( 0, 0, 0, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     border-radius: 10px;
-    max-height: 50vh;
+    max-height: 40vh;
 }
 
 .postCategory {

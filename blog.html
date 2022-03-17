@@ -50,6 +50,12 @@
     </a>
     <div id="blog">
         <img src="/img/2022-01_ARBEE_Wort-Marke_rgb_weiss_01.svg" id="wordmark" alt="ARBEE's Wordmark">
+        <!-- <div id="filterLinks">
+            <p class="filterHead">Filter by Category:</p>
+            {% for category in site.categories %}
+            <a class="filterLink" href="/blog?c={{ category | first }}">{{ category | first }}</a>
+            {% endfor %}
+        </div> -->
         {% for post in site.posts limit:1 %}
         <div class="post wide">
             <div id="postAbout">
@@ -63,9 +69,8 @@
             <a href="{{ post.url }}">
                 <article id="postContent">
                     <img id="postImg" src="{{ post.postimage }}">
-                    <div class="postTitleWide">
-                        <h2 class="postTitle">{{ post.title }}</h2>
-                    </div>
+                    <h2 class="postTitle">{{ post.title }}</h2>
+                    <p class="postPreview">{{ post.content | truncatewords: 50 | strip_html }}</p>
                 </article>
             </a>
         </div>

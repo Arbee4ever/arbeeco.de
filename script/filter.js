@@ -1,4 +1,3 @@
-const post = document.getElementsByClassName("post");
 const postCategory = document.getElementsByClassName("postCategory");
 
 for (let i = 0; i < postCategory.length; i++) {
@@ -7,7 +6,5 @@ for (let i = 0; i < postCategory.length; i++) {
     const urlParams = new URLSearchParams(queryString);
     if (urlParams.has("c") && element.firstChild.textContent != urlParams.get("c")) {
         element.parentNode.style.display = "none";
-    } else {
-        element.parentNode.style.display = "block";
     }
 }
