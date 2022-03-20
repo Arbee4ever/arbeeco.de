@@ -18,6 +18,7 @@ layout: null
         <author>{{ post.author }}</author>
         <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
         <media:content medium="image" url="https://www.arbee.cf{{ post.postimage }}"/>
+        <media:content medium="image" url="https://www.arbee.cf{{ post.authorimage }}"/>
       </item>
     {% endfor %}
   </channel>
