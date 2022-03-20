@@ -22,11 +22,7 @@ layout: null
           <title>postimage</title>
           <link>https://www.arbee.cf{{ post.url }}</link>
         </image>
-        <image>
-          <url>https://www.arbee.cf{{ post.authorimage }}</url>
-          <title>postimage</title>
-          <link>{{ post.authorurl }}</link>
-        </image>
+        <media:content medium="image" url="https://www.arbee.cf{{ post.postimage }}"/>
       </item>
     {% endfor %}
   </channel>
