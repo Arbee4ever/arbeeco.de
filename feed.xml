@@ -16,7 +16,7 @@ layout: null
         <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
         <link>https://www.arbee.cf{{ post.url }}</link>
         <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
-        <media:content medium="image" url="{{ post.postimage }}"/>
+        <media:content medium="image" url="https://www.arbee.cf/{{ post.postimage }}"/>
       </item>
     {% endfor %}
   </channel>
