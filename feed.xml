@@ -17,6 +17,11 @@ layout: null
         <link>https://www.arbee.cf{{ post.url }}</link>
         <author>{{ post.author }}</author>
         <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+        <image>
+          <url>https://www.w3schools.com/images/logo.gif</url>
+          <title>W3Schools.com</title>
+          <link>https://www.w3schools.com</link>
+        </image>
         <media:content medium="image" url="https://www.arbee.cf{{ post.postimage }}"/>
       </item>
     {% endfor %}
