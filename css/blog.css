@@ -53,9 +53,9 @@ html {
 
 #wordmark {
     display: block;
+    padding-top: 5vh;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5vh;
     margin-bottom: 3vh;
     height: 2vh;
 }
