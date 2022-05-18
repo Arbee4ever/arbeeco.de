@@ -60,7 +60,7 @@
         <img src="/img/2022-01_ARBEE_Wort-Marke_rgb_weiss_01.svg" id="wordmark" alt="ARBEE's Wordmark">
     </a>
     <img class="postImg" src="{{ page.postimage }}">
-    <div class="post">
+    <main>
         <div class="postAbout">
             <a href="{{ page.authorurl }}" target="_blank">
                 <img class="authorImg" src="{{ page.authorimage }}">
@@ -76,7 +76,7 @@
             <h1 class="postTitle"><a href="{{ page.url }}">{{ page.title }}</a></h1>
             <p class="postText">{{ content | remove: '<p>' | remove: '</p>' }}</p>
         </article>
-    </div>
+    </main>
     <footer id="footer">
         <img src="/img/2022-01_ARBEE_Wort-Bild-Marke_rgb_weiss_01.svg" alt="ARBEE's Word-Imagemark.">
         <br>

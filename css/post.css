@@ -92,7 +92,7 @@ html {
     margin-bottom: 2vh;
 }
 
-.post {
+main {
     margin-left: 10vw;
     display: flex;
     max-width: 80vw;
@@ -124,7 +124,7 @@ html {
 }
 
 @media only screen and (max-width: 1075px) {
-    .post {
+    main {
         display: unset;
         width: 80vw;
         margin-left: auto;
