@@ -44,7 +44,7 @@ vignette.onclick = function () {
 }
 
 window.addEventListener("click", function (e) {
-    if (e.target == this.document.getElementById("main")) {
+    if (e.target == document.getElementById("main")) {
         if (centerIcon.classList.contains("hide")) {
             toggleHide();
             center.classList.toggle("bigger");
