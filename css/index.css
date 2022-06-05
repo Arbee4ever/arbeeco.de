@@ -86,7 +86,6 @@ main {
 }
 
 #centerIcon, #centerIcon2 {
-    cursor: pointer;
     position: absolute;
     transition: height 0.4s ease-in-out, margin 0.4s ease-in-out, opacity 0.4s ease-in-out;
     height: 60%;

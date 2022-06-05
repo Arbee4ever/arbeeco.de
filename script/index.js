@@ -1,10 +1,8 @@
 const button = document.getElementsByClassName("button");
 var state = 1;
 
-centerIcon.onclick = function () { toggleHide() };
-centerIcon2.onclick = function () { toggleHide() };
-
 function toggleHide() {
+    center.classList.toggle("bigger");
     if (state == 1) {
         for (let x = 0; x < button.length; x++) {
             const element = button[x];
@@ -25,32 +23,12 @@ function toggleHide() {
 }
 
 center.onmouseenter = function () {
-    if (centerIcon2.classList.contains("hide")) {
-        center.classList.toggle("bigger");
-    }
+    toggleHide();
 }
 
 center.onmouseleave = function () {
-    if (centerIcon2.classList.contains("hide")) {
-        center.classList.toggle("bigger");
-    }
+    toggleHide();
 }
-
-vignette.onclick = function () {
-    if (centerIcon.classList.contains("hide")) {
-        toggleHide();
-        center.classList.toggle("bigger");
-    }
-}
-
-window.addEventListener("click", function (e) {
-    if (e.target == document.getElementById("main")) {
-        if (centerIcon.classList.contains("hide")) {
-            toggleHide();
-            center.classList.toggle("bigger");
-        }
-    }
-});
 
 const posts = document.getElementsByClassName("post");
 for (let i = 0; i < posts.length; i++) {
