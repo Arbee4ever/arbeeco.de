@@ -3,23 +3,26 @@ var state = 1;
 
 function toggleHide() {
     center.classList.toggle("bigger");
-    if (state == 1) {
-        for (let x = 0; x < button.length; x++) {
+    for (let x = 0; x < button.length; x++) {
+        if (state == 1) {
             const element = button[x];
             element.classList.toggle("hide");
-            element.style.zIndex = 1;
-        }
-        state = 0;
-    } else {
-        for (let x = 0; x < button.length; x++) {
+            state = 0;
+        } else {
             const element = button[x];
             element.classList.toggle("hide");
-            element.style.zIndex = -1;
+            state = 1;
         }
-        state = 1;
     }
     centerIcon2.classList.toggle("hide");
     centerIcon.classList.toggle("hide");
+    setTimeout(function () {
+        for (let x = 0; x < button.length; x++) {
+            const element = button[x];
+            element.classList.toggle("unclickable");
+            console.log(element);
+        }
+    } , 400)
 }
 
 center.onmouseenter = function () {

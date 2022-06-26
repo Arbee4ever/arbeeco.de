@@ -11,8 +11,8 @@
 
 @keyframes movement {
     0%,
-  100% { transform: translateY(-10%); }
-   50% { transform: translateY(10%); }
+  100% { transform: translateY(0vh); }
+   50% { transform: translateY(-2vh); }
 }
 
 * {
@@ -98,6 +98,7 @@ main {
 }
 
 #centerIcon2 {
+    pointer-events: none;
     filter: drop-shadow(0 0 10px #ff00ee);
     -webkit-filter: drop-shadow(0 0 10px #ff00ee);
 }
@@ -329,6 +330,9 @@ p {
 
 .hide {
     opacity: 0;
+}
+
+.unclickable {
     pointer-events: none;
 }
 
