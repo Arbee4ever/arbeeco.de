@@ -31,7 +31,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <link rel="canonical" href="https://arbeeco.de{{ page.url }}">
+    {% if page.category == "MINECRAFT MOD" %}
+    <meta name="twitter:card" content="summary" />
+    {% else %}
     <meta name="twitter:card" content="summary_large_image" />
+    {% endif %}
     <meta name="twitter:site" content="@0Arbee0" />
     <meta name="twitter:creator" content="@0Arbee0" />
     <meta name="twitter:description" content="{{ content | truncatewords: 20 }}" />
