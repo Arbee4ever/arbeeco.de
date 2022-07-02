@@ -1,10 +1,10 @@
 # ===================================
 # Generator: http://pixelfolk.net/tools/robots
 # Erstellt am: 10.03.2022, 13:25
-# Webseite: http://http://www.arbee.cf
+# Webseite: http://http://arbeeco.de
 # ===================================
 
-Sitemap: http://www.arbee.cf/sitemap.xml
+Sitemap: http://arbeeco.de/sitemap.xml
 
 # ===================================
 # Folgende Seiten sollen nicht indexiert werden:

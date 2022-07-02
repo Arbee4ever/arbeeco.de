@@ -14,15 +14,15 @@ layout: null
         <title>{{ post.title }}</title>
         <description>{{ post.content | xml_escape }}</description>
         <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-        <link>https://www.arbee.cf{{ post.url }}</link>
+        <link>https://arbeeco.de{{ post.url }}</link>
         <author>{{ post.author }}</author>
         <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
         <image>
-          <url>https://www.arbee.cf{{ post.authorimage }}</url>
+          <url>https://arbeeco.de{{ post.authorimage }}</url>
           <title>authorimage</title>
-          <link>https://www.arbee.cf{{ post.authorurl }}</link>
+          <link>https://arbeeco.de{{ post.authorurl }}</link>
         </image>
-        <media:content medium="image" url="https://www.arbee.cf{{ post.postimage }}"/>
+        <media:content medium="image" url="https://arbeeco.de{{ post.postimage }}"/>
       </item>
     {% endfor %}
   </channel>

@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "BLOG FEATURE RELEASED!"
-date: 2022-03-10 02:30
-category: WEBSITE UPDATE
+date: 2022-03-10
+category: WEBSITE
 author: ARBEE
-authorurl: https://www.arbee.cf
+authorurl: https://arbeeco.de
 authorimage: /authorImg/2022-01_ARBEE_Bild-Marke_rgb_weiss_bg_verlauf_01.png
 postimage: /postImg/Blog_2022-03-10.png
 ---

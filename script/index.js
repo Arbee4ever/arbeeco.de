@@ -22,7 +22,7 @@ function toggleHide() {
             element.classList.toggle("unclickable");
             console.log(element);
         }
-    } , 400)
+    }, 400)
 }
 
 center.onmouseenter = function () {
@@ -43,7 +43,7 @@ var num = 3;
 postHandler(num);
 
 function moreLink() {
-    if (num != 9 && num <= posts.length) {
+    if (num != 9 && num < posts.length) {
         num = num + 3;
         postHandler(num);
     } else {

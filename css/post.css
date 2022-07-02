@@ -84,6 +84,16 @@ html {
     border-radius: 10px;
 }
 
+#postFrame {
+    object-fit: cover;
+    width: 80vw;
+    margin: 1vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    border-radius: 10px;
+    min-height: 50vh;
+}
+
 .postCategory {
     margin-bottom: 1vh;
 }

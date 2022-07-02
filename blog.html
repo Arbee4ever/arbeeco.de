@@ -33,15 +33,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
-    <link rel="canonical" href="https://www.arbee.cf/blog">
+    <link rel="canonical" href="https://arbeeco.de/blog">
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@0Arbee0" />
     <meta name="twitter:creator" content="@0Arbee0" />
-    <meta property="og:url" content="https://www.arbee.cf/blog" />
+    <meta property="og:url" content="https://arbeeco.de/blog" />
     <meta property="og:title" content="ARBEE's Blog" />
     <meta property="og:description"
         content="Read about stuff ARBEE is doing or thinking about technical, political or any other stuff." />
-    <meta property="og:image" content="https://www.arbee.cf/img/2022-01_ARBEE_Bild-Marke_rgb_Verlauf_01.png" />
+    <meta property="og:image" content="https://arbeeco.de/img/2022-01_ARBEE_Bild-Marke_rgb_Verlauf_01.png" />
     <meta name="theme-color" content="#2b8eaf" />
 </head>
 
@@ -80,7 +80,11 @@
             <h3 class="postCategory"><a href="/blog?c={{ post.category }}">{{ post.category }}</a></h3>
             <a class="postLink" href="{{ post.url }}">
                 <article id="postContent">
-                    <img id="postImg" src="{{ post.postimage }}">
+                    {% if post.category == "MINECRAFT MOD" %}
+                        <iframe id="postFrame" frameBorder="0" src="genImg?p={{ post.title }}"></iframe>
+                    {% else %}
+                        <img id="postImg" src="{{ post.postimage }}">
+                    {% endif %}
                     <h2 class="postTitle">{{ post.title }}</h2>
                     <p class="postPreview">{{ post.content | truncatewords: 50 | strip_html }}</p>
                 </article>
@@ -100,7 +104,11 @@
                 <h3 class="postCategory"><a href="/blog?c={{ post.category }}">{{ post.category }}</a></h3>
                 <a class="postLink" href="{{ post.url }}">
                     <article id="postContent">
-                        <img id="postImg" src="{{ post.postimage }}">
+                        {% if post.category == "MINECRAFT MOD" %}
+                            <iframe id="postFrame" frameBorder="0" src="genImg?p={{ post.title }}"></iframe>
+                        {% else %}
+                            <img id="postImg" src="{{ post.postimage }}">
+                        {% endif %}
                         <h2 class="postTitle">{{ post.title }}</h2>
                         <p class="postPreview">{{ post.content | truncatewords: 50 | strip_html }}</p>
                     </article>
