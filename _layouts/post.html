@@ -42,11 +42,7 @@
     <meta property="og:url" content="{{ page.url }}" />
     <meta property="og:title" content="{{ page.title }} | ARBEE" />
     <meta property="og:description" content="{{ content | truncatewords: 20 }}" />
-    {% if page.category == "MINECRAFT MOD" %}
-    <meta property="og:image" content="https://arbeeco.de{{ page.authorimage }}" />
-    {% else %}
     <meta property="og:image" content="https://arbeeco.de{{ page.postimage }}" />
-    {% endif %}
     <meta property="og:published_time " content="{{ page.date }}" />
     <meta name="theme-color" content="#2b8eaf" />
 </head>
