@@ -80,7 +80,9 @@
             <h3 class="postCategory"><a href="/blog?c={{ page.category }}">{{ page.category }}</a></h3>
             <h1 class="postTitle"><a href="{{ page.url }}">{{ page.title }}</a></h1>
             <p class="postText">
-                <a href="https://modrinth.com/mod/{{ page.title }}" target="_blank">Download here</a><br>
+                {% if post.category == "MINECRAFT MOD" %}
+                    <a href="https://modrinth.com/mod/{{ page.title }}" target="_blank">Download here</a><br>
+                {% endif %}
                 {{ content | remove: '<p>' | remove: '</p>' }}</p>
         </article>
     </main>
