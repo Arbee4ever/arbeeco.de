@@ -60,12 +60,6 @@ html {
     height: 2vh;
 }
 
-#backBtn {
-    transform: rotateZ(-90deg);
-    position: fixed;
-    z-index: 2;
-}
-
 #topBtn {
     display: none;
     position: fixed;
