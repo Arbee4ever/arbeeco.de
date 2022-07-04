@@ -79,7 +79,6 @@ html {
 }
 
 #postFrame {
-    object-fit: cover;
     width: 80vw;
     margin: 1vh;
     margin-left: 10vw;
