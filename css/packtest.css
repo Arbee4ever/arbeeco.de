@@ -1,0 +1,17 @@
+table {
+    width: 60vw;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 32px 0 #0000005e;
+    margin: 1vw;
+}
+
+tr {
+    color: white;
+    width: fit-content;
+    height: 3vh;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 32px 0 #0000005e;
+    text-align: center;
+}
