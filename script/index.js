@@ -1,7 +1,6 @@
 const button = document.getElementsByClassName("button");
 var state = 1;
 
-
 function toggleHide() {
     center.classList.toggle("bigger");
     for (let x = 0; x < button.length; x++) {
