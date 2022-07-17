@@ -16,14 +16,12 @@ fetch("https://api.modrinth.com/v2/project/" + project, {
         modimg.onload = function() {
             var color;
             const context = document.createElement('canvas').getContext('2d');
-            context.drawImage(modimg, 1, 1, 10, 10);
-            console.log(context.getImageData(1, 1, 1, 1));
+            context.drawImage(modimg, 1, 1, 100, 100);
             const {
                 data
-            } = context.getImageData(10, 10, 1, 1);
+            } = context.getImageData(1, 1, 1, 1);
             color = "rgb(" + data[0] + "," + data[1] + "," + data[2] + ")";
 
-            console.log(color);
             document.body.style.backgroundColor = color;
         }
     });
