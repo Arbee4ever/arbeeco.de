@@ -61,7 +61,7 @@
         <img src="/img/2022-01_ARBEE_Wort-Marke_rgb_weiss_01.svg" id="wordmark" alt="ARBEE's Wordmark">
     </a>
     {% if page.category == "MINECRAFT MOD" %}
-        <iframe id="postFrame" frameBorder="0" src="/genImg.html?p={{ page.title }}"></iframe>
+        <iframe id="postFrame" frameBorder="0" src="/genImg.html?p={{ page.slug }}"></iframe>
     {% else %}
         <img class="postImg" src="{{ page.postimage }}">
     {% endif %}
@@ -81,7 +81,7 @@
             <h1 class="postTitle"><a href="{{ page.url }}">{{ page.title }}</a></h1>
             <p class="postText">
                 {% if page.category == "MINECRAFT MOD" %}
-                    <a href="https://modrinth.com/mod/{{ page.title }}" target="_blank">Download here</a><br>
+                    <a href="https://modrinth.com/mod/{{ page.slug }}" target="_blank">Download here</a><br>
                 {% endif %}
                 {{ content | remove: '<p>' | remove: '</p>' }}</p>
         </article>

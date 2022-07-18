@@ -100,7 +100,7 @@
                 <a class="postLink" href="{{ post.url }}">
                     <article id="postContent">
                         {% if post.category == "MINECRAFT MOD" %}
-                            <iframe id="postFrame" frameBorder="0" src="genImg?p={{ post.title }}"></iframe>
+                            <iframe id="postFrame" frameBorder="0" src="genImg?p={{ post.slug }}"></iframe>
                         {% else %}
                             <img id="postImg" src="{{ post.postimage }}">
                         {% endif %}

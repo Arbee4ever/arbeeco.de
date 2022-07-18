@@ -179,10 +179,7 @@ main {
     margin-left: 5px;
 }
 
-h1,
-h2,
-a,
-p {
+* {
     color: White;
     text-decoration: none;
 }
