@@ -68,7 +68,7 @@
             <a class="postLink" href="{{ post.url | remove: '.html' }}">
                 <article id="postContent">
                     {% if post.category == "MINECRAFT MOD" %}
-                        <iframe id="postFrame" frameBorder="0" src="genImg?p={{ post.modrithslug }}"></iframe>
+                        <iframe id="postFrame" frameBorder="0" src="genImg?p={{ post.modrinthslug }}"></iframe>
                     {% else %}
                         <img id="postImg" src="{{ post.postimage }}">
                     {% endif %}
@@ -92,7 +92,7 @@
                 <a class="postLink" href="{{ post.url }}">
                     <article id="postContent">
                         {% if post.category == "MINECRAFT MOD" %}
-                            <iframe id="postFrame" frameBorder="0" src="genImg?p={{ post.modrithslug }}"></iframe>
+                            <iframe id="postFrame" frameBorder="0" src="genImg?p={{ post.modrinthslug }}"></iframe>
                         {% else %}
                             <img id="postImg" src="{{ post.postimage }}">
                         {% endif %}
