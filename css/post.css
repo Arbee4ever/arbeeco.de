@@ -80,11 +80,11 @@ html {
 
 #postFrame {
     width: 80vw;
+    height: 30vh;
     margin: 1vh;
     margin-left: 10vw;
     margin-right: 10vw;
     border-radius: 10px;
-    min-height: 50vh;
 }
 
 .postCategory {
