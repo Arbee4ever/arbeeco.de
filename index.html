@@ -65,14 +65,14 @@
     </main>
     <section id="blog">
         <div id="posts">
-            {% for post in site.posts limit:9 %}
+            {% for post in collection.post | reverse %}<!-- limit:9 %} -->
             <div class="post" id="post">
                 <div id="postAbout">
                     <a href="{{ post.authorurl }}" target="_blank">
                         <img class="authorImg" src="{{ post.authorimage }}">
                     </a>
                     <a class="authorName" href="{{ post.authorurl }}" target="_blank">{{ post.author }}</a>
-                    <p class="postDate">{{ post.date | date_to_string }}</p>
+                    <p class="postDate">{{ post.date }}</p>
                 </div>
                 <h3 class="postCategory"><a href="/blog?c={{ post.category }}">{{ post.category }}</a></h3>
                 <a class="postLink" href="{{ post.url | remove: '.html' }}">
