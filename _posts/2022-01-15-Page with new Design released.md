@@ -1,8 +1,8 @@
 ---
+tags: post
 layout: post
 title: "PAGE WITH NEW DESIGN RELEASED!"
 date: 2022-01-15
-tags: post
 category: WEBSITE
 author: ARBEE
 authorurl: https://arbeeco.de

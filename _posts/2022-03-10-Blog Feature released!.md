@@ -1,4 +1,5 @@
 ---
+tags: post
 layout: post
 title: "BLOG FEATURE RELEASED!"
 date: 2022-03-10

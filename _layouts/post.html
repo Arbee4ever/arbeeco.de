@@ -61,7 +61,7 @@
                 {% if page.category == "MINECRAFT MOD" %}
                     <a href="https://modrinth.com/mod/{{ page.modrinthslug }}" target="_blank">Download here</a><br>
                 {% endif %}
-                {{ content | remove: '<p>' | remove: '</p>' }}</p>
+                {{ page.content | remove: '<p>' | remove: '</p>' }}</p>
         </article>
     </main>
     <footer id="footer">
