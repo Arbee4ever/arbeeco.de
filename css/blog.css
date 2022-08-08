@@ -111,7 +111,6 @@ html {
 /*big screens (Computers)*/
 .post {
     position: relative;
-    transition: transform 0.3s ease-in-out;
     height: fit-content;
     overflow: hidden;
     background: #1a1a1a99;
