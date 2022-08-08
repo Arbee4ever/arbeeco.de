@@ -83,7 +83,7 @@
                             <img id="postImg" src="{{ post.data.postimage }}">
                         {% endif %}
                         <h2 class="postTitle">{{ post.data.title }}</h2>
-                        <p class="postPreview">{{ post.content | truncatewords: 50 | strip_html }}</p>
+                        <p class="postPreview">{{ post.content | fifty_words }}</p>
                     </article>
                 </a>
             </div>

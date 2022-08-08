@@ -20,5 +20,9 @@
   "homepage": "https://github.com/Arbee4ever/arbeeco.de#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1"
+  },
+  "dependencies": {
+    "he": "^1.2.0",
+    "striptags": "^3.2.0"
   }
 }
