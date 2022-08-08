@@ -1,7 +1,8 @@
 ---
+tags: post
 layout: post
 title: "MODS NOW ON BLOG!"
-date: 2022-07-02
+date: 2022-08-08
 category: WEBSITE
 author: ARBEE
 authorurl: https://arbeeco.de
@@ -15,7 +16,7 @@ This is to make it easier for everyone to discover and play my mods.
 <br>
 Also, I made it possible to filter for Categories, so you can easily find all posts in the Category ["MINECRAFT MOD"](https://arbeeco.de/blog?c=MINECRAFT%20MOD) by clicking on the category anywhere you can find it.
 <br>
-Lastly I rewrote the site with [11ty](https://www.11ty.dev) to make it build faster when I make changes to it.
+Lastly I rewrote the site with [11ty](https://www.11ty.dev) to make it build faster when I make changes to it and to make the code more readable for me or anyone wanting to contribute, to continue development on it.
 <br>
 In the future I'll also be improving the download link and adding an advanced filter to the main [Blog page](https://arbeeco.de/blog), if I can figure out how to properly do it of course.<br>
 <br>

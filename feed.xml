@@ -9,20 +9,20 @@ layout: null
     <description>{{ site.description }}</description>
     <link>{{ site.url }}</link>
     <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
-    {% for post in site.posts %}
+    {% for post in collections.post %}
       <item>
-        <title>{{ post.title }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+        <title>{{ post.data.title }}</title>
+        <description>{{ post.templateContent | fifty_words }}</description>
+        <pubDate>{{ post.date | date: "%d %b %Y" }}</pubDate>
         <link>https://arbeeco.de{{ post.url }}</link>
-        <author>{{ post.author }}</author>
+        <author>{{ post.data.author }}</author>
         <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
         <image>
-          <url>https://arbeeco.de{{ post.authorimage }}</url>
+          <url>https://arbeeco.de{{ post.data.authorimage }}</url>
           <title>authorimage</title>
-          <link>https://arbeeco.de{{ post.authorurl }}</link>
+          <link>{{ post.data.authorurl }}</link>
         </image>
-        <media:content medium="image" url="{{ post.postimage }}"/>
+        <media:content medium="image" url="{{ post.data.postimage }}"/>
       </item>
     {% endfor %}
   </channel>

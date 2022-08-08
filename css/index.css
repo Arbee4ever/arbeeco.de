@@ -146,31 +146,17 @@ main {
     position: relative;
 }
 
-#posts {
-    margin: 1vw;
-    margin-left: 2vw;
-    margin-right: 2vw;
+.posts {
+    margin: 2vw;
     display: grid;
-    grid-auto-flow: row;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 14px 14px;
-    grid-template-areas:
-    ". . ."
-    ". . .";
+    gap: 1vw 1vw;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: masonry;
 }
 
-#post:hover {
-    -webkit-transform: scale(1.05) rotate(1deg);
-    transform: scale(1.05) rotate(1deg);
-}
-
-/*big screens (Computers)*/
-#post {
+.post {
     position: relative;
-    transition: max-height 0.5s ease-in-out, transform 0.3s ease-in-out;
-    border-top: #1a1a1a99 20px;
-    width: 30vw;
+    transition: transform 0.3s ease-in-out;
     height: fit-content;
     overflow: hidden;
     background: #1a1a1a99;
@@ -182,33 +168,15 @@ main {
 
 /*medium screens (tablets)*/
 @media only screen and (max-width: 1024px) {
-    #posts {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-        ". ."
-        ". .";
-    }
-
-    #post {
-        width: 45vw;
+    .posts {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 /*small screens (phones)*/
 @media only screen and (max-width: 480px) {
-    #posts {
+    .posts {
         grid-template-columns: 1fr;
-        grid-template-areas:
-        "."
-        ".";
-    }
-    
-    #post {
-        width: 90vw;
-    }
-
-    #seeAll {
-        margin: 6vw;
     }
 }
 
