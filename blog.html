@@ -77,7 +77,7 @@
                     <p class="postDate">{{ post.date | date: "%d %b %Y" }}</p>
                 </div>
                 <h3 class="postCategory"><a href="/blog?c={{ post.data.category }}">{{ post.data.category }}</a></h3>
-                <a class="postLink" href="{{ post.url }}">
+                <a class="postLink" href="{{ post.url | remove: '.html'}}">
                     <article id="postContent">
                         {% if post.data.category == "MINECRAFT MOD" %}
                             <iframe id="postFrame" frameBorder="0" src="../genImg?p={{ post.data.modrinthslug }}"></iframe>

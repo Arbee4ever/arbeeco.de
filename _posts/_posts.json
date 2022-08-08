@@ -1,0 +1,3 @@
+{
+    "permalink": "./{{ category | slugify }}/{{ date | date: '%Y' }}/{{ date | date: '%m' }}/{{ date | date: '%d' }}/{{ title | slugify }}/"
+}

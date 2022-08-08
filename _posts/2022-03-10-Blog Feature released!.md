@@ -6,9 +6,8 @@ date: 2022-03-10
 category: WEBSITE
 author: ARBEE
 authorurl: https://arbeeco.de
-authorimage: ../authorImg/2022-01_ARBEE_Bild-Marke_rgb_weiss_bg_verlauf_01.png
-postimage: ../postImg/Blog_2022-03-10.png
-permalink: "/{{ category }}/{{ date | date: '%Y' }}/{{ date | date: '%m' }}/{{ date | date: '%d' }}/{{ title }}"
+authorimage: /authorImg/2022-01_ARBEE_Bild-Marke_rgb_weiss_bg_verlauf_01.png
+postimage: /postImg/Blog_2022-03-10.png
 ---
 
 *console.log("Hello World")*<br>

@@ -5,11 +5,11 @@ const WHITESPACE = /\s+/;
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('CNAME');
-    eleventyConfig.addPassthroughCopy("./authorimg");
+    eleventyConfig.addPassthroughCopy("./authorImg");
     eleventyConfig.addPassthroughCopy("./css");
     eleventyConfig.addPassthroughCopy("./img");
     eleventyConfig.addPassthroughCopy("./links");
-    eleventyConfig.addPassthroughCopy("./postimg");
+    eleventyConfig.addPassthroughCopy("./postImg");
     eleventyConfig.addPassthroughCopy("./script");
 
     eleventyConfig.addFilter("fifty_words", (content) => {

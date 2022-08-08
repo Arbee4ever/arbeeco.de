@@ -1,15 +1,18 @@
+---
+---
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8" />
-    <title>{{ page.title }} | ARBEE</title>
+    <title>{{ title }} | ARBEE</title>
     <meta name="description" content="ARBEE's Website">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="screen" href="/css/post.css" />
     <link rel="icon" href="/img/2022-01_ARBEE_Bild-Marke_rgb_Verlauf_01.png">
-    <link rel="canonical" href="https://arbeeco.de{{ page.url }}">
-    {% if page.category == "MINECRAFT MOD" %}
+    <link rel="canonical" href="https://arbeeco.de{{ url }}">
+    {% if post.category == "MINECRAFT MOD" %}
     <meta name="twitter:card" content="summary" />
     {% else %}
     <meta name="twitter:card" content="summary_large_image" />
@@ -17,11 +20,11 @@
     <meta name="twitter:site" content="@0Arbee0" />
     <meta name="twitter:creator" content="@0Arbee0" />
     <meta name="twitter:description" content="{{ content | truncatewords: 20 }}" />
-    <meta property="og:url" content="{{ page.url }}" />
-    <meta property="og:title" content="{{ page.title }} | ARBEE" />
+    <meta property="og:url" content="{{ url }}" />
+    <meta property="og:title" content="{{ title }} | ARBEE" />
     <meta property="og:description" content="{{ content | truncatewords: 20 }}" />
-    <meta property="og:image" content="{{ page.postimage }}" />
-    <meta property="og:published_time " content="{{ page.date }}" />
+    <meta property="og:image" content="{{ postimage }}" />
+    <meta property="og:published_time " content="{{ date }}" />
     <meta name="theme-color" content="#2b8eaf" />
 </head>
 
@@ -38,30 +41,30 @@
     <a href="/">
         <img src="/img/2022-01_ARBEE_Wort-Marke_rgb_weiss_01.svg" id="wordmark" alt="ARBEE's Wordmark">
     </a>
-    {% if page.data.category == "MINECRAFT MOD" %}
-        <iframe id="postFrame" frameBorder="0" src="../genImg.html?p={{ page.data.modrinthslug }}"></iframe>
+    {% if category == "MINECRAFT MOD" %}
+        <iframe id="postFrame" frameBorder="0" src="/genImg?p={{ modrinthslug }}"></iframe>
     {% else %}
-        <img class="postImg" src="{{ page.data.postimage }}">
+        <img class="postImg" src="{{ postimage }}">
     {% endif %}
     <main>
         <div class="postAbout">
-            <a href="{{ page.data.authorurl }}" target="_blank">
-                <img class="authorImg" src="{{ page.data.authorimage }}">
+            <a href="{{ authorurl }}" target="_blank">
+                <img class="authorImg" src="{{ authorimage }}">
             </a>
             <p>Author:</p>
-            <a class="authorName" href="{{ post.data.authorurl }}" target="_blank">{{ page.data.author }}</a>
+            <a class="authorName" href="{{ authorurl }}" target="_blank">{{ author }}</a>
             <br>
             <p>Published:</p>
-            <p class="postDate">{{ page.date | date: "%d %b %Y" }}</p>
+            <p class="postDate">{{ date | date: "%d %b %Y" }}</p>
         </div>
         <article class="postContent">
-            <h3 class="postCategory"><a href="/blog?c={{ page.data.category }}">{{ page.data.category }}</a></h3>
-            <h1 class="postTitle"><a href="{{ page.data.url }}">{{ page.data.title }}</a></h1>
+            <h3 class="postCategory"><a href="/blog?c={{ category }}">{{ category }}</a></h3>
+            <h1 class="postTitle"><a href="{{ url | remove: '.html'}}">{{ title }}</a></h1>
             <p class="postText">
-                {% if page.data.category == "MINECRAFT MOD" %}
-                    <a href="https://modrinth.com/mod/{{ page.data.modrinthslug }}" target="_blank">Download here</a><br>
+                {% if category == "MINECRAFT MOD" %}
+                    <a href="https://modrinth.com/mod/{{ modrinthslug }}" target="_blank">Download here</a><br>
                 {% endif %}
-                {{ page.content | remove: '<p>' | remove: '</p>' }}</p>
+                {{ content | remove: '<p>' | remove: '</p>' }}</p>
         </article>
     </main>
     <footer id="footer">
