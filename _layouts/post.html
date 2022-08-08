@@ -38,28 +38,28 @@
     <a href="/">
         <img src="/img/2022-01_ARBEE_Wort-Marke_rgb_weiss_01.svg" id="wordmark" alt="ARBEE's Wordmark">
     </a>
-    {% if page.category == "MINECRAFT MOD" %}
-        <iframe id="postFrame" frameBorder="0" src="/genImg.html?p={{ page.modrinthslug }}"></iframe>
+    {% if page.data.category == "MINECRAFT MOD" %}
+        <iframe id="postFrame" frameBorder="0" src="../genImg.html?p={{ page.data.modrinthslug }}"></iframe>
     {% else %}
-        <img class="postImg" src="{{ page.postimage }}">
+        <img class="postImg" src="{{ page.data.postimage }}">
     {% endif %}
     <main>
         <div class="postAbout">
-            <a href="{{ page.authorurl }}" target="_blank">
-                <img class="authorImg" src="{{ page.authorimage }}">
+            <a href="{{ page.data.authorurl }}" target="_blank">
+                <img class="authorImg" src="{{ page.data.authorimage }}">
             </a>
             <p>Author:</p>
-            <a class="authorName" href="{{ page.authorurl }}" target="_blank">{{ page.author }}</a>
+            <a class="authorName" href="{{ post.data.authorurl }}" target="_blank">{{ page.data.author }}</a>
             <br>
             <p>Published:</p>
-            <p class="postDate">{{ page.date }}</p>
+            <p class="postDate">{{ page.date | date: "%d %b %Y" }}</p>
         </div>
         <article class="postContent">
-            <h3 class="postCategory"><a href="/blog?c={{ page.category }}">{{ page.category }}</a></h3>
-            <h1 class="postTitle"><a href="{{ page.url }}">{{ page.title }}</a></h1>
+            <h3 class="postCategory"><a href="/blog?c={{ page.data.category }}">{{ page.data.category }}</a></h3>
+            <h1 class="postTitle"><a href="{{ page.data.url }}">{{ page.data.title }}</a></h1>
             <p class="postText">
-                {% if page.category == "MINECRAFT MOD" %}
-                    <a href="https://modrinth.com/mod/{{ page.modrinthslug }}" target="_blank">Download here</a><br>
+                {% if page.data.category == "MINECRAFT MOD" %}
+                    <a href="https://modrinth.com/mod/{{ page.data.modrinthslug }}" target="_blank">Download here</a><br>
                 {% endif %}
                 {{ page.content | remove: '<p>' | remove: '</p>' }}</p>
         </article>

@@ -43,49 +43,49 @@
             <a class="filterLink" href="/blog?c={{ category | first }}">{{ category | first }}</a>
             {% endfor %}
         </div> -->
-        {% for post in site.posts limit:1 %}
+        {% for post in collections.post limit:1 %}
         <div class="post wide">
             <div id="postAbout">
-                <a href="{{ post.authorurl }}" target="_blank">
-                    <img class="authorImg" src="{{ post.authorimage }}">
+                <a href="{{ post.data.authorurl }}" target="_blank">
+                    <img class="authorImg" src="{{ post.data.authorimage }}">
                 </a>
-                <a class="authorName" href="{{ post.authorurl }}" target="_blank">{{ post.author }}</a>
-                <p class="postDate">{{ page.date }}</p>
+                <a class="authorName" href="{{ post.data.authorurl }}" target="_blank">{{ post.data.author }}</a>
+                <p class="postDate">{{ post.date | date: "%d %b %Y" }}</p>
             </div>
-            <h3 class="postCategory"><a href="/blog?c={{ post.category }}">{{ post.category }}</a></h3>
-            <a class="postLink" href="{{ post.url | remove: '.html' }}">
+            <h3 class="postCategory"><a href="/blog?c={{ post.data.category }}">{{ post.category }}</a></h3>
+            <a class="postLink" href="{{ post.url }}">
                 <article id="postContent">
-                    {% if post.category == "MINECRAFT MOD" %}
-                        <iframe id="postFrame" frameBorder="0" src="genImg?p={{ post.modrinthslug }}"></iframe>
+                    {% if post.data.category == "MINECRAFT MOD" %}
+                        <iframe id="postFrame" frameBorder="0" src="../genImg?p={{ post.data.modrinthslug }}"></iframe>
                     {% else %}
-                        <img id="postImg" src="{{ post.postimage }}">
+                        <img id="postImg" src="{{ post.data.postimage }}">
                     {% endif %}
-                    <h2 class="postTitle">{{ post.title }}</h2>
-                    <p class="postPreview">{{ post.content | truncatewords: 50 | strip_html }}</p>
+                    <h2 class="postTitle">{{ post.data.title }}</h2>
+                    <p class="postPreview">{{ post.content | fifty_words }}</p>
                 </article>
             </a>
         </div>
         {% endfor %}
         <div id="posts">
-            {% for post in site.posts offset:1 %}
+            {% for post in collections.post offset:1%}
             <div class="post">
                 <div id="postAbout">
-                    <a href="{{ post.authorurl }}" target="_blank">
-                        <img class="authorImg" src="{{ post.authorimage }}">
+                    <a href="{{ post.data.authorurl }}" target="_blank">
+                        <img class="authorImg" src="{{ post.data.authorimage }}">
                     </a>
-                    <a class="authorName" href="{{ post.authorurl }}" target="_blank">{{ post.author }}</a>
-                    <p class="postDate">{{ page.date }}</p>
+                    <a class="authorName" href="{{ post.data.authorurl }}" target="_blank">{{ post.data.author }}</a>
+                    <p class="postDate">{{ post.date | date: "%d %b %Y" }}</p>
                 </div>
-                <h3 class="postCategory"><a href="/blog?c={{ post.category }}">{{ post.category }}</a></h3>
+                <h3 class="postCategory"><a href="/blog?c={{ post.data.category }}">{{ post.data.category }}</a></h3>
                 <a class="postLink" href="{{ post.url }}">
                     <article id="postContent">
-                        {% if post.category == "MINECRAFT MOD" %}
-                            <iframe id="postFrame" frameBorder="0" src="genImg?p={{ post.modrinthslug }}"></iframe>
+                        {% if post.data.category == "MINECRAFT MOD" %}
+                            <iframe id="postFrame" frameBorder="0" src="../genImg?p={{ post.data.modrinthslug }}"></iframe>
                         {% else %}
-                            <img id="postImg" src="{{ post.postimage }}">
+                            <img id="postImg" src="{{ post.data.postimage }}">
                         {% endif %}
                         <h2 class="postTitle">{{ post.title }}</h2>
-                        <p class="postPreview">{{ post.content | truncatewords: 50 | strip_html }}</p>
+                        <p class="postPreview">{{ post.content }}</p>
                     </article>
                 </a>
             </div>
