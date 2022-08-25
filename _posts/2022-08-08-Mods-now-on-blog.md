@@ -1,5 +1,5 @@
 ---
-tags: post
+tags: draft
 layout: post
 title: "MODS NOW ON BLOG!"
 date: 2022-08-08
