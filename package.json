@@ -1,0 +1,29 @@
+{
+  "name": "arbeeco.de",
+  "version": "1.0.0",
+  "description": "Arbee's website.",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf ./_site",
+    "build": "npm run clean && eleventy",
+    "start": "eleventy --serve --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arbee4ever/arbeeco.de.git"
+  },
+  "author": "ARBEE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arbee4ever/arbeeco.de/issues"
+  },
+  "homepage": "https://github.com/Arbee4ever/arbeeco.de#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1"
+  },
+  "dependencies": {
+    "he": "^1.2.0",
+    "node-fetch": "^2.6.7",
+    "striptags": "^3.2.0"
+  }
+}

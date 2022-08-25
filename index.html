@@ -19,22 +19,14 @@
     <meta property="og:title" content="ARBEE" />
     <meta property="og:description"
         content="I (ARBEE) am a german guy who likes programming fun things. I'm creating Minecraft mods and games in Unity." />
-    <meta property="og:image" content="https://arbeeco.de/authorImg/2022-01_ARBEE_Bild-Marke_rgb_weiss_bg_verlauf_01.png" />
+    <meta property="og:image"
+        content="https://arbeeco.de/authorImg/2022-01_ARBEE_Bild-Marke_rgb_weiss_bg_verlauf_01.png" />
     <meta name="theme-color" content="#2b8eaf" />
     <meta name="keywords" content="Blog, Modding, Gamedev, Arbee, GitHub">
 </head>
 
 <body>
-    <noscript>
-        <div id="error">
-            <strong>
-                This site works best with JavaScript enabled! (╯°□°）╯︵ ┻━┻
-            </strong>
-        </div>
-    </noscript>
-    <img id="topBtn" src="/img/TopIcon.svg" alt="Click to go back to top.">
-    <div id="vignette"></div>
-    <img src="/img/2022-01_ARBEE_Wort-Marke_rgb_weiss_01.svg" id="wordmark" alt="ARBEE's Wordmark">
+    {% header %}
     <main id="main">
         <div id="center" class="center">
             <img src="/img/CenterCircle.svg" id="centerIcon" alt="Hover to show Contact options.">
@@ -51,7 +43,8 @@
                 <img class="button hide unclickable" style="left: 15%; top: 39%;"
                     src="img/GitHub-Mark-Light-120px-plus.png" alt="Contact ARBEE over GitHub.">
             </a>
-            <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%61%72%62%65%65%40%61%72%62%65%65%63%6F%2E%64%65?subject=Contact-Website&body=Hello%20ARBEE%2C">
+            <a
+                href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%61%72%62%65%65%40%61%72%62%65%65%63%6F%2E%64%65?subject=Contact-Website&body=Hello%20ARBEE%2C">
                 <img class="button hide unclickable" style="left: 39%; bottom: 15%;" src="img/MailLogoWhite.svg"
                     alt="Contact ARBEE over eMail.">
             </a>
@@ -64,26 +57,32 @@
         </a>
     </main>
     <section id="blog">
-        <div id="posts">
-            {% for post in site.posts limit:9 %}
-            <div class="post" id="post">
+        <div class="posts">
+            {% assign latest_posts = collections.post | reverse %}
+            {% for post in latest_posts %}
+            <div class="post" data-tilt data-tilt-scale="0.95" data-tilt-max="5">
                 <div id="postAbout">
-                    <a href="{{ post.authorurl }}" target="_blank">
-                        <img class="authorImg" src="{{ post.authorimage }}">
+                    <a href="{{ post.data.authorurl }}" target="_blank">
+                        <img class="authorImg" src="{{ post.data.authorimage }}">
                     </a>
-                    <a class="authorName" href="{{ post.authorurl }}" target="_blank">{{ post.author }}</a>
-                    <p class="postDate">{{ post.date | date_to_string }}</p>
+                    <a class="authorName" href="{{ post.data.authorurl }}" target="_blank">{{ post.data.author }}</a>
+                    <p class="postDate">{{ post.date | date: "%d %b %Y" }}</p>
                 </div>
-                <h3 class="postCategory"><a href="/blog?c={{ post.category }}">{{ post.category }}</a></h3>
-                <a class="postLink" href="{{ post.url | remove: '.html' }}">
+                <h3 class="postCategory"><a href="/blog?c={{ post.data.category }}">{{ post.data.category }}</a>
+                </h3>
+                <a class="postLink" href="{{ post.url | remove: '.html'}}">
                     <article id="postContent">
-                        {% if post.category == "MINECRAFT MOD" %}
-                            <iframe id="postFrame" frameBorder="0" src="genImg?p={{ post.modrinthslug }}"></iframe>
+                        {% if post.data.category == "MINECRAFT MOD" %}
+                        <iframe id="postFrame" frameBorder="0" src="genImg?p={{ post.data.modrinthslug }}"></iframe>
                         {% else %}
-                            <img id="postImg" src="{{ post.postimage }}">
+                        <img id="postImg" src="{{ post.data.postimage }}">
                         {% endif %}
-                        <h2 class="postTitle">{{ post.title }}</h2>
-                        <p class="postPreview">{{ post.content | truncatewords: 50 | strip_html }}</p>
+                        <h2 class="postTitle">{{ post.data.title }}</h2>
+                        {% if post.data.category == "MINECRAFT MOD" %}
+                        <p class="postPreview">{% modPostPreview post.data.modrinthslug %}</p>
+                        {% else %}
+                        <p class="postPreview">{{ post.templateContent | fifty_words }}</p>
+                        {% endif %}
                     </article>
                 </a>
             </div>
@@ -99,30 +98,8 @@
             <a class="seeAll postUtilities" href="/blog">SEE ALL</a>
         </div>
     </section>
-    <footer id="footer">
-        <img src="/img/2022-01_ARBEE_Wort-Bild-Marke_rgb_weiss_01.svg" alt="ARBEE's Word-Imagemark.">
-        <br>
-        <div id="footercontact">
-            <a href="https://ko-fi.com/arbee" target="_blank">
-                <img src="/img/ko-fi-icon.svg" alt="Support me on Ko-Fi!">
-            </a>
-            <a href="https://discord.gg/fHu8AZBrYW" target="_blank">
-                <img src="/img/icon_clyde_circle_white.svg" alt="Contact ARBEE over Discord.">
-            </a>
-            <a href="https://twitter.com/0Arbee0" target="_blank">
-                <img src="/img/TwitterLogoWhite.svg" alt="Contact ARBEE over Twitter">
-            </a>
-            <a href="https://github.com/Arbee4ever" target="_blank">
-                <img src="img/GitHub-Mark-Light-120px-plus.png" alt="Contact ARBEE over GitHub.">
-            </a>
-            <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%61%72%62%65%65%40%61%72%62%65%65%63%6F%2E%64%65?subject=Contact-Website&body=Hello%20ARBEE%2C">
-                <img src="/img/MailLogoWhite.svg" alt="Contact ARBEE over eMail.">
-            </a>
-        </div>
-        <p>This website is hosted by <a href="https://pages.cloudflare.com" target="_blank">Cloudflare</a>.</p>
-        <p>Brand design by <a href="https://www.instagram.com/ralfbaenecke/" target="_blank">ralf baenecke</a>.</p>
-        <p>© 2022 ARBEE</p>
-    </footer>
+    {% footer %}
+    <script src="/script/vanilla-tilt.js"></script>
     <script src="/script/index.js"></script>
     <script src="/script/top.js"></script>
     <script src="https://unpkg.com/smoothscroll-polyfill/dist/smoothscroll.min.js"></script>

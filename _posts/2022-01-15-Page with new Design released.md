@@ -1,4 +1,5 @@
 ---
+tags: post
 layout: post
 title: "PAGE WITH NEW DESIGN RELEASED!"
 date: 2022-01-15
