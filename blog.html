@@ -36,7 +36,7 @@
         <div class="posts">
             {% assign latest_posts = collections.post | reverse %}
             {% for post in latest_posts %}
-            <div class="post" data-tilt data-tilt-speed="400" data-tilt-scale="1.05" data-tilt-max="5">
+            <div class="post" data-tilt data-tilt-scale="1.05" data-tilt-max="5">
                 <div id="postAbout">
                     <a href="{{ post.data.authorurl }}" target="_blank">
                         <img class="authorImg" src="{{ post.data.authorimage }}">
@@ -53,7 +53,11 @@
                         <img id="postImg" src="{{ post.data.postimage }}">
                         {% endif %}
                         <h2 class="postTitle">{{ post.data.title }}</h2>
+                        {% if post.data.category == "MINECRAFT MOD" %}
+                        <p class="postPreview">{% modPostPreview post.data.modrinthslug %}</p>
+                        {% else %}
                         <p class="postPreview">{{ post.templateContent | fifty_words }}</p>
+                        {% endif %}
                     </article>
                 </a>
             </div>

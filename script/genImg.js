@@ -5,7 +5,7 @@ const project = urlParams.get("p");
 fetch("https://api.modrinth.com/v2/project/" + project, {
     Accept: "application/json",
     method: "GET",
-    "User-Agent": "https://github.com/Arbee4ever/arbee4ever.github.io (arbeeco.de)"
+    "User-Agent": "https://github.com/Arbee4ever/arbeeco.de (arbeeco.de)"
 })
     .then(response => {
         return response.json();

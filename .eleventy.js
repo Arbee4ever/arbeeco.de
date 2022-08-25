@@ -1,6 +1,6 @@
 const striptags = require("striptags");
+const fetch = require("node-fetch");
 const he = require("he");
-const fs = require('fs')
 
 const WHITESPACE = /\s+/;
 
@@ -15,7 +15,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter("fifty_words", (content) => {
         var plainText = he.decode(striptags(content), { strict: true });
-        if(plainText.split(WHITESPACE).length > 50) {
+        if (plainText.split(WHITESPACE).length > 50) {
             plainText = plainText.split(WHITESPACE).slice(0, 50).join(" ") + "...";
         }
         return plainText;
@@ -44,8 +44,8 @@ module.exports = function (eleventyConfig) {
             <img src="/img/2022-01_ARBEE_Wort-Bild-Marke_rgb_weiss_01.svg" alt="ARBEE's Word-Imagemark.">
             <br>
             <div id="footercontact">
-                <a href="https://ko-fi.com/arbee" target="_blank">
-                    <img src="/img/ko-fi-icon.svg" alt="Support me on Ko-Fi!">
+                <a href="https://www.patreon.com/ARBEECODE" target="_blank">
+                    <img src="/img/PatreonIcon.svg" alt="Support me on Patreon!">
                 </a>
                 <a href="https://discord.gg/fHu8AZBrYW" target="_blank">
                     <img src="/img/icon_clyde_circle_white.svg" alt="Contact ARBEE over Discord.">
@@ -64,6 +64,16 @@ module.exports = function (eleventyConfig) {
             <p>Brand design by <a href="https://www.instagram.com/ralfbaenecke/" target="_blank">ralf baenecke</a>.</p>
             <p>© 2022 ARBEE</p>
         </footer>`
+    });
+    eleventyConfig.addLiquidShortcode("modPostPreview", async mod => {
+        const modrinthAPI = await fetch("https://api.modrinth.com/v2/project/" + mod, {
+            Accept: "application/json",
+            method: "GET",
+            "User-Agent": "https://github.com/Arbee4ever/arbeeco.de (arbeeco.de)"
+        });
+        const response = await modrinthAPI.json();
+        const body = response.body;
+        return eleventyConfig.getFilter("fifty_words")(body);
     });
 
     return {
