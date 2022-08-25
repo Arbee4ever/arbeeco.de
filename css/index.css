@@ -155,6 +155,8 @@ main {
     gap: 1vw 1vw;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: masonry;
+    transform: scaleZ(-1000px);
+    -webkit-transform: translateZ(-1000px);
 }
 
 .post {
