@@ -304,7 +304,7 @@ var VanillaTilt = (function () {
         this.element.style.transform = "perspective(" + this.settings.perspective + "px) " +
           "rotateX(" + (this.settings.axis === "x" ? 0 : values.tiltY) + "deg) " +
           "rotateY(" + (this.settings.axis === "y" ? 0 : values.tiltX) + "deg) " +
-          "scale3d(" + this.settings.scale + ", " + this.settings.scale + ", " + this.settings.scale + ")";
+          "scale3d(" + this.settings.scale + ", " + this.settings.scale+ ", " + this.settings.scale + ")";
     
         if (this.glare) {
           this.glareElement.style.transform = `rotate(${values.angle}deg) translate(-50%, -50%)`;

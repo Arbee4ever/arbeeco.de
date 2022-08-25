@@ -60,7 +60,7 @@
         <div class="posts">
             {% assign latest_posts = collections.post | reverse %}
             {% for post in latest_posts %}
-            <div class="post" data-tilt data-tilt-scale="1.05" data-tilt-max="5" data-tilt-startX="0" data-tilt-start="0">
+            <div class="post" data-tilt data-tilt-scale="0.95" data-tilt-max="5">
                 <div id="postAbout">
                     <a href="{{ post.data.authorurl }}" target="_blank">
                         <img class="authorImg" src="{{ post.data.authorimage }}">

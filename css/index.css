@@ -1,6 +1,7 @@
 @import url(https://fonts.bunny.net/css?family=josefin-sans:400);
 
 @keyframes transform {
+
     0%,
   100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 
    14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; } 
@@ -12,6 +13,7 @@
 }
 
 @keyframes movement {
+
     0%,
   100% { transform: translateY(0vh); }
    50% { transform: translateY(-2vh); }
@@ -22,7 +24,7 @@
     margin: 0%;
     scrollbar-width: auto;
     scrollbar-color: rgba(127, 127, 127, 0.502) #000000;
-  }
+}
 
 *::-webkit-scrollbar {
     width: 12px;
@@ -43,6 +45,14 @@ html {
     background-attachment: fixed;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
 #vignette {
     pointer-events: none;
     position: fixed;
@@ -51,14 +61,6 @@ html {
     height: 100vh;
     box-shadow: 0px 0px 250px 0px #000000 inset;
     z-index: 3;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
 }
 
 #wordmark {
@@ -81,13 +83,14 @@ main {
     background: -moz-linear-gradient(45deg, #2b8eaf 0%, #b222a8 100%);
     background: -webkit-linear-gradient(45deg, #2b8eaf 0%, #b222a8 100%);
     background: linear-gradient(45deg, #2b8eaf 0%, #b222a8 100%);
-    animation: 
-    transform 50s ease-in-out infinite both alternate,
-    movement 10s ease-in-out infinite both;
+    animation:
+        transform 50s ease-in-out infinite both alternate,
+        movement 10s ease-in-out infinite both;
     position: absolute;
 }
 
-#centerIcon, #centerIcon2 {
+#centerIcon,
+#centerIcon2 {
     position: absolute;
     transition: height 0.4s ease-in-out, margin 0.4s ease-in-out, opacity 0.4s ease-in-out;
     height: 60%;
@@ -155,12 +158,10 @@ main {
 }
 
 .post {
-    position: relative;
     height: fit-content;
-    overflow: hidden;
     background: #1a1a1a99;
     border-radius: 10px;
-    background: rgba( 0, 0, 0, 0.25 );
+    background: rgba(0, 0, 0, 0.25);
     box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.37);
     place-self: center;
 }
@@ -181,14 +182,14 @@ main {
 
 #postAbout {
     margin-top: auto;
-    border-top-right-radius:  10px;
-    border-top-left-radius:  10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     background-color: #000000;
     margin: 3px;
     height: 4vh;
     align-content: center;
-    background: rgba( 0, 0, 0, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     border-radius: 10px;
 }
 
@@ -222,15 +223,15 @@ main {
 #postImg {
     width: 100%;
     object-fit: cover;
-    background: rgba( 0, 0, 0, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     border-radius: 10px;
 }
 
 #postFrame {
     width: 100%;
-    background: rgba( 0, 0, 0, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     border-radius: 10px;
     height: 250px;
     pointer-events: none;
@@ -338,18 +339,18 @@ p {
     text-align: center;
     font-weight: bold;
     font-size: 120%;
-    color: hsl(0,0%,100%);
+    color: hsl(0, 0%, 100%);
     background-color: #c22e32;
     padding: 5px 0;
 }
 
 #notFound {
     position: absolute;
-    width: 100px; 
-    top: 50%; 
+    width: 100px;
+    top: 50%;
     transform: translate(0, -50%);
     width: 100%;
     text-align: center;
     font-size: 150%;
-    color: hsl(0,0%,100%);
+    color: hsl(0, 0%, 100%);
 }
