@@ -60,7 +60,7 @@ module.exports = function (eleventyConfig) {
                     <img src="/img/MailLogoWhite.svg" alt="Contact ARBEE over eMail.">
                 </a>
             </div>
-            <p>This website is hosted by <a href="https://pages.cloudflare.com" target="_blank">Cloudflare</a>.</p>
+            <p>Hosted on <a href="https://pages.cloudflare.com" target="_blank">Cloudflare</a>, domain from <a href="https://dashserv.io/a/arbee" target="_blank">dashserv</a></p>
             <p>Brand design by <a href="https://www.instagram.com/ralfbaenecke/" target="_blank">ralf baenecke</a>.</p>
             <p>© 2022 ARBEE</p>
         </footer>`
