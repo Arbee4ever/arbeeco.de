@@ -45,7 +45,7 @@ module.exports = function (eleventyConfig) {
             <br>
             <div id="footercontact">
                 <a href="https://ko-fi.com/arbee" target="_blank">
-                    <img src="/img/ko-fi-icon.svg" alt="Support me on Patreon!">
+                    <img src="/img/ko-fi-icon.svg" alt="Support me on Ko-fi!">
                 </a>
                 <a href="https://discord.gg/fHu8AZBrYW" target="_blank">
                     <img src="/img/icon_clyde_circle_white.svg" alt="Contact ARBEE over Discord.">
