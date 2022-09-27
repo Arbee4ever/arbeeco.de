@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/Arbee4ever/arbeeco.de#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.1"
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0"
   },
   "dependencies": {
     "he": "^1.2.0",

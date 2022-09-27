@@ -1,10 +1,13 @@
 const striptags = require("striptags");
 const fetch = require("node-fetch");
 const he = require("he");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 const WHITESPACE = /\s+/;
 
 module.exports = function (eleventyConfig) {
+    eleventyConfig.addPlugin(pluginRss);
+
     eleventyConfig.addPassthroughCopy('CNAME');
     eleventyConfig.addPassthroughCopy("./authorImg");
     eleventyConfig.addPassthroughCopy("./css");
