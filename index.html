@@ -49,7 +49,19 @@
                     alt="Contact ARBEE over eMail.">
             </a>
         </div>
-        <h1 id="description">I (ARBEE) am a german guy&nbsp;who&nbsp;likes&nbfHu8AZBrYW
+        <h1 id="description">I (ARBEE) am a german guy&nbsp;who&nbsp;likes&nbsp;programming&nbsp;fun&nbsp;things.
+            <br>I'm creating Minecraft mods and&nbsp;games&nbsp;in&nbsp;Unity.
+        </h1>
+        <a href="#blog" id="blogBtnDiv">
+            <img class="blogBtn" src="/img/BlogIcon.svg" alt="Click to show blog.">
+        </a>
+    </main>
+    <section id="blog">
+        <div class="posts">
+            {% assign latest_posts = collections.post | reverse %}
+            {% for post in latest_posts %}
+            <div class="post" data-tilt data-tilt-scale="0.95" data-tilt-max="5">
+                <div id="postAbout">
                     <a href="{{ post.data.authorurl }}" target="_blank">
                         <img class="authorImg" src="{{ post.data.authorimage }}">
                     </a>
