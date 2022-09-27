@@ -1,5 +1,5 @@
 ---
-tags: draft
+tags: post
 layout: post
 title: "MODS NOW ON BLOG!"
 date: 2022-08-08
@@ -7,7 +7,7 @@ category: WEBSITE
 author: ARBEE
 authorurl: https://arbeeco.de
 authorimage: /authorImg/2022-01_ARBEE_Bild-Marke_rgb_weiss_bg_verlauf_01.png
-postimage: https://arbeeco.de/postImg/Blog_2022-03-10.png
+postimage: /postImg/ARBEExModrinth.png
 ---
 
 I finally managed to completely add support for Minecraft mods to my Blog. From now on, every mod and mod update that I publish on [Modrinth](https://modrinth.com "Checkout modrinth!") will be linked here as well.
