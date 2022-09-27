@@ -47,7 +47,7 @@ module.exports = function (eleventyConfig) {
                 <a href="https://ko-fi.com/arbee" target="_blank">
                     <img src="/img/ko-fi-icon.svg" alt="Support me on Ko-fi!">
                 </a>
-                <a href="https://discord.gg/fHu8AZBrYW" target="_blank">
+                <a href="https://arbeeco.de/links/discord" target="_blank">
                     <img src="/img/icon_clyde_circle_white.svg" alt="Contact ARBEE over Discord.">
                 </a>
                 <a href="https://twitter.com/0Arbee0" target="_blank">
