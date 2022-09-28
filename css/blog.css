@@ -102,9 +102,7 @@ html {
     margin: 2vw;
     display: grid;
     gap: 1vw 1vw;
-    grid-template-areas:
-    ". . ."
-    ". . .";
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: masonry;
 }
 
@@ -127,9 +125,7 @@ html {
 /*medium screens (tablets)*/
 @media only screen and (max-width: 1024px) {
     .posts {
-        grid-template-areas:
-        ". ."
-        ". .";
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .posts div:first-child {
@@ -141,9 +137,7 @@ html {
 /*small screens (phones)*/
 @media only screen and (max-width: 480px) {
     .posts {
-        grid-template-areas:
-        "."
-        ".";
+        grid-template-columns: 1fr;
     }
 
     .posts div:first-child {
