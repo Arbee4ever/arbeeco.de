@@ -114,7 +114,17 @@ main {
     margin: 1%;
     position: absolute;
     height: 6vh;
+    width: 6vh;
 }
+
+.path {
+    transition: fill 0.5s;
+}
+
+.discord:hover > .path{fill: #5865F2;}
+.twitter:hover > .path{fill: #1DA1F2;}
+.github:hover > .path{fill: black;}
+.mail:hover > .path{fill: #ffc861;}
 
 #blogBtnDiv {
     position: absolute;

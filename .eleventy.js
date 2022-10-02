@@ -57,7 +57,7 @@ module.exports = function (eleventyConfig) {
                     <img src="/img/TwitterLogoWhite.svg" alt="Contact ARBEE over Twitter">
                 </a>
                 <a href="https://github.com/Arbee4ever" target="_blank">
-                    <img src="/img/GitHub-Mark-Light-120px-plus.png" alt="Contact ARBEE over GitHub.">
+                    <img src="/img/GitHub-Logo.svg" alt="Contact ARBEE over GitHub.">
                 </a>
                 <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%61%72%62%65%65%40%61%72%62%65%65%63%6F%2E%64%65?subject=Contact-Website&body=Hello%20ARBEE%2C">
                     <img src="/img/MailLogoWhite.svg" alt="Contact ARBEE over eMail.">
