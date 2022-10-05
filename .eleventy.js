@@ -53,7 +53,7 @@ module.exports = function (eleventyConfig) {
                 <a href="https://arbeeco.de/links/discord" target="_blank">
                     <img src="/img/icon_clyde_circle_white.svg" alt="Contact ARBEE over Discord.">
                 </a>
-                <a href="https://twitter.com/0Arbee0" target="_blank">
+                <a href="https://twitter.com/ARBEE_codes" target="_blank">
                     <img src="/img/TwitterLogoWhite.svg" alt="Contact ARBEE over Twitter">
                 </a>
                 <a href="https://github.com/Arbee4ever" target="_blank">
