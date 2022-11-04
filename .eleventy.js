@@ -6,26 +6,26 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const WHITESPACE = /\s+/;
 
 module.exports = function (eleventyConfig) {
-    eleventyConfig.addPlugin(pluginRss);
+	eleventyConfig.addPlugin(pluginRss);
 
-    eleventyConfig.addPassthroughCopy('CNAME');
-    eleventyConfig.addPassthroughCopy("./authorImg");
-    eleventyConfig.addPassthroughCopy("./css");
-    eleventyConfig.addPassthroughCopy("./img");
-    eleventyConfig.addPassthroughCopy("./links");
-    eleventyConfig.addPassthroughCopy("./postImg");
-    eleventyConfig.addPassthroughCopy("./script");
+	eleventyConfig.addPassthroughCopy('CNAME');
+	eleventyConfig.addPassthroughCopy("./authorImg");
+	eleventyConfig.addPassthroughCopy("./css");
+	eleventyConfig.addPassthroughCopy("./img");
+	eleventyConfig.addPassthroughCopy("./links");
+	eleventyConfig.addPassthroughCopy("./postImg");
+	eleventyConfig.addPassthroughCopy("./script");
 
-    eleventyConfig.addFilter("fifty_words", (content) => {
-        var plainText = he.decode(striptags(content), { strict: true });
-        if (plainText.split(WHITESPACE).length > 50) {
-            plainText = plainText.split(WHITESPACE).slice(0, 50).join(" ") + "...";
-        }
-        return plainText;
-    });
+	eleventyConfig.addFilter("fifty_words", (content) => {
+		var plainText = he.decode(striptags(content), { strict: true });
+		if (plainText.split(WHITESPACE).length > 50) {
+			plainText = plainText.split(WHITESPACE).slice(0, 50).join(" ") + "...";
+		}
+		return plainText;
+	});
 
-    eleventyConfig.addLiquidShortcode("header", function () {
-        return `
+	eleventyConfig.addLiquidShortcode("header", function () {
+		return `
         <header>
             <noscript>
                 <div id="error">
@@ -40,9 +40,9 @@ module.exports = function (eleventyConfig) {
                 <img src="/img/2022-01_ARBEE_Wort-Marke_rgb_weiss_01.svg" id="wordmark" alt="ARBEE's Wordmark">
             </a>
         </header>`
-    });
-    eleventyConfig.addLiquidShortcode("footer", function () {
-        return `
+	});
+	eleventyConfig.addLiquidShortcode("footer", function () {
+		return `
         <footer id="footer">
             <img src="/img/2022-01_ARBEE_Wort-Bild-Marke_rgb_weiss_01.svg" alt="ARBEE's Word-Imagemark.">
             <br>
@@ -56,6 +56,9 @@ module.exports = function (eleventyConfig) {
                 <a href="https://twitter.com/ARBEE_codes" target="_blank">
                     <img src="/img/TwitterLogoWhite.svg" alt="Contact ARBEE over Twitter">
                 </a>
+				<a rel="me" href="https://floss.social/@arbee">
+					<img src="/img/MastodonLogoWhiteCircle.svg" alt="Contact ARBEE over Mastodon">
+				</a>
                 <a href="https://github.com/Arbee4ever" target="_blank">
                     <img src="/img/GitHub-Logo.svg" alt="Contact ARBEE over GitHub.">
                 </a>
@@ -67,23 +70,23 @@ module.exports = function (eleventyConfig) {
             <p>Brand design by <a href="https://www.instagram.com/ralfbaenecke/" target="_blank">ralf baenecke</a>.</p>
             <p>© 2022 ARBEE</p>
         </footer>`
-    });
-    eleventyConfig.addLiquidShortcode("modPostPreview", async mod => {
-        const modrinthAPI = await fetch("https://api.modrinth.com/v2/project/" + mod, {
-            Accept: "application/json",
-            method: "GET",
-            "User-Agent": "https://github.com/Arbee4ever/arbeeco.de (arbeeco.de)"
-        });
-        const response = await modrinthAPI.json();
-        const body = response.body;
-        return eleventyConfig.getFilter("fifty_words")(body);
-    });
+	});
+	eleventyConfig.addLiquidShortcode("modPostPreview", async mod => {
+		const modrinthAPI = await fetch("https://api.modrinth.com/v2/project/" + mod, {
+			Accept: "application/json",
+			method: "GET",
+			"User-Agent": "https://github.com/Arbee4ever/arbeeco.de (arbeeco.de)"
+		});
+		const response = await modrinthAPI.json();
+		const body = response.body;
+		return eleventyConfig.getFilter("fifty_words")(body);
+	});
 
-    return {
-        dir: {
-            input: "./",
-            output: "./_site",
-            layouts: "./_layouts"
-        }
-    };
+	return {
+		dir: {
+			input: "./",
+			output: "./_site",
+			layouts: "./_layouts"
+		}
+	};
 }
