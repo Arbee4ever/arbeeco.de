@@ -108,6 +108,11 @@ main {
     line-height: 1.6;
 }
 
+.postText img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
 .postAbout {
     line-height: 20px;
     padding-top: 1vw;
