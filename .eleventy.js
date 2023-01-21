@@ -17,7 +17,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("./script");
 
 	eleventyConfig.addFilter("fifty_words", (content) => {
-		var plainText = he.decode(content, { strict: true });
+		var plainText = he.decode(striptags(content), { strict: true });
 		if (plainText.split(WHITESPACE).length > 50) {
 			plainText = plainText.split(WHITESPACE).slice(0, 50).join(" ") + "...";
 		}
