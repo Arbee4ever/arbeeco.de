@@ -1,7 +1,7 @@
 ---
 tags: post
 layout: post
-title: "Bedventory"
+title: "BEDVENTORY"
 date: 2022-08-16
 category: MINECRAFT MOD
 author: ARBEE
