@@ -15,6 +15,8 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("./links");
 	eleventyConfig.addPassthroughCopy("./postImg");
 	eleventyConfig.addPassthroughCopy("./script");
+	eleventyConfig.addPassthroughCopy("./sitemap.xml");
+	eleventyConfig.addPassthroughCopy("./robots.txt");
 
 	eleventyConfig.addFilter("fifty_words", (content) => {
 		var plainText = he.decode(striptags(content), { strict: true });
@@ -56,9 +58,9 @@ module.exports = function (eleventyConfig) {
                 <a href="https://twitter.com/ARBEE_codes" target="_blank">
                     <img src="/img/TwitterLogoWhite.svg" alt="Contact ARBEE over Twitter">
                 </a>
-				<a rel="me" href="https://floss.social/@arbee">
-					<img src="/img/MastodonLogoWhiteCircle.svg" alt="Contact ARBEE over Mastodon">
-				</a>
+								<a rel="me" href="https://floss.social/@arbee">
+										<img src="/img/MastodonLogoWhiteCircle.svg" alt="Contact ARBEE over Mastodon">
+								</a>
                 <a href="https://github.com/Arbee4ever" target="_blank">
                     <img src="/img/GitHub-Logo.svg" alt="Contact ARBEE over GitHub.">
                 </a>
