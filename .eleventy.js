@@ -17,6 +17,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("./script");
 	eleventyConfig.addPassthroughCopy("./sitemap.xml");
 	eleventyConfig.addPassthroughCopy("./robots.txt");
+	eleventyConfig.addPassthroughCopy("./ads.txt");
 
 	eleventyConfig.addFilter("fifty_words", (content) => {
 		var plainText = he.decode(striptags(content), { strict: true });
