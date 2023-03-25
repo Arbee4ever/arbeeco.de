@@ -133,6 +133,18 @@ main {
     margin-right: auto;
 }
 
+.postContent p a {
+    color: #00BFFF;
+}
+
+.postContent p a:hover {
+    text-shadow: 0px 0px 20px #00BFFF;
+}
+
+.postContent img {
+    margin-bottom: 16px;
+}
+
 @media only screen and (max-width: 1075px) {
     main {
         display: unset;
@@ -189,14 +201,6 @@ main {
 * {
     color: White;
     text-decoration: none;
-}
-
-.postContent p a {
-    color: #00BFFF;
-}
-
-.postContent p a:hover {
-    text-shadow: 0px 0px 20px #00BFFF;
 }
 
 #error {

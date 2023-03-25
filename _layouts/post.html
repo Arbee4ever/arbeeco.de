@@ -58,7 +58,7 @@
                 {% if category == "MINECRAFT MOD" %}
                 {% modPost modrinthslug %}
                 {% else %}
-                {{ content | remove: '<p>' | remove: '</p>' }}
+                {{ content }}
             {% endif %}
             </p>
         </article>
