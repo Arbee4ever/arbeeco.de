@@ -1,4 +1,6 @@
 const striptags = require("striptags");
+const markdownIt = require("markdown-it");
+const mdRender = new markdownIt();
 const fetch = require("node-fetch");
 const he = require("he");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -20,7 +22,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("./ads.txt");
 
 	eleventyConfig.addFilter("fifty_words", (content) => {
-		var plainText = he.decode(striptags(content), { strict: true });
+		var plainText = striptags(he.decode(mdRender.render(content), { strict: true }), []);
 		if (plainText.split(WHITESPACE).length > 50) {
 			plainText = plainText.split(WHITESPACE).slice(0, 50).join(" ") + "...";
 		}
@@ -83,6 +85,15 @@ module.exports = function (eleventyConfig) {
 		const response = await modrinthAPI.json();
 		const body = response.body;
 		return eleventyConfig.getFilter("fifty_words")(body);
+	});
+	eleventyConfig.addLiquidShortcode("modPost", async mod => {
+		const modrinthAPI = await fetch("https://api.modrinth.com/v2/project/" + mod, {
+			Accept: "application/json",
+			method: "GET",
+			"User-Agent": "https://github.com/Arbee4ever/arbeeco.de (arbeeco.de)"
+		});
+		const response = await modrinthAPI.json();
+		return mdRender.render(response.body);
 	});
 
 	return {

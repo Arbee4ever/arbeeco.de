@@ -1,3 +1,8 @@
+<script>
+    const striptags = require("striptags");
+    const strippedContent = striptags(content)
+</script>
+
 <!DOCTYPE html>
 <html>
 
@@ -16,10 +21,10 @@
     {% endif %}
     <meta name="twitter:site" content="@ARBEE_codes" />
     <meta name="twitter:creator" content="@ARBEE_codes" />
-    <meta name="twitter:description" content="{{ content | truncatewords: 20 }}" />
+    <meta name="twitter:description" content="{{ strippedContent | truncatewords: 20 }}" />
     <meta property="og:url" content="{{ url }}" />
     <meta property="og:title" content="{{ title }} | ARBEE" />
-    <meta property="og:description" content="{{ content | truncatewords: 20 }}" />
+    <meta property="og:description" content="{{ strippedContent | truncatewords: 20 }}" />
     <meta property="og:image" content="{{ postimage }}" />
     <meta property="og:published_time " content="{{ date }}" />
     <meta name="theme-color" content="#2b8eaf" />
@@ -28,9 +33,9 @@
 <body>
     {% header %}
     {% if category == "MINECRAFT MOD" %}
-        <iframe id="postFrame" frameBorder="0" src="/genImg?p={{ modrinthslug }}"></iframe>
+    <iframe id="postFrame" frameBorder="0" src="/genImg?p={{ modrinthslug }}"></iframe>
     {% else %}
-        <img class="postImg" src="{{ postimage }}">
+    <img class="postImg" src="{{ postimage }}">
     {% endif %}
     <main>
         <div class="postAbout">
@@ -48,13 +53,13 @@
             <h1 class="postTitle"><a href="{{ url | remove: '.html'}}">{{ title }}</a></h1>
             <p class="postText">
                 {% if category == "MINECRAFT MOD" %}
-                    <a href="https://modrinth.com/mod/{{ modrinthslug }}" target="_blank">Download here</a><br>
+                <a href="https://modrinth.com/mod/{{ modrinthslug }}" target="_blank">Download here</a><br>
                 {% endif %}
                 {% if category == "MINECRAFT MOD" %}
-                {% modPostPreview modrinthslug %}
+                {% modPost modrinthslug %}
                 {% else %}
                 {{ content | remove: '<p>' | remove: '</p>' }}
-                {% endif %}
+            {% endif %}
             </p>
         </article>
     </main>

@@ -103,12 +103,12 @@ main {
     max-width: 80vw;
 }
 
-.postText {
+.postContent p {
     max-width: 900px;
     line-height: 1.6;
 }
 
-.postText img {
+.postContent p img {
     max-width: 100%;
     border-radius: 10px;
 }
@@ -191,11 +191,11 @@ main {
     text-decoration: none;
 }
 
-.postText a {
+.postContent p a {
     color: #00BFFF;
 }
 
-.postText a:hover {
+.postContent p a:hover {
     text-shadow: 0px 0px 20px #00BFFF;
 }
 
