@@ -1,0 +1,45 @@
+@import url(https://fonts.bunny.net/css?family=josefin-sans:400);
+
+* {
+	font-family: 'Josefin Sans', sans-serif;
+	margin: 0;
+	scrollbar-color: rgba(127, 127, 127, 0.502) transparent;
+
+	&::-webkit-scrollbar {
+		width: 12px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #00000080;
+		border-radius: 10px;
+		border: 0px;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow: overlay;
+	background: linear-gradient(to bottom right, #2b8eaf, #b222a8) fixed;
+}
+
+body {
+	transition: rotate 1s;
+	min-height: 100vh;
+}
+
+h1, h2, h3, a, p {
+	color: White;
+	text-decoration: none;
+}
+
+.hide {
+	opacity: 0 !important;
+}
+
+.unclickable {
+	pointer-events: none;
+}
+
+.roll {
+	rotate: 360deg;
+}
