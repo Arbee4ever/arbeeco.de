@@ -185,7 +185,7 @@
 	}
 
 	:global(.bigger) {
-		margin-top: 22.5vh !important;
+		margin-top: 32.5vh !important;
 		height: 30vh !important;
 		width: 30vh !important;
 	}
