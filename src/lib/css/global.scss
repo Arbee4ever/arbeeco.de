@@ -38,6 +38,7 @@ h1, h2, h3, a, p {
 
 .unclickable {
 	pointer-events: none;
+	touch-action: none;
 }
 
 .roll {

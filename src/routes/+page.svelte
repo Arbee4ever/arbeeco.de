@@ -6,56 +6,43 @@
 	import BlogIcon from '$lib/img/BlogIcon.svg?url';
 	import CenterCross from '$lib/img/CenterCross.svg?url';
 	import CenterCircle from '$lib/img/CenterCircle.svg?url';
+	import { onMount } from 'svelte';
 
 	let center: HTMLDivElement;
-	let centerCircle: HTMLDivElement;
-	let centerCross: HTMLDivElement;
-	let buttons = []
-	var state = 1;
+	let hovering = false;
+	let unclickable = false;
+	onMount(() => {
+		hovering = center.matches(':hover');
+		unclickable = !hovering;
+	})
 
-	function toggleHide() {
-		center.classList.toggle("bigger");
-		for (let x = 0; x < buttons.length; x++) {
-			if (state == 1) {
-				const element = buttons[x];
-				element.classList.toggle("hide");
-				state = 0;
-			} else {
-				const element = buttons[x];
-				element.classList.toggle("hide");
-				state = 1;
-			}
-		}
-		centerCircle.classList.toggle("hide");
-		centerCross.classList.toggle("hide");
-		setTimeout(function () {
-			for (let x = 0; x < buttons.length; x++) {
-				const element = buttons[x];
-				element.classList.toggle("unclickable");
-			}
-		}, 400)
+	function toggleHide(e) {
+		hovering = e.type == "mouseenter";
+		setTimeout(() => {
+			unclickable = !hovering;
+		}, 500);
 	}
 </script>
 
 <main id="main">
-	<div bind:this={center} id="center" class="center" on:mouseenter={toggleHide} on:mouseleave={toggleHide}>
-		<img bind:this={centerCircle} src={CenterCircle} id="centerIcon" alt="Hover to show Contact options.">
-		<img bind:this={centerCross} src={CenterCross} id="centerIcon2" class="hide" alt="Stop hovering to hide Contact options.">
-		<a href="https://arbeeco.de/links/discord" target="_blank">
-			<img bind:this={buttons[0]} src={DiscordLogo} class="button hide unclickable discord"
+	<div bind:this={center} class:bigger={hovering} role="main" class="center" on:mouseenter={toggleHide} on:mouseleave={toggleHide}>
+		<img class:hide={hovering} src={CenterCircle} id="centerIcon" alt="Hover to show Contact options.">
+		<img class:hide={!hovering} src={CenterCross} id="centerIcon2" class="hide"
+				 alt="Stop hovering to hide Contact options.">
+		<a href="https://arbeeco.de/links/discord" class:unclickable target="_blank">
+			<img class:hide={!hovering} src={DiscordLogo} class="button discord"
 					 alt="Contact ARBEE over Discord." style="left: 39%; top: 15%;">
 		</a>
-		<a href="https://twitter.com/ARBEE_codes" target="_blank">
-			<img bind:this={buttons[1]} src={TwitterLogo} class="button hide unclickable twitter"
+		<a href="https://arbeeco.de/links/twitter" class:unclickable target="_blank">
+			<img class:hide={!hovering} src={TwitterLogo} class="button twitter"
 					 alt="Contact ARBEE over Twitter" style="right: 15%; top: 39%">
 		</a>
-		<a href="https://github.com/Arbee4ever" target="_blank">
-			<img bind:this={buttons[2]} src={GithubLogo} class="button hide unclickable github"
+		<a href="https://arbeeco.de/links/github" class:unclickable target="_blank">
+			<img class:hide={!hovering} src={GithubLogo} class="button github"
 					 alt="Contact ARBEE over GitHub." style="left: 15%; top: 39%;">
 		</a>
-		<a
-			href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%61%72%62%65%65%40%61%72%62%65%65%63%6F%2E%64%65?subject=Contact-Website&body=Hello%20ARBEE%2C">
-			<img bind:this={buttons[3]} src={MailLogo} class="button hide unclickable mail"
+		<a href="https://arbeeco.de/links/email" class:unclickable target="_blank">
+			<img class:hide={!hovering} src={MailLogo} class="button mail"
 					 alt="Contact ARBEE over eMail." style="left: 39%; bottom: 15%;">
 		</a>
 	</div>
