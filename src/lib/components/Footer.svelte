@@ -36,7 +36,7 @@
 	<p>
 		Hosted on <a href='https://pages.cloudflare.com' target='_blank' rel='noreferrer'>Cloudflare</a
 	>, domain from
-		<a href='https://dashserv.io/a/statcord' target='_blank' rel='noreferrer'>dashserv</a>.
+		<a href='https://dashserv.io/a/statcord' target='_blank' rel='noreferrer'>dashserv</a>
 	</p>
 	<p>
 		Brand design by <a
@@ -50,7 +50,7 @@
 
 <style>
 	#footer {
-		margin-top: 1vh;
+		margin-top: 6vh;
 		text-align: center;
 		background-color: #000000c2;
 		padding: 5vh;
