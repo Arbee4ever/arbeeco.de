@@ -7,6 +7,11 @@
 	import CenterCross from '$lib/img/CenterCross.svg?url';
 	import CenterCircle from '$lib/img/CenterCircle.svg?url';
 	import { onMount } from 'svelte';
+	import BlogSection from '$lib/components/BlogSection.svelte';
+
+	import type {PageData} from "./$types";
+	export let data: PageData;
+	let posts = data.posts;
 
 	let center: HTMLDivElement;
 	let hovering = false;
@@ -53,6 +58,7 @@
 		<img class="blogBtn" src={BlogIcon} alt="Click to show blog.">
 	</a>
 </main>
+<BlogSection {posts}></BlogSection>
 
 <style lang="scss">
 	/* @formatter:off */
@@ -84,11 +90,11 @@
 		flex-direction: column;
 		align-items: center;
 		width: 100%;
-		min-height: 100vh;
+		min-height: 90vh;
 	}
 
 	.center {
-		margin-top: 35vh;
+		margin-top: 25vh;
 		display: flex;
 		justify-content: center;
 		height: 25vh;
@@ -166,13 +172,13 @@
 		line-height: 120%;
 		font-size: 2vh;
 		margin: 1vh;
-		margin-top: 70vh;
+		margin-top: 60vh;
 		height: 5vh;
 		text-align: center;
 	}
 
 	:global(.bigger) {
-		margin-top: 32.5vh !important;
+		margin-top: 22.5vh !important;
 		height: 30vh !important;
 		width: 30vh !important;
 	}

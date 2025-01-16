@@ -2,11 +2,11 @@
 	import arbeeLogo from '$lib/img/2022-01_ARBEE_Wort-Marke_rgb_weiss_01.svg';
 	import TopIcon from '$lib/img/TopIcon.svg';
 
-	var topBtn: HTMLImageElement;
+	var topBtn: HTMLDivElement;
 
 	function onScroll() {
 		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-			topBtn.style.display = 'block';
+			topBtn.style.display = 'contents';
 		} else {
 			topBtn.style.display = 'none';
 		}
@@ -27,22 +27,17 @@
 		</div>
 	</noscript>
 	<div id='vignette' />
-	<img
-		id='topBtn'
-		src={TopIcon}
-		alt='Click to go back to top.'
-		on:mousedown={scrollUp}
-		bind:this={topBtn}
-	/>
+	<span id='topBtn' on:mousedown={scrollUp} on:keydown={scrollUp} bind:this={topBtn}>
+		<img src={TopIcon} alt='Click to go back to top.' />
+	</span>
 	<a href='/'>
 		<img src={arbeeLogo} id='wordmark' alt="ARBEE's Wordmark" />
 	</a>
 </header>
 
-<style>
+<style lang="scss">
 	header {
-		position: absolute;
-		top: 0%;
+		top: 0;
 		width: 100%;
 		text-align: center;
 		height: 10vh;
@@ -53,7 +48,7 @@
 		position: fixed;
 		width: 100vw;
 		height: 100vh;
-		box-shadow: 0px 0px 250px 0px #000000 inset;
+		box-shadow: 0 0 250px 0 #000000 inset;
 		z-index: 1;
 	}
 
@@ -79,10 +74,13 @@
 
 	#topBtn {
 		display: none;
-		position: fixed;
-		bottom: 0;
-		right: 0;
-		z-index: 2;
 		cursor: pointer;
+
+		img {
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			z-index: 2;
+		}
 	}
 </style>
