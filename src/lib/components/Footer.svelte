@@ -45,7 +45,7 @@
 		rel='noreferrer'>ralf baenecke</a
 	>.
 	</p>
-	<p>© 2022 ARBEE</p>
+	<p>© 2025 ARBEE</p>
 </footer>
 
 <style>
