@@ -65,15 +65,19 @@
 			<meta property="og:description" content="{shorten(content)}" />
 		{/await}
 	{:else if modBody || mod !== undefined}
-		<meta property="og:description" content="Read about stuff ARBEE is doing or thinking about technical or any other stuff." />
+		{#await loadDescription((modBody ?? mod).slug) then content}
+			<meta name="twitter:description" content="{content}" />
+			<meta property="og:description" content="{content}" />
+		{/await}
 	{/if}
 	{#if post.image}
 		<meta property="og:image" content="{post.image.src}" />
+	{:else if modBody || mod !== undefined}
+		{#await loadModData((modBody ?? mod).slug) then mod}
+			<meta property="og:image" content="{mod.icon_url}" />
+		{/await}
 	{:else if img}
 		<meta property="og:image" content="{img.src}" />
-	{:else}
-		<meta property="og:image"
-					content="https://arbeeco.de/authorImg/2022-01_ARBEE_Bild-Marke_rgb_weiss_bg_verlauf_01.png" />
 	{/if}
 	<meta property="og:published_time " content="{post.date}" />
 </svelte:head>
