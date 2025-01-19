@@ -29,6 +29,15 @@
 	}
 </script>
 
+<svelte:head>
+	<title>A Я B E E</title>
+	<meta name="twitter:card" content="summary" />
+	<meta property="og:description" content="I (ARBEE) am a german guy who likes programming fun things. I'm creating Minecraft mods and Websites with Svelte." />
+	<meta property="og:title" content="A Я B E E" />
+	<meta property="og:image"
+				content="https://arbeeco.de/authorImg/2022-01_ARBEE_Bild-Marke_rgb_weiss_bg_verlauf_01.png" />
+</svelte:head>
+
 <main id="main">
 	<div bind:this={center} class:bigger={hovering} role="main" class="center" on:mouseenter={toggleHide} on:mouseleave={toggleHide}>
 		<img class:hide={hovering} src={CenterCircle} id="centerIcon" alt="Hover to show Contact options.">

@@ -5,11 +5,16 @@
 	import Image from '$lib/components/blog/Image.svelte';
 	import ModBody from '$lib/components/blog/ModBody.svelte';
 	import DownloadButton from '$lib/components/blog/DownloadButton.svelte';
+	import { marked } from 'marked';
+	import { browser } from '$app/environment';
+	import striptags from 'striptags';
 
 	export let data: PageData;
 	let post = data.post;
 
+	const image = post.image;
 	const img = post.content.find((el) => el.type === 'image');
+	const text = post.content.find((el) => el.type === 'text');
 	const mod = post.content.find((el) => el.type === 'mod');
 	const modBody = post.content.find((el) => el.type === 'modbody');
 
@@ -19,7 +24,63 @@
 		image: Image,
 		modbody: ModBody
 	};
+
+	async function loadDescription(slug) {
+		if (browser) {
+			let response = await loadModData(slug);
+			let body = await marked(response.body);
+			return shorten(body);
+		}
+	}
+
+	function shorten(body: string) {
+		body = striptags(body);
+		const LINEBREAK = /(\r\n|\n|\r)/gm;
+		const WHITESPACE = /\s+/;
+		body = body.replace(LINEBREAK, '');
+		const maxLength = 20;
+		if (body.split(WHITESPACE).length > maxLength + 1) {
+			body = body.split(WHITESPACE).slice(0, maxLength).join(' ') + '...';
+		}
+		return body;
+	}
+
+	async function loadModData(slug) {
+		if (browser) {
+			let req = await fetch('https://api.modrinth.com/v2/project/' + slug);
+			return await req.json();
+		}
+	}
 </script>
+
+<svelte:head>
+	<title>{post.title.toUpperCase()} | ARBEE</title>
+	<meta property="og:title" content="{post.title.toUpperCase()} | ARBEE" />
+	{#if post.category.key === "mcmod"}
+		<meta name="twitter:card" content="summary" />
+	{:else}
+		<meta name="twitter:card" content="summary_large_image" />
+	{/if}
+	{#if text !== undefined}
+		{#await marked(text.markdown) then content}
+			<meta name="twitter:description" content="{shorten(content)}" />
+			<meta property="og:description" content="{shorten(content)}" />
+		{/await}
+	{:else if modBody || mod !== undefined}
+		{#await loadDescription((modBody ?? mod).slug) then content}
+			<meta name="twitter:description" content="{content}" />
+			<meta property="og:description" content="{content}" />
+		{/await}
+	{/if}
+	{#if post.image}
+		<meta property="og:image" content="{post.image.src}" />
+	{:else if modBody || mod !== undefined}
+		<meta property="og:image" content="{loadModData(modBody ?? mod).slug}" />
+	{:else if img}
+		<meta property="og:image" content="{img.src}" />
+	{/if}
+	<meta property="og:published_time " content="{post.date}" />
+</svelte:head>
 
 <div class="post">
 	{#if post.image}
