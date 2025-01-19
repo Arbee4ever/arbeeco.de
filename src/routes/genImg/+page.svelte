@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '$lib/css/global.scss';
 	import '$lib/css/normalize.css';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
@@ -33,7 +32,7 @@
 </svelte:head>
 
 <div id="imgdiv">
-	<img id="modimg" bind:this={modimg} alt="{project}" src="">
+	<img id="modimg" bind:this={modimg} alt="" src="">
 </div>
 <img id="quiltimg" alt="Available for Quilt"
 		 src="https://raw.githubusercontent.com/intergrav/devins-badges/c3978d683c857458fbd4f7fb609b197a3aeb6ec1/badges/quilt_vector.svg">
