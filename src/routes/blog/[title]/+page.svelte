@@ -122,6 +122,7 @@
 					display: flex;
 					flex-direction: column;
 					gap: 1vh;
+					line-height: 1.6;
 				}
 
 				.download {
