@@ -17,6 +17,6 @@ content:
       <br>
       Lastly I rewrote the site with [11ty](https://www.11ty.dev) to make it build faster when I make changes to it and to make the code more readable for me or anyone wanting to contribute, to continue development on it.
       <br>
-      In the future I'll also be improving the download link and adding an advanced filter to the main [Blog page](https://arbeeco.de/blog), if I can figure out how to properly do it of course.<br>
+      In the future I'll also be improving the download link and adding an advanced filter to the main [Blog page](/blog), if I can figure out how to properly do it of course.<br>
       <br>
       *Arbee over and out!*
