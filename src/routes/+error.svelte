@@ -15,7 +15,7 @@
 	<div id="notFound">
 		<h1>{$page.status}</h1>
 
-		<p><strong>{$page.status == 404 ? "Page not found :(" : $page.error}</strong></p>
+		<p><strong>{$page.status == 404 ? "Page not found :(" : $page.error.message}</strong></p>
 		{#if $page.status == 404}
 			<p>The requested page could not be found.</p>
 		{/if}
