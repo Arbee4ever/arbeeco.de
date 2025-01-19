@@ -21,22 +21,26 @@
 			let req = await fetch('https://api.modrinth.com/v2/project/' + slug);
 			let response = await req.json();
 			let body = await marked(response.body);
-			body = striptags(body);
-			const LINEBREAK = /(\r\n|\n|\r)/gm;
-			body = body.replace(LINEBREAK, '');
-			const maxLength = 200;
-			if (body.split('').length > maxLength + 1) {
-				body = body.split('').slice(0, maxLength).join('') + '...';
-			}
-			return body;
+			return shorten(body);
 		}
+	}
+
+	function shorten(body: string) {
+		body = striptags(body);
+		const LINEBREAK = /(\r\n|\n|\r)/gm;
+		const WHITESPACE = /\s+/
+		body = body.replace(LINEBREAK, '');
+		const maxLength = 50;
+		if (body.split(WHITESPACE).length > maxLength + 1) {
+			body = body.split(WHITESPACE).slice(0, maxLength).join(' ') + '...';
+		}
+		return body;
 	}
 </script>
 
 <section id="blog">
 	<div class="posts">
 		{#each posts.slice(0, all ? posts.length : maxPosts) as post, i}
-			{@const heroImg = post.content.find(el => el.hero === true)}
 			{@const img = post.content.find((el) => el.type === "image")}
 			{@const text = post.content.find((el) => el.type === "text")}
 			{@const mod = post.content.find((el) => el.type === "mod")}
@@ -60,12 +64,9 @@
 					<div class="postContent">
 						{#if post.image}
 							<img class="postImg" src={post.image.src} alt={post.image.alt}>
-						{:else if modBody !== undefined}
+						{:else if modBody || mod !== undefined}
 							<iframe class="postImg" frameBorder="0" title="Website generating Image for mod from modrinth"
-											src="https://arbeeco.de/genImg?p={modBody.slug}"></iframe>
-						{:else if mod}
-							<iframe class="postImg" title="Website generating Image for mod from modrinth"
-											src="https://arbeeco.de/genImg?p={mod.slug}"></iframe>
+											src="https://arbeeco.de/genImg?p={(modBody ?? mod).slug}"></iframe>
 						{:else if img}
 							<img class="postImg" src={img.src} alt={img.alt}>
 						{/if}
@@ -73,11 +74,11 @@
 							<h2 class="postTitle">{post.title}</h2>
 							{#if text !== undefined}
 								{#await marked(text.markdown) then content}
-									<p class="postPreview">{@html striptags(content)}</p>
+									<p class="postPreview">{@html shorten(content)}</p>
 								{/await}
-							{:else if mod !== undefined}
-								{#await loadDescription(mod.slug) then content}
-									<p class="postPreview">{@html marked(content)}</p>
+							{:else if modBody || mod !== undefined}
+								{#await loadDescription((modBody ?? mod).slug) then content}
+									<p class="postPreview">{@html content}</p>
 								{:catch error}
 									{error}
 								{/await}
