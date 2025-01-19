@@ -134,10 +134,6 @@
 			background: rgba(0, 0, 0, 0.25);
 			box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.37);
 
-			/*everything but small screens (phones)*/
-			@media only screen and (min-width: 481px) {
-			}
-
 			.postAbout {
 				margin: 3px;
 				height: 4vh;
