@@ -66,7 +66,7 @@
 							<img class="postImg" src={post.image.src} alt={post.image.alt}>
 						{:else if modBody || mod !== undefined}
 							<iframe class="postImg" frameBorder="0" title="Website generating Image for mod from modrinth"
-											src="https://arbeeco.de/genImg?p={(modBody ?? mod).slug}"></iframe>
+											src="/genImg?p={(modBody ?? mod).slug}"></iframe>
 						{:else if img}
 							<img class="postImg" src={img.src} alt={img.alt}>
 						{/if}
