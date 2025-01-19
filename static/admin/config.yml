@@ -2,7 +2,7 @@ backend:
   name: github
   repo: arbee4ever/arbeeco.de
   branch: default
-  base_url: https://sveltia-cms-auth.baenecke-it263.workers.dev
+  base_url: https://sveltia-cms-auth.arbee.workers.dev
 
 media_folder: "/static/assets"
 public_folder: "/assets"
