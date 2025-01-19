@@ -16,7 +16,7 @@ collections:
     public_folder: "/assets/posts"
     create: true # Allow users to create new documents in this collection
     extension: "yml" # The file extension searched for and used to save new collection items
-    thumbnail: "content.0.image"
+    thumbnail: "*.src"
     fields:
       - name: "title"
         label: "Title"
@@ -86,7 +86,7 @@ collections:
     create: true # Allow users to create new documents in this collection
     extension: "yml" # The file extension searched for and used to save new collection items
     slug: "{{name}}"
-    thumbnail: "image.src"
+    thumbnail: "*.src"
     fields:
       - name: "name"
         label: "Name"
