@@ -116,3 +116,19 @@ collections:
       - name: "key"
         label: "Key"
         widget: string
+  - name: "links"
+    label: "Links"
+    label_singular: "Link"
+    folder: "/content/links"
+    media_folder: "/static/assets/links"
+    public_folder: "/assets/links"
+    create: true # Allow users to create new documents in this collection
+    extension: "yml" # The file extension searched for and used to save new collection items
+    slug: "{{slug}}"
+    fields:
+      - name: "name"
+        label: "Name"
+        widget: string
+      - name: "url"
+        label: "Url"
+        widget: string

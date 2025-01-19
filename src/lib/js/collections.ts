@@ -77,3 +77,10 @@ function getCategory(key: string) {
 	if (!category) return null;
 	return category;
 }
+
+export function getLink(key: string) {
+	if (!collections.links) return null;
+	let category = collections.links[key];
+	if (!category) return null;
+	return category;
+}
