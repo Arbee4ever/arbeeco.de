@@ -46,10 +46,8 @@
 	}
 
 	async function loadModData(slug) {
-		if (browser) {
-			let req = await fetch('https://api.modrinth.com/v2/project/' + slug);
-			return await req.json();
-		}
+		let req = await fetch('https://api.modrinth.com/v2/project/' + slug);
+		return await req.json();
 	}
 </script>
 
