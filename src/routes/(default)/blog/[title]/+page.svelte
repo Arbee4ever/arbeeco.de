@@ -75,7 +75,9 @@
 	{#if post.image}
 		<meta property="og:image" content="{post.image.src}" />
 	{:else if modBody || mod !== undefined}
-		<meta property="og:image" content="{loadModData(modBody ?? mod).slug}" />
+		{#await loadModData((modBody ?? mod).slug) then mod}
+			<meta property="og:image" content="{mod.icon_url}" />
+		{/await}
 	{:else if img}
 		<meta property="og:image" content="{img.src}" />
 	{/if}
