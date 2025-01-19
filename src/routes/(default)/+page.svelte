@@ -34,19 +34,19 @@
 		<img class:hide={hovering} src={CenterCircle} id="centerIcon" alt="Hover to show Contact options.">
 		<img class:hide={!hovering} src={CenterCross} id="centerIcon2" class="hide"
 				 alt="Stop hovering to hide Contact options.">
-		<a href="https://arbeeco.de/links/discord" class:unclickable target="_blank">
+		<a href="/links/discord" class:unclickable target="_blank">
 			<img class:hide={!hovering} src={DiscordLogo} class="button discord"
 					 alt="Contact ARBEE over Discord." style="left: 39%; top: 15%;">
 		</a>
-		<a href="https://arbeeco.de/links/twitter" class:unclickable target="_blank">
+		<a href="/links/twitter" class:unclickable target="_blank">
 			<img class:hide={!hovering} src={TwitterLogo} class="button twitter"
 					 alt="Contact ARBEE over Twitter" style="right: 15%; top: 39%">
 		</a>
-		<a href="https://arbeeco.de/links/github" class:unclickable target="_blank">
+		<a href="/links/github" class:unclickable target="_blank">
 			<img class:hide={!hovering} src={GithubLogo} class="button github"
 					 alt="Contact ARBEE over GitHub." style="left: 15%; top: 39%;">
 		</a>
-		<a href="https://arbeeco.de/links/email" class:unclickable target="_blank">
+		<a href="/links/email" class:unclickable target="_blank">
 			<img class:hide={!hovering} src={MailLogo} class="button mail"
 					 alt="Contact ARBEE over eMail." style="left: 39%; bottom: 15%;">
 		</a>
