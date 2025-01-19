@@ -65,10 +65,7 @@
 			<meta property="og:description" content="{shorten(content)}" />
 		{/await}
 	{:else if modBody || mod !== undefined}
-		{#await loadDescription((modBody ?? mod).slug) then content}
-			<meta name="twitter:description" content="{content}" />
-			<meta property="og:description" content="{content}" />
-		{/await}
+		<meta property="og:description" content="Read about stuff ARBEE is doing or thinking about technical or any other stuff." />
 	{/if}
 	{#if post.image}
 		<meta property="og:image" content="{post.image.src}" />
