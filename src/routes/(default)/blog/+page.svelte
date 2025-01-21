@@ -21,7 +21,7 @@
 	<meta property="og:description" content="Read about stuff ARBEE is doing or thinking about technical or any other stuff." />
 	<meta property="og:title" content="A Я B E E | BLOG" />
 	<meta property="og:image"
-				content="https://arbeeco.de/authorImg/2022-01_ARBEE_Bild-Marke_rgb_weiss_bg_verlauf_01.png" />
+				content="https://arbeeco.de/img/2022-01_ARBEE_Bild-Marke_rgb_Verlauf_01.png" />
 </svelte:head>
 
 <BlogSection {posts} all={true}></BlogSection>
