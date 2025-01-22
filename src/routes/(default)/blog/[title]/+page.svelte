@@ -40,6 +40,7 @@
 
 <svelte:head>
 	<title>{post.title.toUpperCase()} | ARBEE</title>
+	<meta name="twitter:title" content="{post.title.toUpperCase()} | ARBEE" />
 	<meta property="og:title" content="{post.title.toUpperCase()} | ARBEE" />
 	{#if post.category.key === "mcmod"}
 		<meta name="twitter:card" content="summary" />
@@ -54,10 +55,13 @@
 		<meta property="og:description" content="{shorten((modBody ?? mod).body)}" />
 	{/if}
 	{#if post.image}
+		<meta name="twitter:image" content="{post.image.src}" />
 		<meta property="og:image" content="{post.image.src}" />
 	{:else if modBody || mod !== undefined}
+		<meta name="twitter:image" content="{(modBody ?? mod).icon_url}" />
 		<meta property="og:image" content="{(modBody ?? mod).icon_url}" />
 	{:else if img}
+		<meta name="twitter:image" content="{img.src}" />
 		<meta property="og:image" content="{img.src}" />
 	{/if}
 	<meta property="og:published_time " content="{post.date}" />

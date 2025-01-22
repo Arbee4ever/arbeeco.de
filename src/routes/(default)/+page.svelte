@@ -34,6 +34,8 @@
 	<meta name="twitter:card" content="summary" />
 	<meta property="og:description" content="I (ARBEE) am a german guy who likes programming fun things. I'm creating Minecraft mods and Websites with Svelte." />
 	<meta property="og:title" content="A Я B E E" />
+	<meta name="twitter:image"
+				content="https://arbeeco.de/img/2022-01_ARBEE_Bild-Marke_rgb_Verlauf_01.png" />
 	<meta property="og:image"
 				content="https://arbeeco.de/img/2022-01_ARBEE_Bild-Marke_rgb_Verlauf_01.png" />
 </svelte:head>

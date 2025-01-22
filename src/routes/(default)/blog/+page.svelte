@@ -18,8 +18,11 @@
 <svelte:head>
 	<title>A Я B E E | BLOG</title>
 	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:description" content="Read about stuff ARBEE is doing or thinking about technical or any other stuff." />
 	<meta property="og:description" content="Read about stuff ARBEE is doing or thinking about technical or any other stuff." />
 	<meta property="og:title" content="A Я B E E | BLOG" />
+	<meta name="twitter:image"
+				content="https://arbeeco.de/img/2022-01_ARBEE_Bild-Marke_rgb_Verlauf_01.png" />
 	<meta property="og:image"
 				content="https://arbeeco.de/img/2022-01_ARBEE_Bild-Marke_rgb_Verlauf_01.png" />
 </svelte:head>
