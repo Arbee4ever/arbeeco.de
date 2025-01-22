@@ -32,7 +32,8 @@ function globImportToCollections(
 	return collections;
 }
 
-export function getPosts() {
+export function getPosts(title: string = "") {
+	if (title !== "") return getPost(title);
 	let posts = _.cloneDeep(Object.values(collections.posts));
 	for (let post of posts) {
 		post.authors = post.authors.reduce((acc: Array<object>, author: string) => {
@@ -47,7 +48,7 @@ export function getPosts() {
 	return posts;
 }
 
-export function getPost(title: string) {
+function getPost(title: string) {
 	if (!collections.posts) return null;
 	let post = _.cloneDeep(collections.posts[title]);
 	if (!post) return null;

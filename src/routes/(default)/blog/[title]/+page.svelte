@@ -6,14 +6,11 @@
 	import ModBody from '$lib/components/blog/ModBody.svelte';
 	import DownloadButton from '$lib/components/blog/DownloadButton.svelte';
 	import { marked } from 'marked';
-	import { browser } from '$app/environment';
 	import striptags from 'striptags';
-	import { loadModData } from '$lib/js/helpers';
 
 	export let data: PageData;
-	let post = data.post;
+	let post = data.posts;
 
-	const image = post.image;
 	const img = post.content.find((el) => el.type === 'image');
 	const text = post.content.find((el) => el.type === 'text');
 	const mod = post.content.find((el) => el.type === 'mod');
@@ -26,15 +23,9 @@
 		modbody: ModBody
 	};
 
-	async function loadDescription(slug) {
-		if (browser) {
-			let response = await loadModData(slug);
-			let body = await marked(response.body);
-			return shorten(body);
-		}
-	}
-
-	function shorten(body: string) {
+	function shorten(body: string | Promise<string>) {
+		body = body as string;
+		body = marked(body) as string;
 		body = striptags(body);
 		const LINEBREAK = /(\r\n|\n|\r)/gm;
 		const WHITESPACE = /\s+/;
@@ -56,22 +47,16 @@
 		<meta name="twitter:card" content="summary_large_image" />
 	{/if}
 	{#if text !== undefined}
-		{#await marked(text.markdown) then content}
-			<meta name="twitter:description" content="{shorten(content)}" />
-			<meta property="og:description" content="{shorten(content)}" />
-		{/await}
+		<meta name="twitter:description" content="{shorten(marked(text.markdown))}" />
+		<meta property="og:description" content="{shorten(marked(text.markdown))}" />
 	{:else if modBody || mod !== undefined}
-		{#await loadDescription((modBody ?? mod).slug) then content}
-			<meta name="twitter:description" content="{content}" />
-			<meta property="og:description" content="{content}" />
-		{/await}
+		<meta name="twitter:description" content="{shorten((modBody ?? mod).body)}" />
+		<meta property="og:description" content="{shorten((modBody ?? mod).body)}" />
 	{/if}
 	{#if post.image}
 		<meta property="og:image" content="{post.image.src}" />
 	{:else if modBody || mod !== undefined}
-		{#await loadModData((modBody ?? mod).slug) then mod}
-			<meta property="og:image" content="{mod.icon_url}" />
-		{/await}
+		<meta property="og:image" content="{(modBody ?? mod).icon_url}" />
 	{:else if img}
 		<meta property="og:image" content="{img.src}" />
 	{/if}

@@ -28,7 +28,7 @@
 	function shorten(body: string) {
 		body = striptags(body);
 		const LINEBREAK = /(\r\n|\n|\r)/gm;
-		const WHITESPACE = /\s+/
+		const WHITESPACE = /\s+/;
 		body = body.replace(LINEBREAK, '');
 		const maxLength = 50;
 		if (body.split(WHITESPACE).length > maxLength + 1) {
@@ -73,9 +73,7 @@
 						<div class="postSummary">
 							<h2 class="postTitle">{post.title}</h2>
 							{#if text !== undefined}
-								{#await marked(text.markdown) then content}
-									<p class="postPreview">{@html shorten(content)}</p>
-								{/await}
+								<p class="postPreview">{@html shorten(marked(text.markdown))}</p>
 							{:else if modBody || mod !== undefined}
 								{#await loadDescription((modBody ?? mod).slug) then content}
 									<p class="postPreview">{@html content}</p>

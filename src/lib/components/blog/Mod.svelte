@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
 	import { marked } from 'marked';
 	import striptags from 'striptags';
 	import { Download, Heart } from 'lucide-svelte';
@@ -7,38 +6,26 @@
 
 	export let data;
 
-	async function loadModData(slug) {
-		if (browser) {
-			let req = await fetch('https://api.modrinth.com/v2/project/' + slug);
-			return await req.json();
-		}
-	}
+	const body = marked(data.body) as string;
 </script>
 
 <div class="mod">
-	{#await loadModData(data.slug)}
-		Loading...
-	{:then mod}
-		<img src={mod.icon_url} alt={mod.title}>
-		<div class="info">
-			<h2>{mod.title}</h2>
-			{#await marked(mod.body) then body}
-				<p>{@html striptags(body)}</p>
-			{/await}
-			<div class="bottom">
-				<div class="stats">
-					<p>
-						<Download /> {mod.downloads}</p>
-					<p>
-						<Heart /> {mod.followers}</p>
-				</div>
-				<DownloadButton mod={mod}/>
+	<img src={data.icon_url} alt={data.title}>
+	<div class="info">
+		<h2>{data.title}</h2>
+		<p>{@html striptags(body)}</p>
+		<div class="bottom">
+			<div class="stats">
+				<p>
+					<Download /> {data.downloads}
+				</p>
+				<p>
+					<Heart /> {data.followers}
+				</p>
 			</div>
+			<DownloadButton mod={data} />
 		</div>
-	{:catch error}
-		{error}
-		{JSON.stringify(data)}
-	{/await}
+	</div>
 </div>
 
 <style lang="scss">
