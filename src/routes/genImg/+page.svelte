@@ -2,28 +2,22 @@
 	import '$lib/css/normalize.css';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import { loadModData } from '$lib/js/helpers';
 
-	const project = $page.url.searchParams.get('p');
+	const project = $page.url.searchParams.get('p') ?? '';
 
 	let modimg: HTMLImageElement;
 
 	onMount(async () => {
-		await fetch('https://api.modrinth.com/v2/project/' + project, {
-			'Accept': 'application/json',
-			method: 'GET',
-			'User-Agent': 'https://github.com/Arbee4ever/arbeeco.de (arbeeco.de)'
-		})
-			.then(async response => {
-				let json = await response.json();
-				modimg.crossOrigin = 'Anonymous';
-				modimg.src = json.icon_url;
-				modimg.onload = function() {
-					const context = document.createElement('canvas').getContext('2d')!;
-					context.drawImage(modimg, 1, 1, 100, 100);
-					const { data } = context.getImageData(1, 1, 1, 1);
-					document.body.style.backgroundColor = 'rgb(' + data[0] + ',' + data[1] + ',' + data[2] + ')';
-				};
-			});
+		let data = await loadModData(project);
+		modimg.crossOrigin = "Anonymous";
+		modimg.src = data.icon_url;
+		modimg.onload = function() {
+			const context = document.createElement('canvas').getContext('2d')!;
+			context.drawImage(modimg, 1, 1, 100, 100);
+			const { data } = context.getImageData(1, 1, 1, 1);
+			document.body.style.backgroundColor = 'rgb(' + data[0] + ',' + data[1] + ',' + data[2] + ')';
+		};
 	});
 </script>
 

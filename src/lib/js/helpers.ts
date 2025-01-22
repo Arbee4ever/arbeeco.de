@@ -29,3 +29,13 @@ export function forcePrefixAndSuffix(str: string, prefix: string = "", suffix: s
 	}
 	return str;
 }
+
+
+export async function loadModData(slug: string) {
+	let req = await fetch('https://api.modrinth.com/v2/project/' + slug,  {
+		'Accept': 'application/json',
+		method: 'GET',
+		'User-Agent': 'https://github.com/Arbee4ever/arbeeco.de (arbeeco.de)'
+	});
+	return await req.json();
+}

@@ -3,6 +3,7 @@
 	import striptags from 'striptags';
 	import tilt from 'svelte-tilt';
 	import { browser } from '$app/environment';
+	import { loadModData } from '$lib/js/helpers';
 
 	export let posts: any[];
 	export let all = false;
@@ -18,9 +19,8 @@
 
 	async function loadDescription(slug) {
 		if (browser) {
-			let req = await fetch('https://api.modrinth.com/v2/project/' + slug);
-			let response = await req.json();
-			let body = await marked(response.body);
+			let data = await loadModData(slug);
+			let body = await marked(data.body);
 			return shorten(body);
 		}
 	}

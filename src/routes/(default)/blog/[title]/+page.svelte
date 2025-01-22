@@ -8,6 +8,7 @@
 	import { marked } from 'marked';
 	import { browser } from '$app/environment';
 	import striptags from 'striptags';
+	import { loadModData } from '$lib/js/helpers';
 
 	export let data: PageData;
 	let post = data.post;
@@ -43,11 +44,6 @@
 			body = body.split(WHITESPACE).slice(0, maxLength).join(' ') + '...';
 		}
 		return body;
-	}
-
-	async function loadModData(slug) {
-		let req = await fetch('https://api.modrinth.com/v2/project/' + slug);
-		return await req.json();
 	}
 </script>
 

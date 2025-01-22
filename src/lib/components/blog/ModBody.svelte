@@ -1,15 +1,8 @@
 <script lang="ts">
 	import { marked } from 'marked';
-	import { browser } from '$app/environment';
+	import { loadModData } from '$lib/js/helpers';
 
 	export let data;
-
-	async function loadModData(slug) {
-		if (browser) {
-			let req = await fetch('https://api.modrinth.com/v2/project/' + slug);
-			return await req.json();
-		}
-	}
 </script>
 
 <div class="mod-body">
