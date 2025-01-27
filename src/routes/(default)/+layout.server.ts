@@ -6,14 +6,19 @@ export async function load({params}) {
 	let posts = getPosts(params.title);
 
 	if(params.title != undefined) {
+		console.log('posts', posts.content);
 		posts.content = await posts.content.reduce(
 			async (acc: Array<object>, cur: { type: string; slug: string }) => {
-				if (cur.type !== 'mod' && cur.type !== 'modbody') return acc.push(cur);
-				acc.push({ type: cur.type, ...(await loadModData(cur.slug)) });
+				if (cur.type !== 'mod' && cur.type !== 'modbody') {
+					acc.push(cur);
+				} else {
+					acc.push({ type: cur.type, ...(await loadModData(cur.slug)) });
+				}
 				return acc;
 			},
 			[]
 		);
+		console.log('posts', posts.content);
 	}
 
 	return {
