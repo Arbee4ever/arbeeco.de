@@ -9,7 +9,6 @@
 	if ($page.url.searchParams.has("c")) {
 		let category = $page.url.searchParams.get("c")
 		posts = posts.filter(post => {
-			console.log('post', post);
 			return post.category.key == category;
 		});
 	}
