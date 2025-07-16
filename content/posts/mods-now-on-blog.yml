@@ -1,7 +1,7 @@
 title: Mods now on Blog!
 category: website
 image:
-  src: /assets/posts/ARBEExModrinth.png
+  src: /assets/posts/ARBEExModrinth.webp
   alt: Hero Image for Mods on Blog post
 authors:
   - arbee
@@ -19,4 +19,4 @@ content:
       <br>
       In the future I'll also be improving the download link and adding an advanced filter to the main [Blog page](/blog), if I can figure out how to properly do it of course.<br>
       <br>
-      *Arbee over and out!*
+      _Arbee over and out!_
