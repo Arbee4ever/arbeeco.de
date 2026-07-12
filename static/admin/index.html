@@ -9,5 +9,75 @@
 <body>
 <!-- Include the script that builds the page and powers Decap CMS -->
 <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+<script type="module">
+	import { Components } from '/src/lib/js/markdownComponents.ts';
+
+	let id = 0;
+	const toPreview = (data) => {
+		if (!data) return '';
+
+		const placeholderId = `${data.type}-preview-${id++}`;
+
+		setTimeout(() => {
+			const placeholder = document.getElementById(placeholderId);
+			if (placeholder) {
+				const key = Components[data.type].prop;
+				new Components[data.type].component({
+					target: placeholder,
+					props: { [key]: data[key] },
+					hydrate: true
+				});
+			}
+		}, 0);
+
+		return `<div id="${placeholderId}">Loading ${data.type}...</div>`;
+	};
+
+	CMS.registerEditorComponent({
+		id: 'mod',
+		label: 'Mod',
+		icon: 'deployed_code',
+		fields: [
+			{
+				name: 'slug',
+				label: 'Modrinth-Slug',
+				widget: 'string'
+			}
+		],
+		pattern: Components.mod.pattern,
+		fromBlock: (match) => {
+			return ({
+				type: 'mod',
+				slug: Components.mod.transform(match[1])
+			});
+		},
+		toBlock: (data) => `!mod[${data.slug}]`,
+		toPreview
+	});
+
+	CMS.registerEditorComponent({
+		id: 'images',
+		label: 'Images',
+		icon: 'image',
+		fields: [
+			{
+				name: 'src',
+				label: 'Source',
+				widget: 'image',
+				multiple: true
+			}
+		],
+		pattern: Components.images.pattern,
+		fromBlock: (match) => {
+			return {
+				type: 'images',
+				src: Components.images.transform(match[1])
+			};
+		},
+		toBlock: (data) => `!(${data.src})`,
+		toPreview
+	});
+
+</script>
 </body>
 </html>

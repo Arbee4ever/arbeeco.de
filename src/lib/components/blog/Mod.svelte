@@ -3,29 +3,38 @@
 	import striptags from 'striptags';
 	import { Download, Heart } from 'lucide-svelte';
 	import DownloadButton from '$lib/components/blog/DownloadButton.svelte';
+	import { loadModData } from '$lib/js/helpers';
 
-	export let data;
-
-	const body = marked(data.body) as string;
+	export let slug: string;
 </script>
 
 <div class="mod">
-	<img src={data.icon_url} alt={data.title}>
-	<div class="info">
-		<h2>{data.title}</h2>
-		<p>{@html striptags(body)}</p>
-		<div class="bottom">
-			<div class="stats">
-				<p>
-					<Download /> {data.downloads}
-				</p>
-				<p>
-					<Heart /> {data.followers}
-				</p>
+	{#if slug}
+		{#await loadModData(slug)}
+			<p>Loading mod data...</p>
+		{:then mod}
+			<img src={mod.icon_url} alt={mod.title}>
+			<div class="info">
+				<h2>{mod.title}</h2>
+				{#await marked(mod.body)}
+					<p>Loading mod data...</p>
+				{:then body}
+					<p>{@html striptags(body)}</p>
+				{/await}
+				<div class="bottom">
+					<div class="stats">
+						<p>
+							<Download /> {mod.downloads}
+						</p>
+						<p>
+							<Heart /> {mod.followers}
+						</p>
+					</div>
+					<DownloadButton mod={mod} />
+				</div>
 			</div>
-			<DownloadButton mod={data} />
-		</div>
-	</div>
+		{/await}
+	{/if}
 </div>
 
 <style lang="scss">

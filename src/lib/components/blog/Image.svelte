@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { marked } from 'marked';
 
-	export let data
+	export let image;
 </script>
 
-<img src={data.src} style={data.style}>
+<img src={image.src} style={image.style} alt={image.alt}>
 
 <style lang="scss">
 	img {

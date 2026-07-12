@@ -1,27 +1,20 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import Markdown from '$lib/components/blog/Markdown.svelte';
-	import Mod from '$lib/components/blog/Mod.svelte';
-	import Image from '$lib/components/blog/Image.svelte';
 	import ModBody from '$lib/components/blog/ModBody.svelte';
-	import DownloadButton from '$lib/components/blog/DownloadButton.svelte';
-	import { marked } from 'marked';
 	import striptags from 'striptags';
+	import { parseComponents } from '$lib/js/markdownComponents';
+	import { marked } from 'marked';
+	import { loadModData } from '$lib/js/helpers';
+	import DownloadButton from '$lib/components/blog/DownloadButton.svelte';
 
 	export let data: PageData;
 	let post = data.posts;
 
-	const img = post.content.find((el) => el.type === 'image');
-	const text = post.content.find((el) => el.type === 'text');
-	const mod = post.content.find((el) => el.type === 'mod');
-	const modBody = post.content.find((el) => el.type === 'modbody');
-
-	const Components = {
-		text: Markdown,
-		mod: Mod,
-		image: Image,
-		modbody: ModBody
-	};
+	/*const img = post.content.find((el) => el.type === 'image');*/
+	const text = post.content.find((el: any) => el.type === 'text');
+	/*const mod = post.content.find((el) => el.type === 'mod');*/
+	const modBody = post.content.find((el: any) => el.type === 'modbody');
 
 	function shorten(body: string | Promise<string>) {
 		body = body as string;
@@ -48,21 +41,23 @@
 		<meta name="twitter:card" content="summary_large_image" />
 	{/if}
 	{#if text !== undefined}
-		<meta name="twitter:description" content="{shorten(marked(text.markdown))}" />
-		<meta property="og:description" content="{shorten(marked(text.markdown))}" />
-	{:else if modBody || mod !== undefined}
-		<meta name="twitter:description" content="{shorten((modBody ?? mod).body)}" />
-		<meta property="og:description" content="{shorten((modBody ?? mod).body)}" />
+		<meta name="twitter:description" content="{shorten(parseComponents(text.markdown))}" />
+		<meta property="og:description" content="{shorten(parseComponents(text.markdown))}" />
+	{:else if modBody} <!--|| mod !== undefined}-->
+		{#await loadModData(modBody.slug) then modData}
+			<meta name="twitter:description" content="{shorten((modData /*?? mod*/).body)}" />
+			<meta property="og:description" content="{shorten((modData /*?? mod*/).body)}" />
+		{/await}
 	{/if}
 	{#if post.image}
 		<meta name="twitter:image" content="{post.image.src}" />
 		<meta property="og:image" content="{post.image.src}" />
-	{:else if modBody || mod !== undefined}
-		<meta name="twitter:image" content="{(modBody ?? mod).icon_url}" />
-		<meta property="og:image" content="{(modBody ?? mod).icon_url}" />
-	{:else if img}
-		<meta name="twitter:image" content="{img.src}" />
-		<meta property="og:image" content="{img.src}" />
+	{:else if modBody} <!--|| mod !== undefined}-->
+		<meta name="twitter:image" content="{(modBody /*?? mod*/).icon_url}" />
+		<meta property="og:image" content="{(modBody /*?? mod*/).icon_url}" />
+		<!--{:else if img}
+			<meta name="twitter:image" content="{img.src}" />
+			<meta property="og:image" content="{img.src}" />-->
 	{/if}
 	<meta property="og:published_time " content="{post.date}" />
 </svelte:head>
@@ -70,11 +65,11 @@
 <div class="post" style={`view-transition-name: ${post.collName}`}>
 	{#if post.image}
 		<img class="postImg" src={post.image.src} alt={post.image.alt}>
-	{:else if modBody || mod !== undefined}
+	{:else if modBody} <!--|| mod !== undefined}-->
 		<iframe class="postImg" title="Website generating Image for mod from modrinth"
-						src="/genImg?p={(modBody ?? mod).slug}"></iframe>
-	{:else if img !== undefined}
-		<img class="postImg" src={img.src} alt={img.alt}>
+		        src="/genImg?p={(modBody /*?? mod*/).slug}"></iframe>
+		<!--{:else if img !== undefined}
+			<img class="postImg" src={img.src} alt={img.alt}>-->
 	{/if}
 	<div class="postData">
 		<div class="postAbout">
@@ -100,9 +95,11 @@
 				</div>
 			{/if}
 			<p class="postText">
-				{#each post.content as item}
-					<svelte:component this={Components[item.type]} data={item}></svelte:component>
-				{/each}
+				{#if text}
+					<Markdown data={text}></Markdown>
+				{:else if modBody}
+					<ModBody slug={modBody.slug}></ModBody>
+				{/if}
 			</p>
 		</article>
 	</div>

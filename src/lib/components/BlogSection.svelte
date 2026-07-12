@@ -4,20 +4,21 @@
 	import tilt from 'svelte-tilt';
 	import { browser } from '$app/environment';
 	import { loadModData } from '$lib/js/helpers';
+	import { parseComponents } from '$lib/js/markdownComponents';
 
 	export let posts: any[];
 	export let all = false;
 
 	let maxPosts = 3;
 
-	function moreLink(e) {
+	function moreLink(e: MouseEvent | KeyboardEvent) {
 		maxPosts += 3;
 		if (maxPosts == 9 || maxPosts == posts.length) {
-			e.target.href = '/blog';
+			(e.target! as HTMLAnchorElement).href = '/blog';
 		}
 	}
 
-	async function loadDescription(slug) {
+	async function loadDescription(slug: string) {
 		if (browser) {
 			let data = await loadModData(slug);
 			let body = await marked(data.body);
@@ -41,9 +42,9 @@
 <section id="blog">
 	<div class="posts">
 		{#each posts.slice(0, all ? posts.length : maxPosts) as post, i}
-			{@const img = post.content.find((el) => el.type === "image")}
+			<!--{@const img = post.content.text.matchAll(new RegExp(Components.images.pattern, 'g')).next().value[1].split(',')[0]}-->
 			{@const text = post.content.find((el) => el.type === "text")}
-			{@const mod = post.content.find((el) => el.type === "mod")}
+			<!--{@const mod = post.content.text.matchAll(new RegExp(Components.mod.pattern, 'g')).next().value[1]}-->
 			{@const modBody = post.content.find((el) => el.type === "modbody")}
 			<div class="post" use:tilt={{ scale: 0.95, strength: 0.25 }} class:wide={all && i === 0}
 			     style={`view-transition-name: ${post.collName}`}>
@@ -65,18 +66,18 @@
 					<div class="postContent">
 						{#if post.image}
 							<img class="postImg" src={post.image.src} alt={post.image.alt}>
-						{:else if modBody || mod !== undefined}
+						{:else if modBody} <!--|| mod !== undefined}-->
 							<iframe class="postImg" title="Website generating Image for mod from modrinth"
-											src="/genImg?p={(modBody ?? mod).slug}"></iframe>
-						{:else if img}
-							<img class="postImg" src={img.src} alt={img.alt}>
+							        src="/genImg?p={(modBody /*?? mod*/).slug}"></iframe>
+							<!--{:else if img}
+								<img class="postImg" src={img.src} alt={img.alt}>-->
 						{/if}
 						<div class="postSummary">
 							<h2 class="postTitle">{post.title}</h2>
 							{#if text !== undefined}
-								<p class="postPreview">{@html shorten(marked(text.markdown))}</p>
-							{:else if modBody || mod !== undefined}
-								{#await loadDescription((modBody ?? mod).slug) then content}
+								<p class="postPreview">{@html shorten(marked(parseComponents(text.markdown)))}</p>
+							{:else if modBody} <!--|| mod !== undefined}-->
+								{#await loadDescription((modBody /*?? mod*/).slug) then content}
 									<p class="postPreview">{@html content}</p>
 								{:catch error}
 									{error}

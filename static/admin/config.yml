@@ -59,33 +59,20 @@ collections:
       - name: "content"
         label: "Content"
         widget: list
+        max: 1
         types:
-          - name: 'mod'
-            label: 'Mod'
-            widget: object
-            summary: '{{fields.slug}}'
-            fields:
-              - { label: Modrinth-Slug, name: slug, widget: string }
           - name: 'modbody'
             label: 'Mod-Body'
             widget: object
             summary: '{{fields.slug}}'
             fields:
               - { label: Modrinth-Slug, name: slug, widget: string }
-          - label: 'Text'
-            name: 'text'
+          - name: 'text'
+            label: 'Markdown'
             widget: object
             summary: '{{fields.markdown}}'
             fields:
               - { label: Markdown, name: markdown, widget: markdown }
-          - label: 'Image'
-            name: 'image'
-            widget: object
-            summary: '{{fields.alt}}'
-            fields:
-              - { label: Image, name: src, widget: image }
-              - { label: Alt-Text, name: alt, widget: string }
-              - { label: Style, name: style, widget: text, required: false }
   - name: "authors"
     label: "Authors"
     label_singular: "Author"
