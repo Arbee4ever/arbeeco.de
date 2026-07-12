@@ -50,6 +50,7 @@
 		height: 100vh;
 		box-shadow: 0 0 250px 0 #000000 inset;
 		z-index: 1;
+		view-transition-name: vignette;
 	}
 
 	#wordmark {
