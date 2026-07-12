@@ -1,11 +1,18 @@
 <script lang="ts">
 	import { marked } from 'marked';
+	import { loadModData } from '$lib/js/helpers';
 
-	export let data;
+	export let slug: string;
 </script>
 
 <div class="mod-body">
-	{@html marked(data.body)}
+	{#if slug}
+		{#await loadModData(slug)}
+			<p>Loading mod data...</p>
+		{:then mod}
+			{@html marked(mod.body)}
+		{/await}
+	{/if}
 </div>
 
 <style lang="scss">
