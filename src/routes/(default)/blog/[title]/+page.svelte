@@ -67,7 +67,7 @@
 	<meta property="og:published_time " content="{post.date}" />
 </svelte:head>
 
-<div class="post">
+<div class="post" style={`view-transition-name: ${post.collName}`}>
 	{#if post.image}
 		<img class="postImg" src={post.image.src} alt={post.image.alt}>
 	{:else if modBody || mod !== undefined}

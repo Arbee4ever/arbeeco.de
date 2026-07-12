@@ -45,7 +45,8 @@
 			{@const text = post.content.find((el) => el.type === "text")}
 			{@const mod = post.content.find((el) => el.type === "mod")}
 			{@const modBody = post.content.find((el) => el.type === "modbody")}
-			<div class="post" use:tilt={{ scale: 0.95, strength: 0.25 }} class:wide={all && i === 0}>
+			<div class="post" use:tilt={{ scale: 0.95, strength: 0.25 }} class:wide={all && i === 0}
+			     style={`view-transition-name: ${post.collName}`}>
 				<div class="postAbout">
 					<a href="{post.authors[0].url}" target="_blank">
 						<img class="authorImg" src="{post.authors[0].image.src}" alt={post.authors[0].image.alt}>

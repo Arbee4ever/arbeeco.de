@@ -1,3 +1,23 @@
+import { onNavigate } from '$app/navigation';
+
+export const preparePageTransition = () => {
+	onNavigate(async (navigation) => {
+		if (!document.startViewTransition) {
+			return;
+		}
+
+		document.documentElement.style.scrollBehavior = 'auto';
+
+		return new Promise((oldStateCaptureResolve) => {
+			document.startViewTransition(async () => {
+				oldStateCaptureResolve();
+				await navigation.complete;
+				document.documentElement.style.scrollBehavior = 'smooth';
+			});
+		});
+	});
+};
+
 /**
  * Removes file-extension-suffix from string (.___)
  * @param str string to trim

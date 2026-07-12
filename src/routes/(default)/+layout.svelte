@@ -3,6 +3,9 @@
 	import "$lib/css/normalize.css";
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import { preparePageTransition } from '$lib/js/helpers';
+
+	preparePageTransition()
 </script>
 
 <svelte:head>
