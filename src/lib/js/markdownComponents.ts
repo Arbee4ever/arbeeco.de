@@ -1,6 +1,6 @@
 import Mod from '$lib/components/blog/Mod.svelte';
 import Images from '$lib/components/blog/Images.svelte';
-import ModBody from '$lib/components/blog/ModBody.svelte';
+import { Code } from 'lucide-svelte';
 
 export const Components = {
 	mod: {
@@ -14,6 +14,12 @@ export const Components = {
 		component: Images,
 		prop: 'src',
 		transform: (input: string) => input.split(',')
+	},
+	code: {
+		pattern: /```([^`]*)```/,
+		component: Code,
+		prop: 'src',
+		transform: (input: string) => input
 	}
 } as const;
 
