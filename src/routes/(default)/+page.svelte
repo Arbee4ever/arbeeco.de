@@ -110,7 +110,7 @@
 		justify-content: center;
 		height: 25vh;
 		width: 25vh;
-		box-shadow: 0 0 20px #000;
+		filter: drop-shadow(0 0 10px #000);
 		transition: height 0.4s ease-in-out, width 0.4s ease-in-out, margin-top 0.4s ease-in-out;
 		background: -moz-linear-gradient(45deg, #2b8eaf 0%, #b222a8 100%);
 		background: -webkit-linear-gradient(45deg, #2b8eaf 0%, #b222a8 100%);
