@@ -6,19 +6,13 @@
 	scrollbar-color: rgba(127, 127, 127, 0.502) transparent;
 
 	&::-webkit-scrollbar {
-		width: 12px;
-	}
-
-	&::-webkit-scrollbar-thumb {
-		background-color: #00000080;
-		border-radius: 10px;
-		border: 0px;
+		background-color: transparent;
+		color: transparent;
 	}
 }
 
 html {
 	scroll-behavior: smooth;
-	overflow: overlay;
 	background: linear-gradient(to bottom right, #2b8eaf, #b222a8);
 }
 
