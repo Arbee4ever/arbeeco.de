@@ -37,7 +37,7 @@
 	"type": "module",
 	"dependencies": {
 		"lodash": "^4.17.21",
-		"lucide-svelte": "^0.471.0",
+		"lucide-svelte": "^1.0.1",
 		"marked": "^15.0.3",
 		"striptags": "^3.2.0"
 	}
