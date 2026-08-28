@@ -27,7 +27,7 @@
 		"prettier-plugin-svelte": "^3.1.2",
 		"sass": "^1.81.0",
 		"svelte": "^4.2.7",
-		"svelte-check": "^4.1.0",
+		"svelte-check": "^4.7.6",
 		"svelte-preprocess": "^6.0.3",
 		"svelte-tilt": "^0.0.3",
 		"typescript": "^5.7.2",
