@@ -1,13 +1,15 @@
 <script lang="ts">
-	import '$lib/css/global.scss';
-	import '$lib/css/normalize.css';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import { page } from '$app/stores';
+	import globalStylesheet from './../lib/css/global.scss?url'
+	import normalizeStylesheet from './../lib/css/normalize.css?url'
 </script>
 
 <svelte:head>
 	<title>{$page.status} | ARBEE</title>
+	<link rel="stylesheet" href={globalStylesheet} />
+	<link rel="stylesheet" href={normalizeStylesheet} />
 </svelte:head>
 
 <Header></Header>
@@ -15,7 +17,7 @@
 	<div id="notFound">
 		<h1>{$page.status}</h1>
 
-		<p><strong>{$page.status == 404 ? "Page not found :(" : $page.error.message}</strong></p>
+		<p><strong>{$page.status == 404 ? "Page not found :(" : $page.error?.message}</strong></p>
 		{#if $page.status == 404}
 			<p>The requested page could not be found.</p>
 		{/if}

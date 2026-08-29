@@ -1,25 +1,67 @@
 import Mod from '$lib/components/blog/Mod.svelte';
 import Images from '$lib/components/blog/Images.svelte';
-import { Code } from 'lucide-svelte';
+import Code from '$lib/components/blog/Code.svelte';
+import type { Field } from '@sveltia/cms';
 
-export const Components = {
+type Component = {
+	pattern: RegExp;
+	component: any;
+	label: string;
+	icon: string;
+	fields: Field[];
+	transform: (input: string) => any;
+	markdown: (data: any) => string;
+};
+
+export const Components: { [key: string]: Component } = {
 	mod: {
 		pattern: /!mod\[([^\]]*)]/,
 		component: Mod,
-		prop: 'slug',
-		transform: (input: string) => input
+		label: 'Mod',
+		icon: 'deployed_code',
+		fields: [
+			{
+				name: 'slug',
+				label: 'Modrinth-Slug',
+				widget: 'string'
+			}
+		],
+		transform: (input: string) => ({ slug: input }),
+		markdown: (data) => `!mod[${data.slug}]`
 	},
 	images: {
 		pattern: /!\(([^)]*)\)/,
 		component: Images,
-		prop: 'src',
-		transform: (input: string) => input.split(',')
+		label: 'Images',
+		icon: 'image',
+		fields: [
+			{
+				name: 'src',
+				label: 'Source',
+				widget: 'image',
+				multiple: true
+			}
+		],
+		transform: (input: string) => ({ src: input.split(',') }),
+		markdown: (data) => `!(${data.src})`
 	},
 	code: {
-		pattern: /```([^`]*)```/,
+		pattern: /!code\[([^\]]*)]/,
 		component: Code,
-		prop: 'src',
-		transform: (input: string) => input
+		label: 'Code',
+		icon: 'code',
+		fields: [
+			{
+				name: 'src',
+				label: 'Source',
+				widget: 'code'
+			}
+		],
+		transform: (input: string) => {
+			console.log("input", input);
+			return ({ src: { code: input, lang: 'plain' } })
+		},
+		markdown: (data) => `!code[${JSON.stringify(data)}]`
 	}
 } as const;
 
@@ -30,7 +72,7 @@ export function parseComponents(markdown: string) {
 		markdown.matchAll(pattern).forEach((match) => {
 			const token = {
 				type: key,
-				data: match[1]
+				value: match[1]
 			};
 			markdown = markdown.replace(match[0], `<div data-token='${JSON.stringify(token)}'></div>`);
 		});

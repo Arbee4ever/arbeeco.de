@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { marked } from 'marked';
-
-	export let src: { markdown: string };
+	export let src: { code: string, lang: string };
+	console.log('src', src);
 </script>
 
-<p>{src}</p>
+<p>{JSON.stringify(src)}</p>

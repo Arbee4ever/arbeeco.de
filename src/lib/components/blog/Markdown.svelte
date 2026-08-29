@@ -9,12 +9,6 @@
 
 	data.markdown = parseComponents(data.markdown);
 
-	type ComponentKey = keyof typeof Components;
-	type ComponentToken = {
-		type: ComponentKey;
-		data: string;
-	};
-
 	function mountComponents() {
 		if (!markdownBody) return;
 
@@ -22,19 +16,20 @@
 		placeholders.forEach((target) => {
 			const token = target.dataset.token;
 			if (!token) return;
-			const json = JSON.parse(token) as Partial<ComponentToken>;
-			if (!json.type || !json.data || !(json.type in Components)) return;
+			const json = JSON.parse(token) as { type?: string; value?: string };
+			if (!json.type || !(json.type in Components)) return;
 
-			target.dataset.mounted = 'true';
+			const componentType = json.type as keyof typeof Components;
+			const componentConfig = Components[componentType];
+			if (!componentConfig || typeof json.value === 'undefined') return '';
 
-			const component = Components[json.type];
-			const key = component.prop;
-			new component.component({
+			new (componentConfig.component as any)({
 				target,
-				//@ts-expect-error
-				props: { [key]: component.transform(json.data) },
+				props: componentConfig.transform(json.value) as any,
 				hydrate: true
 			});
+
+			target.dataset.mounted = 'true';
 		});
 	}
 
