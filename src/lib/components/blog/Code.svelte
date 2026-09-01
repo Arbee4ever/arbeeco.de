@@ -11,14 +11,22 @@
 	} else {
 		source = hljs.highlightAuto(src.code).value;
 	}
+
+	function copyToClipboard() {
+		navigator.clipboard.writeText(src.code).then(() => {
+			console.log('Code copied to clipboard');
+		}).catch((err) => {
+			console.error('Could not copy code: ', err);
+		});
+	}
 </script>
 
 <div class="code language-{src.lang}">
 	{@html source}
 	<span class="corner">
-		<button class="copy">
+		<button class="copy" on:click={copyToClipboard}>
 			<span>COPY</span>
-			<LucideCopy size="1em" strokeWidth={3} color="white" on:click={() => navigator.clipboard.writeText(src.code)} />
+			<LucideCopy size="1em" strokeWidth={3} color="white" />
 		</button>
 		{#if hljs.getLanguage(src.lang) != undefined}
 			<span class="lang">
