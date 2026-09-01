@@ -28,7 +28,7 @@ export const load = async () => {
 	};
 
 	const fromBlock = (type: keyof typeof Components, match: RegExpMatchArray) => {
-		const value = Components[type].transform(match[1]);
+		const value = Components[type].transform(match);
 		const [key, val] = Object.entries(value)[0] ?? [];
 
 		return {

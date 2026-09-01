@@ -16,16 +16,16 @@
 		placeholders.forEach((target) => {
 			const token = target.dataset.token;
 			if (!token) return;
-			const json = JSON.parse(token) as { type?: string; value?: string };
+			const json = JSON.parse(token) as { type?: string; value?: Object };
 			if (!json.type || !(json.type in Components)) return;
 
 			const componentType = json.type as keyof typeof Components;
 			const componentConfig = Components[componentType];
 			if (!componentConfig || typeof json.value === 'undefined') return '';
 
-			new (componentConfig.component as any)({
+			new componentConfig.component({
 				target,
-				props: componentConfig.transform(json.value) as any,
+				props: json.value,
 				hydrate: true
 			});
 

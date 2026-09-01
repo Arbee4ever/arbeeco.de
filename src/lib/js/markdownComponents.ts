@@ -9,7 +9,7 @@ type Component = {
 	label: string;
 	icon: string;
 	fields: Field[];
-	transform: (input: string) => any;
+	transform: (input: RegExpMatchArray) => any;
 	markdown: (data: any) => string;
 };
 
@@ -26,7 +26,7 @@ export const Components: { [key: string]: Component } = {
 				widget: 'string'
 			}
 		],
-		transform: (input: string) => ({ slug: input }),
+		transform: (input: RegExpMatchArray) => ({ slug: input[1] }),
 		markdown: (data) => `!mod[${data.slug}]`
 	},
 	images: {
@@ -42,11 +42,11 @@ export const Components: { [key: string]: Component } = {
 				multiple: true
 			}
 		],
-		transform: (input: string) => ({ src: input.split(',') }),
+		transform: (input: RegExpMatchArray) => ({ src: input[1].split(',') }),
 		markdown: (data) => `!(${data.src})`
 	},
 	code: {
-		pattern: /!code\[([^\]]*)]/,
+		pattern: /!code(?<lang>[^\[]*)\[(?<code>[^\]]*)]/m,
 		component: Code,
 		label: 'Code',
 		icon: 'code',
@@ -57,11 +57,15 @@ export const Components: { [key: string]: Component } = {
 				widget: 'code'
 			}
 		],
-		transform: (input: string) => {
-			console.log("input", input);
-			return ({ src: { code: input, lang: 'plain' } })
+		transform: (input: RegExpMatchArray) => {
+			const groups = input.groups ?? {};
+			const lang = groups.lang ?? 'plain';
+			const code = groups.code ?? '';
+			return { src: { code, lang } };
 		},
-		markdown: (data) => `!code[${JSON.stringify(data)}]`
+		markdown: ({ src: { code = '', lang = 'plain' } = {} }) => {
+			return `!code${lang}[${code}]`;
+		}
 	}
 } as const;
 
@@ -72,7 +76,7 @@ export function parseComponents(markdown: string) {
 		markdown.matchAll(pattern).forEach((match) => {
 			const token = {
 				type: key,
-				value: match[1]
+				value: component.transform(match)
 			};
 			markdown = markdown.replace(match[0], `<div data-token='${JSON.stringify(token)}'></div>`);
 		});
